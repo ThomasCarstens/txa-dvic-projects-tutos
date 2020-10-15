@@ -8,7 +8,7 @@ So that you stay in the loop as I update the repository!
 
 ## Contents
 ### Projet postoffice.world (still needs updating so be sure to do the above!)
-See description
+See pdf attached above.
 
 ### Projet highway-driver (still needs updating so be sure to do the above!)
-See description
+See pdf attached above.
