@@ -1,0 +1,2 @@
+navigation:robot_description:robot_description_moveit_config
+-DCATKIN_DEVEL_PREFIX=/home/thomas/chapter_5_ws/devel -DCMAKE_INSTALL_PREFIX=/home/thomas/chapter_5_ws/install -G Unix Makefiles
