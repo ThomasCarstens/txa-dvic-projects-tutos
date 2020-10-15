@@ -1,7 +1,7 @@
 # cours-de-robotique
-Pour l'instant dirigé vers les étudiants qui travailleront sur la plateforme de drones.
+Pour l'instant dirigé vers les étudiants qui travaillent sur la plateforme de drones.
 ## Why a github and not Google Drive?
-So that you stay in the loop as I update the repository! 
+So that you stay in the loop as I update the repository!
 - Learn to use Github: https://www.youtube.com/watch?v=sAdW7aKZBac&t=435s&ab_channel=ThomasCarstens
 - Star this repository for **notifications** of any changes
 - Make sure to ```$git pull``` to **stay up to date** with the changes.
