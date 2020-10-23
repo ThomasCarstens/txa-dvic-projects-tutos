@@ -27,16 +27,18 @@ from cv_bridge import CvBridge, CvBridgeError
 class image_converter:
 
   def __init__(self):
-    self.image_pub = rospy.Publisher("image_topic_2",Image, queue_size=1000)
-    self.twist_pub = rospy.Publisher("robot_base_velocity_controller/cmd_vel", Twist, queue_size=1000);
-    self.gate_pub= rospy.Publisher("gate_state", String, queue_size=10);
-    self.bridge = CvBridge()
-    self.image_sub = rospy.Subscriber("rrbot/camera1/image_raw",Image,self.callback)
+# Initialise publishers and subscribers:
 
-    # Initialise publishers and subscribers:
-    # Subscriber to raw image 
-    # Publisher for an image (optional, for a target/text/etc overlay)
-    # Publisher for a robot velocity
+    self.image_pub = # Publisher for an image (optional, for a target/text/etc overlay)
+    self.twist_pub = # Publishing a robot velocity
+    self.gate_pub= # Publishing a string as information (eg. "found" or "searching", your plan)
+    self.bridge = CvBridge() #Leave as such: ROS<->OpenCV
+    self.image_sub = # Subscriber to raw image 
+
+
+    
+    
+
 
 
 #####################     CALLBACK OF CAMERA IMAGE  ###########################################
@@ -52,6 +54,7 @@ class image_converter:
       cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
     except CvBridgeError as e:
       print(e)
+
     hsv = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV) #Camera video to HSV
     redmask = cv2.inRange(hsv, l_b2, u_b2)
     #-----Reduce Noise using morphology opening-----
@@ -65,7 +68,7 @@ class image_converter:
     ###################### PUTTING INFO ON THE CAMERA PICTURE #########################
     cv2.line(cv_image,(400,480),(x2,y2),(0,255,0),1)
     font = cv2.FONT_HERSHEY_COMPLEX
-    if -velocity<0 :
+    if -velocity<0 : #adding text overlay!
     text = 'Gauche'
     else :
     text = 'Droite'
