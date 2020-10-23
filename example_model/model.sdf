@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="Color Tutorial Model">
+    <static>true</static>
+    <link name="robot_link">
+
+      
+      <visual name="body_visual">
+        <pose>0 0 1 0 1.57079 0</pose>
+        <geometry>
+          <box>
+            <size>4 1 1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>0 1 1 1</specular>
+          <emissive>1 0 0 0</emissive>
+        </material>
+      </visual>
+
+      <collision name="body_collision">
+        <pose>0 0 1 0 1.57079 0</pose>
+        <geometry>
+          <box>
+            <size>4 1 1</size>
+          </box>
+        </geometry>
+      </collision>
+
+
+      <visual name="foot1_visual">
+        <pose relative_to="body_visual">2 0 2.5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>4 1 1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>0 1 1 1</specular>
+          <emissive>1 0 0 0</emissive>
+        </material>
+      </visual>
+
+      <collision name="foot1_collision">
+        <pose relative_to="body_visual">2 0 2.5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>4 1 1</size>
+          </box>
+        </geometry>
+      </collision>
+
+
+      <visual name="foot2_visual">
+        <pose relative_to="body_visual">4 0 1 0 1.57079 0</pose>
+        <geometry>
+          <box>
+            <size>4 1 1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>0 1 1 1</specular>
+          <emissive>1 0 0 0</emissive>
+        </material>
+      </visual>
+
+      <collision name="foot2_collision">
+        <pose relative_to="body_visual">4 0 1 0 1.57079 0</pose>
+        <geometry>
+          <box>
+            <size>4 1 1</size>
+          </box>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>
