@@ -1,12 +1,16 @@
 # cours-de-robotique
-Pour l'instant dirigé vers les étudiants qui travaillent sur la plateforme de drones.
-## Why a github and not Google Drive?
+2 tutorials to get to grips with 
+a. Merging technologies with ROS and 
+b. the foundations of behaviour planning
+
+## Please use this github properly
 So that you stay in the loop as I update the repository!
+
 - Learn to use Github: https://www.youtube.com/watch?v=sAdW7aKZBac&t=435s&ab_channel=ThomasCarstens
 - Star this repository for **notifications** of any changes
 - Make sure to ```$git pull``` to **stay up to date** with the changes.
 
-## Contents
+## Content
 ### Projet postoffice.world (still needs updating so be sure to do the above!)
 See pdf attached above.
 
