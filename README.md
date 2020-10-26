@@ -7,7 +7,8 @@ b. the foundations of behaviour planning
 ## Please use this github properly
 So that you stay in the loop as I update the repository!
 
-- Learn to use Github: https://www.youtube.com/watch?v=sAdW7aKZBac&t=435s&ab_channel=ThomasCarstens
+- Learn to use Github: at least using ```$git clone [repo]```, ```$git add .```, ```$git commit -m "..."```, ```$git push``` and for our purposes, ```$git pull```.
+- I made a video that presents this (start at the 435s mark): https://www.youtube.com/watch?v=sAdW7aKZBac&t=435s&ab_channel=ThomasCarstens
 - Star this repository for **notifications** of any changes
 - Make sure to ```$git pull``` to **stay up to date** with the changes.
 
