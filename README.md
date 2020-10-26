@@ -1,5 +1,6 @@
-# cours-de-robotique
-2 tutorials to get to grips with 
+# txa@dvic: projects-tutos
+
+2 projects to get to grips with 
 a. Merging technologies with ROS and 
 b. the foundations of behaviour planning
 
