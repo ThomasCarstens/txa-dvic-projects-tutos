@@ -1,0 +1,115 @@
+{
+    "child": {
+        "child1": {
+            "child1": {
+                "child1": {
+                    "directory": "\/home\/dvic\/txa-dvic-projects-tutos\/src\/scripts",
+                    "height": 389,
+                    "profile": "2b7c4080-0ddd-46c5-8f23-563fd3ba789d",
+                    "readOnly": false,
+                    "synchronizedInput": true,
+                    "type": "Terminal",
+                    "uuid": "b56c4930-4f1c-44e3-9298-a5dd2854eea2",
+                    "width": 903
+                },
+                "child2": {
+                    "directory": "\/home\/dvic\/txa-dvic-projects-tutos",
+                    "height": 387,
+                    "profile": "2b7c4080-0ddd-46c5-8f23-563fd3ba789d",
+                    "readOnly": false,
+                    "synchronizedInput": true,
+                    "type": "Terminal",
+                    "uuid": "49b8ac3a-bb8b-4e4e-be95-12dfc3b64c60",
+                    "width": 903
+                },
+                "orientation": 1,
+                "position": 43,
+                "ratio": 0.5,
+                "type": "Paned"
+            },
+            "child2": {
+                "child1": {
+                    "directory": "\/home\/dvic\/txa-dvic-projects-tutos\/src\/turtlesim_cleaner\/src",
+                    "height": 167,
+                    "profile": "2b7c4080-0ddd-46c5-8f23-563fd3ba789d",
+                    "readOnly": false,
+                    "synchronizedInput": true,
+                    "type": "Terminal",
+                    "uuid": "f41adc5b-05b9-4a19-ac14-7d84ce7a6196",
+                    "width": 703
+                },
+                "child2": {
+                    "child1": {
+                        "directory": "\/home\/dvic\/txa-dvic-projects-tutos",
+                        "height": 389,
+                        "profile": "2b7c4080-0ddd-46c5-8f23-563fd3ba789d",
+                        "readOnly": false,
+                        "synchronizedInput": true,
+                        "type": "Terminal",
+                        "uuid": "30d491d6-6921-47eb-9f36-0dbd1b6c483d",
+                        "width": 703
+                    },
+                    "child2": {
+                        "directory": "\/home\/dvic",
+                        "height": 218,
+                        "profile": "2b7c4080-0ddd-46c5-8f23-563fd3ba789d",
+                        "readOnly": false,
+                        "synchronizedInput": true,
+                        "type": "Terminal",
+                        "uuid": "45beda43-1de0-435c-b38a-1ec9eb5de9a1",
+                        "width": 703
+                    },
+                    "orientation": 1,
+                    "position": 43,
+                    "ratio": 0.638752052545155991,
+                    "type": "Paned"
+                },
+                "orientation": 1,
+                "position": 18,
+                "ratio": 0.214652956298200526,
+                "type": "Paned"
+            },
+            "orientation": 0,
+            "position": 56,
+            "ratio": 0.561567164179104461,
+            "type": "Paned"
+        },
+        "child2": {
+            "child1": {
+                "directory": "\/home\/dvic\/txa-dvic-projects-tutos",
+                "height": 110,
+                "profile": "2b7c4080-0ddd-46c5-8f23-563fd3ba789d",
+                "readOnly": false,
+                "synchronizedInput": true,
+                "type": "Terminal",
+                "uuid": "25017a04-4b9b-4e7a-8ecb-2f723a016c68",
+                "width": 804
+            },
+            "child2": {
+                "directory": "\/home\/dvic\/txa-dvic-projects-tutos",
+                "height": 110,
+                "profile": "2b7c4080-0ddd-46c5-8f23-563fd3ba789d",
+                "readOnly": false,
+                "synchronizedInput": true,
+                "type": "Terminal",
+                "uuid": "0459f228-8adc-4ed4-91c0-cad274cb85b6",
+                "width": 802
+            },
+            "orientation": 0,
+            "position": 50,
+            "ratio": 0.5,
+            "type": "Paned"
+        },
+        "orientation": 1,
+        "position": 87,
+        "ratio": 0.874157303370786565,
+        "type": "Paned"
+    },
+    "height": 890,
+    "name": "Default",
+    "synchronizedInput": false,
+    "type": "Session",
+    "uuid": "56200418-41a8-4905-a2d4-03404b7c06ca",
+    "version": "1.0",
+    "width": 1608
+}

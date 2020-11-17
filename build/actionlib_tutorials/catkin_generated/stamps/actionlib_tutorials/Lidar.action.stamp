@@ -1,0 +1,8 @@
+#goal definition
+int32 margin
+---
+#result definition
+int32 final
+---
+#feedback
+int32 distance

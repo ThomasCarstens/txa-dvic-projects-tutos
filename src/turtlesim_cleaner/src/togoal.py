@@ -5,6 +5,25 @@ from geometry_msgs.msg import Twist
 from turtlesim.msg import Pose
 from math import pow, atan2, sqrt
 
+from __future__ import print_function
+import rospy
+
+import threading
+from math import sqrt, pow
+import smach_ros
+import smach
+#from machine.action import MachineAction
+
+import actionlib
+from actionlib_tutorials.msg import MachineAction
+#include <actionlib_tutorials/AveragingAction.h>
+from smach import StateMachine, Concurrence
+from smach_ros import ActionServerWrapper, ServiceState, SimpleActionState, MonitorState, IntrospectionServer
+import std_srvs.srv
+import turtlesim.srv
+import turtlesim.msg
+import turtle_actionlib.msg
+
 
 class TurtleBot:
 
@@ -20,22 +39,35 @@ class TurtleBot:
         # A subscriber to the topic '/turtle1/pose'. self.update_pose is called
         # when a message of type Pose is received.
         self.pose_subscriber = rospy.Subscriber('/turtle1/pose',
-                                                Pose, self.update_pose)
-
-        self.pose = Pose()
+                                                Pose, self.update_pose1)
+        self.pose_subscriber = rospy.Subscriber('/turtle2/pose',
+                                                Pose, self.update_pose2)
+        self.turtle1_pose = Pose()
+        self.turtle2_pose = Pose()
         self.rate = rospy.Rate(10)
 
-    def update_pose(self, data):
+    def update_pose1(self, data):
         """Callback function which is called when a new message of type Pose is
         received by the subscriber."""
-        self.pose = data
-        self.pose.x = round(self.pose.x, 4)
-        self.pose.y = round(self.pose.y, 4)
+        self.turtle1_pose = data
+        self.turtle1_pose.x = round(self.turtle1_pose.x, 4)
+        self.turtle1_pose.y = round(self.turtle1_pose.y, 4)
+	#print("turtle1:")
+
+    def update_pose2(self, data):
+        """Callback function which is called when a new message of type Pose is
+        received by the subscriber."""
+        self.turtle2_pose = data
+        self.turtle2_pose.x = round(self.turtle2_pose.x, 4)
+        self.turtle2_pose.y = round(self.turtle2_pose.y, 4)
+	#print("turtle2:")
 
     def euclidean_distance(self, goal_pose):
         """Euclidean distance between current pose and the goal."""
-        return sqrt(pow((goal_pose.x - self.pose.x), 2) +
-                    pow((goal_pose.y - self.pose.y), 2))
+        euclidean_distance= sqrt(pow((goal_pose.x - self.turtle1_pose.x), 2) + pow((goal_pose.y - self.turtle1_pose.y), 2))
+	print("distance is", euclidean_distance)
+	return euclidean_distance
+	
 
     def linear_vel(self, goal_pose, constant=1.5):
         """See video: https://www.youtube.com/watch?v=Qh15Nol5htM."""
@@ -43,22 +75,28 @@ class TurtleBot:
 
     def steering_angle(self, goal_pose):
         """See video: https://www.youtube.com/watch?v=Qh15Nol5htM."""
-        return atan2(goal_pose.y - self.pose.y, goal_pose.x - self.pose.x)
+        return atan2(goal_pose.y - self.turtle1_pose.y, goal_pose.x - self.turtle1_pose.x)
 
     def angular_vel(self, goal_pose, constant=6):
         """See video: https://www.youtube.com/watch?v=Qh15Nol5htM."""
-        return constant * (self.steering_angle(goal_pose) - self.pose.theta)
+        return constant * (self.steering_angle(goal_pose) - self.turtle1_pose.theta)
 
     def move2goal(self):
         """Moves the turtle to the goal."""
         goal_pose = Pose()
 
         # Get the input from the user.
-        goal_pose.x = input("Set your x goal: ")
-        goal_pose.y = input("Set your y goal: ")
+        #goal_pose.x = input("Set your x goal: ")
+        #goal_pose.y = input("Set your y goal: ")
+
 
         # Please, insert a number slightly greater than 0 (e.g. 0.01).
         distance_tolerance = input("Set your tolerance: ")
+
+        goal_pose.x = self.turtle2_pose.x
+        goal_pose.y = self.turtle2_pose.y
+	print ("goal pose is", goal_pose.x, goal_pose.y)
+	print ("turtle2:", self.turtle2_pose.x, self.turtle2_pose.y)
 
         vel_msg = Twist()
 
@@ -82,8 +120,11 @@ class TurtleBot:
 
             # Publish at the desired rate.
             self.rate.sleep()
+	print ("goal pose is", goal_pose.x, goal_pose.y)
 
         # Stopping our robot after the movement is over.
+	print ("turtle1:", self.turtle1_pose.x, self.turtle1_pose.y)
+	print ("turtle2:", self.turtle2_pose.x, self.turtle2_pose.y)
         vel_msg.linear.x = 0
         vel_msg.angular.z = 0
         self.velocity_publisher.publish(vel_msg)

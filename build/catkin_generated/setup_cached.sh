@@ -7,7 +7,9 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/devel:$CMAKE_PREFIX_PATH"
-export PWD="/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/src:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/dvic/txa-dvic-projects-tutos/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/dvic/txa-dvic-projects-tutos/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/dvic/txa-dvic-projects-tutos/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PWD='/home/dvic/txa-dvic-projects-tutos/build'
+export ROSLISP_PACKAGE_DIRECTORIES="/home/dvic/txa-dvic-projects-tutos/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/dvic/txa-dvic-projects-tutos/src:$ROS_PACKAGE_PATH"
