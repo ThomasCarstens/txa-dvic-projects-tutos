@@ -1,0 +1,2 @@
+turtlesim_cleaner
+-DCATKIN_DEVEL_PREFIX=/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/devel -DCMAKE_INSTALL_PREFIX=/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/install -G Unix Makefiles

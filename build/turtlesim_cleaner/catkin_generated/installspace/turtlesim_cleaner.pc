@@ -1,0 +1,8 @@
+prefix=/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/install
+
+Name: turtlesim_cleaner
+Description: Description of turtlesim_cleaner
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

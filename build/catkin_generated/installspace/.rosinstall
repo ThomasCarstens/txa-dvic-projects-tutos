@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/install/setup.sh

@@ -1,20 +1,19 @@
 # txa@dvic: projects-tutos
 
-2 projects to get to grips with 
-a. Merging technologies with ROS and 
-b. the foundations of behaviour planning
+Projects to get to grips with
+- Merging technologies with ROS --> currently on ```main``` branch.
+- The foundations of behaviour planning --> currently on ```behaviour-planning``` branch.
+- Designing a custom simulator --> currently on ```master``` branch.
+***Note: each branch has its own readme.***
 
 ## Please use this github properly
-So that you stay in the loop as I update the repository!
-
-- Learn to use Github: at least using ```$git clone [repo]```, ```$git add .```, ```$git commit -m "..."```, ```$git push``` and for our purposes, ```$git pull```.
-- I made a video that presents this (start at the 435s mark): https://www.youtube.com/watch?v=sAdW7aKZBac&t=435s&ab_channel=ThomasCarstens
+The repository is being updated regularly.
 - Star this repository for **notifications** of any changes
 - Make sure to ```$git pull``` to **stay up to date** with the changes.
 
 ## Content
-### Projet postoffice.world (still needs updating so be sure to do the above!)
-See pdf attached above.
+### Project
+See **Latest version** of PDF.
 
-### Projet highway-driver (still needs updating so be sure to do the above!)
-See pdf attached above.
+### Main textbook
+https://drive.google.com/file/d/1QDUQ2wXoh2mE8xSYpALEfkSY-BAH-ssl/view?usp=sharing
