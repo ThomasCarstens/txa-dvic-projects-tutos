@@ -83,7 +83,7 @@ class ArenaFlyer():
 
         for cf in self.allcfs.crazyflies:
             print(cf.id)
-            cf.takeoff(0.5, 2.5)
+            cf.takeoff(1.0, 2.5)
 
 
             #now we test if he has reached the desired point.
@@ -123,12 +123,8 @@ class ArenaFlyer():
     	return euclidean_distance
 
     def takeoff_transition(self):
-        distance_tolerance = 0.2
-        desired_goal = Pose()
-        desired_goal.x = 0.0
-        desired_goal.y = 0.0
-        desired_goal.z = 0.0
-        while self.euclidean_distance(desired_goal) >= distance_tolerance:
+        distance_tolerance = 1
+        while self.euclidean_distance(self.cf2_pose) >= distance_tolerance:
             self.success = False
 
         if self.euclidean_distance(self.turtle2_pose) < distance_tolerance:

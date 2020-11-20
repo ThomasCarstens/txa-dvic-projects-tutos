@@ -163,6 +163,8 @@ class FibonacciAction(object):
             #self.rate.sleep()
 
         if self.turtle2_pose.x != 0.0 and self.turtle2_pose.y != 0.0:
+
+
             while self.euclidean_distance(self.turtle2_pose) >= distance_tolerance:
                 self.success = False
                 print(self.turtle2_pose)
