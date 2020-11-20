@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/dvic/txa-dvic-projects-tutos/install")
+  set(CMAKE_INSTALL_PREFIX "/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/dvic/txa-dvic-projects-tutos/build/gtest/googlemock/gtest/cmake_install.cmake")
+  include("/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/build/gtest/googlemock/gtest/cmake_install.cmake")
 
 endif()
 

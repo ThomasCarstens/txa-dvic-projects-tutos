@@ -1,8 +1,8 @@
-# Install script for directory: /home/dvic/txa-dvic-projects-tutos/src/turtlesim_cleaner
+# Install script for directory: /home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/src/turtlesim_cleaner
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/dvic/txa-dvic-projects-tutos/install")
+  set(CMAKE_INSTALL_PREFIX "/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/dvic/txa-dvic-projects-tutos/build/turtlesim_cleaner/catkin_generated/installspace/turtlesim_cleaner.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/build/turtlesim_cleaner/catkin_generated/installspace/turtlesim_cleaner.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlesim_cleaner/cmake" TYPE FILE FILES
-    "/home/dvic/txa-dvic-projects-tutos/build/turtlesim_cleaner/catkin_generated/installspace/turtlesim_cleanerConfig.cmake"
-    "/home/dvic/txa-dvic-projects-tutos/build/turtlesim_cleaner/catkin_generated/installspace/turtlesim_cleanerConfig-version.cmake"
+    "/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/build/turtlesim_cleaner/catkin_generated/installspace/turtlesim_cleanerConfig.cmake"
+    "/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/build/turtlesim_cleaner/catkin_generated/installspace/turtlesim_cleanerConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlesim_cleaner" TYPE FILE FILES "/home/dvic/txa-dvic-projects-tutos/src/turtlesim_cleaner/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlesim_cleaner" TYPE FILE FILES "/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/src/turtlesim_cleaner/package.xml")
 endif()
 

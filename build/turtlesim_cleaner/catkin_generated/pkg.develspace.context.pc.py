@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "turtlesim_cleaner"
-PROJECT_SPACE_DIR = "/home/dvic/txa-dvic-projects-tutos/devel"
+PROJECT_SPACE_DIR = "/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/devel"
 PROJECT_VERSION = "0.0.0"

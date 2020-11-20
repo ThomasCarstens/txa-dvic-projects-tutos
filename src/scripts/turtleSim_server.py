@@ -8,7 +8,7 @@ import smach_ros
 import smach
 
 import actionlib
-from actionlib_tutorials.msg import MachineAction
+from actionlib_tutorials.msg import MachineAction, FibonacciAction, FibonacciGoal
 from smach import StateMachine, Concurrence
 from smach_ros import ActionServerWrapper, ServiceState, SimpleActionState, MonitorState, IntrospectionServer
 import std_srvs.srv
@@ -16,13 +16,12 @@ import turtlesim.srv
 import turtlesim.msg
 import turtle_actionlib.msg
 
-
 def polygonial():
 
 
     # Construct static goals
     polygon_big = turtle_actionlib.msg.ShapeGoal(edges = 11, radius = 4.0)
-    polygon_small = turtle_actionlib.msg.ShapeGoal(edges = 6, radius = 0.5) 
+    polygon_small = turtle_actionlib.msg.ShapeGoal(edges = 6, radius = 0.5)
 
     # Create a SMACH state machine
     sm0 = StateMachine(outcomes=['succeeded','aborted','preempted'])
@@ -37,14 +36,31 @@ def polygonial():
         # Create a second turtle
         StateMachine.add('SPAWN',
                 ServiceState('spawn', turtlesim.srv.Spawn,
-                    request = turtlesim.srv.SpawnRequest(0.0,0.0,0.0,'turtle2')),
-                {'succeeded':'TELEPORT1'})
+                    request = turtlesim.srv.SpawnRequest(5.0,2.0,0.0,'turtle2')),
+                {'succeeded':'PRECISE'})
+
+        # fib_goal = FibonacciGoal(order=20)
+        # fib_fullaction = SimpleActionState('fibonacci', FibonacciAction,
+        #                   goal=fib_goal)
+        #
+        # StateMachine.add('FIBONACCI',
+        #                   fib_fullaction,
+        #                   transitions={'succeeded':'PRECISE'})
+
+        goto_goal = FibonacciGoal(order=20)
+        goto_fullaction = SimpleActionState('togoal', FibonacciAction,
+                          goal=goto_goal)
+
+        StateMachine.add('PRECISE',
+                          goto_fullaction,
+                          transitions={'succeeded':'TELEPORT1'})
 
         # Teleport turtle 1
         StateMachine.add('TELEPORT1',
                 ServiceState('turtle1/teleport_absolute', turtlesim.srv.TeleportAbsolute,
                     request = turtlesim.srv.TeleportAbsoluteRequest(5.0,1.0,0.0)),
                 {'succeeded':'DRAW_SHAPES'})
+        print("hi")
 
 
         # Draw some polygons
@@ -87,8 +103,8 @@ def polygonial():
 
                 with draw_monitor_cc:
                     Concurrence.add('DRAW',
-                            SimpleActionState('turtle_shape2',turtle_actionlib.msg.ShapeAction,
-                                goal = polygon_small))
+                            SimpleActionState('togoal', FibonacciAction,
+                                              goal=goto_goal))
 
 
                     def turtle_far_away(ud, msg):

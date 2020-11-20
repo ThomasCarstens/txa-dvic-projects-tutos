@@ -1,4 +1,4 @@
-prefix=/home/dvic/txa-dvic-projects-tutos/devel
+prefix=/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/devel
 
 Name: turtlesim_cleaner
 Description: Description of turtlesim_cleaner
