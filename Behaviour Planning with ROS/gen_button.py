@@ -1,3 +1,5 @@
+
+
 #!/usr/bin/env python
 
 import rospy
@@ -9,7 +11,7 @@ def put_on_default():
     rospy.loginfo("Default on wait until pressed")
     pub.publish("wait")
     while not rospy.is_shutdown():
-        
+
         rospy.sleep(0.05)
 
 if __name__ == '__main__':
