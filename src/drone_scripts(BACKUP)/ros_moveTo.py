@@ -33,7 +33,7 @@ class ArenaFlyer(object):
         self.allcfs = self.swarm.allcfs
 
 
-		self._goal = actionlib_tutorials.msg.MoveToGoal()
+		self._goal = actionlib_tutorials.msg.MoveToGoal().point
 		self.waypoint = np.array([self._goal.x, self._goal.y, self._goal.z])
         self.pos = Point()
 		self.pos = self._goal

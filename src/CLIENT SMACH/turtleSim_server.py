@@ -44,15 +44,16 @@ def polygonial():
     with sm0:
         #add each state
         for i in range(3):
+            print("waypoint:", my_points[i])
             StateMachine.add('STATE' + str(i),
                             SimpleActionState('detect_perimeter',
-                                                MoveToGoal(point = my_points[i])),
+                                                MoveToAction, goal = my_points[i]),
                             transitions={'succeeded' : 'STATE' + str(i+1)})
 
         #make it infinit
         StateMachine.add('STATE' + str(3),
                         SimpleActionState('detect_perimeter',
-                                            MoveToGoal(point = my_points[3])),
+                                            MoveToAction, goal = my_points[3]),
                         transitions={'succeeded' : 'STATE' + str(0)})
 
 
