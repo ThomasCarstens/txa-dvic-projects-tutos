@@ -11,6 +11,12 @@ add_action_files(
   FILES Machine.action
   FILES Lidar.action
   FILES MoveTo.action
+  FILES doTraj.action
+)
+
+add_service_files(
+  FILES
+  killMotors.srv
 )
 
 generate_messages(

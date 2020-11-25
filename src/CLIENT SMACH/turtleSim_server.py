@@ -8,8 +8,10 @@ import smach_ros
 import smach
 
 import actionlib
-from actionlib_tutorials.msg import MoveToAction, MoveToGoal, MachineAction, FibonacciAction, FibonacciGoal
+from actionlib_tutorials.msg import MoveToAction, MoveToGoal, MachineAction, FibonacciAction, FibonacciGoal, doTrajAction, doTrajGoal
+import actionlib_tutorials.srv
 from geometry_msgs.msg import Point
+from std_msgs.msg import String
 from smach import StateMachine, Concurrence
 from smach_ros import ActionServerWrapper, ServiceState, SimpleActionState, MonitorState, IntrospectionServer
 import std_srvs.srv
@@ -49,7 +51,7 @@ def polygonial():
         #                   transitions={'succeeded':'PRECISE'})
         pos = Point()
 
-        pos.x = 0.5
+        pos.x = 0.0
         pos.y = 0.0
         pos.z = 0.5
 
@@ -59,99 +61,116 @@ def polygonial():
 
         StateMachine.add('WAYPOINT1',
                           goto_fullaction,
-                          transitions={'succeeded':'WAYPOINT2'})
+                          transitions={'succeeded':'PREEMPTABLE_MOVE'})
 
-        pos1 = Point()
+        draw_monitor_cc = Concurrence(
+                ['succeeded','aborted','preempted','interrupted'],
+                'aborted',
+                child_termination_cb = lambda so: True,
+                outcome_map = {
+                    'succeeded':{'WAYPOINT2':'succeeded'},
+                    'preempted':{'WAYPOINT2':'preempted','WAIT_FOR_CLEAR':'preempted'},
+                    'interrupted':{'WAIT_FOR_CLEAR':'invalid'}})
 
-        pos1.x = 0.5
-        pos1.y = 0.5
-        pos1.z = 0.5
+        StateMachine.add('PREEMPTABLE_MOVE',
+                draw_monitor_cc,
+                {'interrupted':'WAYPOINT1'})
 
-        goto_goal = MoveToGoal(point=pos1)
+
+        with draw_monitor_cc:
+
+
+            pos1 = Point()
+
+            pos1.x = 0.7
+            pos1.y = 0
+            pos1.z = 0.5
+
+            goto_goal = MoveToGoal(point=pos1)
+            goto_fullaction = SimpleActionState('detect_perimeter', MoveToAction,
+                            goal=goto_goal)
+
+            Concurrence.add('WAYPOINT2',
+                    goto_fullaction)
+
+            def turtle_far_away(ud, msg):
+                """Returns True if UNITY STRING is a kill!!!"""
+                print (msg.data)
+                if msg.data == "home":
+                    return True
+                return False
+
+            Concurrence.add('WAIT_FOR_CLEAR',
+                MonitorState('/cf2/pattern', String,
+                    cond_cb = lambda ud,msg: not turtle_far_away(ud,msg)),
+                {'valid':'WAYPOINT3','invalid':'END_IT'})
+
+
+
+
+        # # Do a lil traj.
+        # goto_goal = doTrajGoal(shape=1, id = 2)
+
+        # goto_fullaction = SimpleActionState('trajectory_action', doTrajAction,
+        #                   goal=goto_goal)
+
+        # StateMachine.add('LIL_TRAJ',
+        #                   goto_fullaction,
+        #                   transitions={'succeeded':'END_IT'})
+
+
+        # # Kill it now.
+        # StateMachine.add('END_IT',
+        #         ServiceState('kill_service', actionlib_tutorials.srv.killMotors,
+        #             request = actionlib_tutorials.srv.killMotorsRequest(2)),
+        #         {'succeeded':'TELEPORT1'})
+
+
+        # def turtle_far_away(ud, msg):
+        #     """Returns True if UNITY STRING is a kill!!!"""
+        #     print (msg.data)
+        #     if msg.data == "home":
+        #         return True
+        #     return False
+
+        # StateMachine.add('WAIT_FOR_CLEAR',
+        #         MonitorState('/cf2/pattern', String,
+        #             cond_cb = lambda ud,msg: not turtle_far_away(ud,msg)),
+        #         {'valid':'WAYPOINT3','invalid':'END_IT'})
+
+         # Kill it now.
+        # StateMachine.add('END_IT',
+        #         ServiceState('kill_service', actionlib_tutorials.srv.killMotors,
+        #             request = actionlib_tutorials.srv.killMotorsRequest(2)),
+        #         {'succeeded':'WAIT_FOR_CLEAR'})
+
+        pos2 = Point()
+
+        pos2.x = 0
+        pos2.y = 0
+        pos2.z = 0.5
+
+        goto_goal = MoveToGoal(point=pos2)
         goto_fullaction = SimpleActionState('detect_perimeter', MoveToAction,
                           goal=goto_goal)
 
-        StateMachine.add('WAYPOINT2',
-                          goto_fullaction,
-                          transitions={'succeeded':'END_IT'})
 
-
-        # Kill it now.
-        StateMachine.add('END_IT',
-                ServiceState('kill', killMotors.srv,
-                    request = turtlesim.srv.killMotorsRequest(2)),
-                {'succeeded':'TELEPORT1'})
-
-
-        # Teleport turtle 1
-        StateMachine.add('TELEPORT1',
-                ServiceState('turtle1/teleport_absolute', turtlesim.srv.TeleportAbsolute,
-                    request = turtlesim.srv.TeleportAbsoluteRequest(5.0,1.0,0.0)),
-                {'succeeded':'DRAW_SHAPES'})
-        print("hi")
-
-
-        # Draw some polygons
-        shapes_cc = Concurrence(
-                outcomes=['succeeded','aborted','preempted'],
-                default_outcome='aborted',
-                outcome_map = {'succeeded':{'BIG':'succeeded','SMALL':'succeeded'}})
-        StateMachine.add('DRAW_SHAPES',shapes_cc)
-        with shapes_cc:
-            # Draw a large polygon with the first turtle
-            Concurrence.add('BIG',
-                    SimpleActionState('turtle_shape1',turtle_actionlib.msg.ShapeAction,
-                        goal = polygon_big))
-
-            # Draw a small polygon with the second turtle
-            small_shape_sm = StateMachine(outcomes=['succeeded','aborted','preempted'])
-            Concurrence.add('SMALL',small_shape_sm)
-
-
-            with small_shape_sm:
-                # Teleport turtle 2
-                StateMachine.add('TELEPORT2',
-                        ServiceState('turtle2/teleport_absolute', turtlesim.srv.TeleportAbsolute,
-                            request = turtlesim.srv.TeleportAbsoluteRequest(9.0,5.0,0.0)),
-                        {'succeeded':'DRAW_WITH_MONITOR'})
-
-                # Construct a concurrence for the shape action and the monitor
-                draw_monitor_cc = Concurrence(
-                        ['succeeded','aborted','preempted','interrupted'],
-                        'aborted',
-                        child_termination_cb = lambda so: True,
-                        outcome_map = {
-                            'succeeded':{'DRAW':'succeeded'},
-                            'preempted':{'DRAW':'preempted','MONITOR':'preempted'},
-                            'interrupted':{'MONITOR':'invalid'}})
-
-                StateMachine.add('DRAW_WITH_MONITOR',
-                        draw_monitor_cc,
-                        {'interrupted':'WAIT_FOR_CLEAR'})
-
-                with draw_monitor_cc:
-                    Concurrence.add('DRAW',
-                            SimpleActionState('togoal', FibonacciAction,
-                                              goal=goto_goal))
-
-
-                    def turtle_far_away(ud, msg):
-                        """Returns True while turtle pose in msg is at least 1 unit away from (2,5)"""
-                        if sqrt(pow(msg.x-9.0,2) + pow(msg.y-5.0,2)) > 2.0:
-                            return True
-                        return False
-
-                    Concurrence.add('MONITOR',
-                            MonitorState('/turtle1/pose',turtlesim.msg.Pose,
-                                cond_cb = turtle_far_away))
+        StateMachine.add('WAYPOINT3',
+                          goto_fullaction)
 
 
 
+        # # Teleport turtle 1
+        # StateMachine.add('TELEPORT1',
+        #         ServiceState('turtle1/teleport_absolute', turtlesim.srv.TeleportAbsolute,
+        #             request = turtlesim.srv.TeleportAbsoluteRequest(5.0,1.0,0.0)),
+        #         {'succeeded':'WAIT_FOR_CLEAR'})
 
-                StateMachine.add('WAIT_FOR_CLEAR',
-                        MonitorState('/turtle1/pose',turtlesim.msg.Pose,
-                            cond_cb = lambda ud,msg: not turtle_far_away(ud,msg)),
-                        {'valid':'WAIT_FOR_CLEAR','invalid':'TELEPORT2'})
+
+        # StateMachine.add('WAIT_FOR_CLEAR',
+        #         MonitorState('/turtle1/pose',turtlesim.msg.Pose,
+        #             cond_cb = lambda ud,msg: not turtle_far_away(ud,msg)),
+        #         {'valid':'WAIT_FOR_CLEAR','invalid':'succeeded'})
 
 
 

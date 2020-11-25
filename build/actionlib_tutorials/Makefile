@@ -168,19 +168,79 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-actionlib_tutorials/CMakeFiles/averaging_server.dir/rule:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/averaging_server.dir/rule
-.PHONY : actionlib_tutorials/CMakeFiles/averaging_server.dir/rule
+actionlib_tutorials/CMakeFiles/averaging_client.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/averaging_client.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/averaging_client.dir/rule
 
 # Convenience name for target.
-averaging_server: actionlib_tutorials/CMakeFiles/averaging_server.dir/rule
+averaging_client: actionlib_tutorials/CMakeFiles/averaging_client.dir/rule
 
-.PHONY : averaging_server
+.PHONY : averaging_client
 
 # fast build rule for target.
-averaging_server/fast:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/averaging_server.dir/build.make actionlib_tutorials/CMakeFiles/averaging_server.dir/build
-.PHONY : averaging_server/fast
+averaging_client/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/averaging_client.dir/build.make actionlib_tutorials/CMakeFiles/averaging_client.dir/build
+.PHONY : averaging_client/fast
+
+# Convenience name for target.
+actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_py.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_py.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_py.dir/rule
+
+# Convenience name for target.
+actionlib_tutorials_generate_messages_py: actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_py.dir/rule
+
+.PHONY : actionlib_tutorials_generate_messages_py
+
+# fast build rule for target.
+actionlib_tutorials_generate_messages_py/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_py.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_py.dir/build
+.PHONY : actionlib_tutorials_generate_messages_py/fast
+
+# Convenience name for target.
+actionlib_tutorials/CMakeFiles/actionlib_tutorials_gennodejs.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_tutorials_gennodejs.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/actionlib_tutorials_gennodejs.dir/rule
+
+# Convenience name for target.
+actionlib_tutorials_gennodejs: actionlib_tutorials/CMakeFiles/actionlib_tutorials_gennodejs.dir/rule
+
+.PHONY : actionlib_tutorials_gennodejs
+
+# fast build rule for target.
+actionlib_tutorials_gennodejs/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_gennodejs.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_gennodejs.dir/build
+.PHONY : actionlib_tutorials_gennodejs/fast
+
+# Convenience name for target.
+actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_nodejs.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_nodejs.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+actionlib_tutorials_generate_messages_nodejs: actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_nodejs.dir/rule
+
+.PHONY : actionlib_tutorials_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_tutorials_generate_messages_nodejs/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_nodejs.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_nodejs.dir/build
+.PHONY : actionlib_tutorials_generate_messages_nodejs/fast
+
+# Convenience name for target.
+actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_lisp.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_lisp.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+actionlib_tutorials_generate_messages_lisp: actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_lisp.dir/rule
+
+.PHONY : actionlib_tutorials_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_tutorials_generate_messages_lisp/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_lisp.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_lisp.dir/build
+.PHONY : actionlib_tutorials_generate_messages_lisp/fast
 
 # Convenience name for target.
 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineGoal.dir/rule:
@@ -226,21 +286,6 @@ rosgraph_msgs_generate_messages_nodejs: actionlib_tutorials/CMakeFiles/rosgraph_
 rosgraph_msgs_generate_messages_nodejs/fast:
 	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_py.dir/rule:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_py.dir/rule
-.PHONY : actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_tutorials_generate_messages_py: actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_py.dir/rule
-
-.PHONY : actionlib_tutorials_generate_messages_py
-
-# fast build rule for target.
-actionlib_tutorials_generate_messages_py/fast:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_py.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_py.dir/build
-.PHONY : actionlib_tutorials_generate_messages_py/fast
 
 # Convenience name for target.
 actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
@@ -303,21 +348,6 @@ _actionlib_tutorials_generate_messages_check_deps_MoveToActionFeedback/fast:
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_MoveToActionFeedback/fast
 
 # Convenience name for target.
-actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages.dir/rule:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages.dir/rule
-.PHONY : actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages.dir/rule
-
-# Convenience name for target.
-actionlib_tutorials_generate_messages: actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages.dir/rule
-
-.PHONY : actionlib_tutorials_generate_messages
-
-# fast build rule for target.
-actionlib_tutorials_generate_messages/fast:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages.dir/build
-.PHONY : actionlib_tutorials_generate_messages/fast
-
-# Convenience name for target.
 actionlib_tutorials/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
 	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 .PHONY : actionlib_tutorials/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
@@ -363,6 +393,21 @@ _actionlib_tutorials_generate_messages_check_deps_MoveToActionResult/fast:
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_MoveToActionResult/fast
 
 # Convenience name for target.
+actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajFeedback.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajFeedback.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajFeedback.dir/rule
+
+# Convenience name for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajFeedback: actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajFeedback.dir/rule
+
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajFeedback
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajFeedback/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajFeedback.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajFeedback.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajFeedback/fast
+
+# Convenience name for target.
 actionlib_tutorials/CMakeFiles/actionlib_generate_messages_py.dir/rule:
 	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_generate_messages_py.dir/rule
 .PHONY : actionlib_tutorials/CMakeFiles/actionlib_generate_messages_py.dir/rule
@@ -393,21 +438,6 @@ actionlib_generate_messages_nodejs/fast:
 .PHONY : actionlib_generate_messages_nodejs/fast
 
 # Convenience name for target.
-actionlib_tutorials/CMakeFiles/actionlib_tutorials_gennodejs.dir/rule:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_tutorials_gennodejs.dir/rule
-.PHONY : actionlib_tutorials/CMakeFiles/actionlib_tutorials_gennodejs.dir/rule
-
-# Convenience name for target.
-actionlib_tutorials_gennodejs: actionlib_tutorials/CMakeFiles/actionlib_tutorials_gennodejs.dir/rule
-
-.PHONY : actionlib_tutorials_gennodejs
-
-# fast build rule for target.
-actionlib_tutorials_gennodejs/fast:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_gennodejs.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_gennodejs.dir/build
-.PHONY : actionlib_tutorials_gennodejs/fast
-
-# Convenience name for target.
 actionlib_tutorials/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
 	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_generate_messages_eus.dir/rule
 .PHONY : actionlib_tutorials/CMakeFiles/actionlib_generate_messages_eus.dir/rule
@@ -421,6 +451,36 @@ actionlib_generate_messages_eus: actionlib_tutorials/CMakeFiles/actionlib_genera
 actionlib_generate_messages_eus/fast:
 	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_generate_messages_eus.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_generate_messages_eus.dir/build
 .PHONY : actionlib_generate_messages_eus/fast
+
+# Convenience name for target.
+actionlib_tutorials/CMakeFiles/actionlib_tutorials_genlisp.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_tutorials_genlisp.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/actionlib_tutorials_genlisp.dir/rule
+
+# Convenience name for target.
+actionlib_tutorials_genlisp: actionlib_tutorials/CMakeFiles/actionlib_tutorials_genlisp.dir/rule
+
+.PHONY : actionlib_tutorials_genlisp
+
+# fast build rule for target.
+actionlib_tutorials_genlisp/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_genlisp.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_genlisp.dir/build
+.PHONY : actionlib_tutorials_genlisp/fast
+
+# Convenience name for target.
+actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineResult.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineResult.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineResult.dir/rule
+
+# Convenience name for target.
+_actionlib_tutorials_generate_messages_check_deps_MachineResult: actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineResult.dir/rule
+
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_MachineResult
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_MachineResult/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineResult.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineResult.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_MachineResult/fast
 
 # Convenience name for target.
 actionlib_tutorials/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
@@ -468,21 +528,6 @@ _actionlib_tutorials_generate_messages_check_deps_FibonacciActionFeedback/fast:
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_FibonacciActionFeedback/fast
 
 # Convenience name for target.
-actionlib_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : actionlib_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: actionlib_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make actionlib_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-# Convenience name for target.
 actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
 	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 .PHONY : actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
@@ -496,21 +541,6 @@ rosgraph_msgs_generate_messages_cpp: actionlib_tutorials/CMakeFiles/rosgraph_msg
 rosgraph_msgs_generate_messages_cpp/fast:
 	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-actionlib_tutorials/CMakeFiles/averaging_client.dir/rule:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/averaging_client.dir/rule
-.PHONY : actionlib_tutorials/CMakeFiles/averaging_client.dir/rule
-
-# Convenience name for target.
-averaging_client: actionlib_tutorials/CMakeFiles/averaging_client.dir/rule
-
-.PHONY : averaging_client
-
-# fast build rule for target.
-averaging_client/fast:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/averaging_client.dir/build.make actionlib_tutorials/CMakeFiles/averaging_client.dir/build
-.PHONY : averaging_client/fast
 
 # Convenience name for target.
 actionlib_tutorials/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
@@ -603,6 +633,21 @@ actionlib_msgs_generate_messages_cpp/fast:
 .PHONY : actionlib_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
+actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback.dir/rule
+
+# Convenience name for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback: actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback.dir/rule
+
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback/fast
+
+# Convenience name for target.
 actionlib_tutorials/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
 	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 .PHONY : actionlib_tutorials/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
@@ -678,6 +723,36 @@ std_msgs_generate_messages_cpp/fast:
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
+actionlib_tutorials/CMakeFiles/fibonacci_server.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/fibonacci_server.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/fibonacci_server.dir/rule
+
+# Convenience name for target.
+fibonacci_server: actionlib_tutorials/CMakeFiles/fibonacci_server.dir/rule
+
+.PHONY : fibonacci_server
+
+# fast build rule for target.
+fibonacci_server/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/fibonacci_server.dir/build.make actionlib_tutorials/CMakeFiles/fibonacci_server.dir/build
+.PHONY : fibonacci_server/fast
+
+# Convenience name for target.
+actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_nodejs: actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_nodejs/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
+.PHONY : actionlib_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
 actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
 	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
 .PHONY : actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
@@ -721,21 +796,6 @@ rosgraph_msgs_generate_messages_py: actionlib_tutorials/CMakeFiles/rosgraph_msgs
 rosgraph_msgs_generate_messages_py/fast:
 	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_nodejs.dir/rule:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_nodejs.dir/rule
-.PHONY : actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_tutorials_generate_messages_nodejs: actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_tutorials_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_tutorials_generate_messages_nodejs/fast:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_nodejs.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_nodejs.dir/build
-.PHONY : actionlib_tutorials_generate_messages_nodejs/fast
 
 # Convenience name for target.
 actionlib_tutorials/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
@@ -796,21 +856,6 @@ rosgraph_msgs_generate_messages_lisp: actionlib_tutorials/CMakeFiles/rosgraph_ms
 rosgraph_msgs_generate_messages_lisp/fast:
 	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_lisp.dir/rule:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_lisp.dir/rule
-.PHONY : actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_tutorials_generate_messages_lisp: actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_lisp.dir/rule
-
-.PHONY : actionlib_tutorials_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_tutorials_generate_messages_lisp/fast:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_lisp.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_lisp.dir/build
-.PHONY : actionlib_tutorials_generate_messages_lisp/fast
 
 # Convenience name for target.
 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_FibonacciFeedback.dir/rule:
@@ -901,6 +946,51 @@ _actionlib_tutorials_generate_messages_check_deps_LidarAction: actionlib_tutoria
 _actionlib_tutorials_generate_messages_check_deps_LidarAction/fast:
 	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_LidarAction.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_LidarAction.dir/build
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_LidarAction/fast
+
+# Convenience name for target.
+actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal.dir/rule
+
+# Convenience name for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal: actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal.dir/rule
+
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal/fast
+
+# Convenience name for target.
+actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages.dir/rule
+
+# Convenience name for target.
+actionlib_tutorials_generate_messages: actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages.dir/rule
+
+.PHONY : actionlib_tutorials_generate_messages
+
+# fast build rule for target.
+actionlib_tutorials_generate_messages/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages.dir/build
+.PHONY : actionlib_tutorials_generate_messages/fast
+
+# Convenience name for target.
+actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_killMotors.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_killMotors.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_killMotors.dir/rule
+
+# Convenience name for target.
+_actionlib_tutorials_generate_messages_check_deps_killMotors: actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_killMotors.dir/rule
+
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_killMotors
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_killMotors/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_killMotors.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_killMotors.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_killMotors/fast
 
 # Convenience name for target.
 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_FibonacciGoal.dir/rule:
@@ -1038,6 +1128,36 @@ _actionlib_tutorials_generate_messages_check_deps_MoveToAction/fast:
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_MoveToAction/fast
 
 # Convenience name for target.
+actionlib_tutorials/CMakeFiles/averaging_server.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/averaging_server.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/averaging_server.dir/rule
+
+# Convenience name for target.
+averaging_server: actionlib_tutorials/CMakeFiles/averaging_server.dir/rule
+
+.PHONY : averaging_server
+
+# fast build rule for target.
+averaging_server/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/averaging_server.dir/build.make actionlib_tutorials/CMakeFiles/averaging_server.dir/build
+.PHONY : averaging_server/fast
+
+# Convenience name for target.
+actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionResult.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionResult.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionResult.dir/rule
+
+# Convenience name for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajActionResult: actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionResult.dir/rule
+
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajActionResult
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajActionResult/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionResult.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionResult.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajActionResult/fast
+
+# Convenience name for target.
 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_AveragingActionFeedback.dir/rule:
 	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_AveragingActionFeedback.dir/rule
 .PHONY : actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_AveragingActionFeedback.dir/rule
@@ -1098,36 +1218,6 @@ _actionlib_tutorials_generate_messages_check_deps_LidarActionResult/fast:
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_LidarActionResult/fast
 
 # Convenience name for target.
-actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineResult.dir/rule:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineResult.dir/rule
-.PHONY : actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineResult.dir/rule
-
-# Convenience name for target.
-_actionlib_tutorials_generate_messages_check_deps_MachineResult: actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineResult.dir/rule
-
-.PHONY : _actionlib_tutorials_generate_messages_check_deps_MachineResult
-
-# fast build rule for target.
-_actionlib_tutorials_generate_messages_check_deps_MachineResult/fast:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineResult.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineResult.dir/build
-.PHONY : _actionlib_tutorials_generate_messages_check_deps_MachineResult/fast
-
-# Convenience name for target.
-actionlib_tutorials/CMakeFiles/actionlib_tutorials_genlisp.dir/rule:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_tutorials_genlisp.dir/rule
-.PHONY : actionlib_tutorials/CMakeFiles/actionlib_tutorials_genlisp.dir/rule
-
-# Convenience name for target.
-actionlib_tutorials_genlisp: actionlib_tutorials/CMakeFiles/actionlib_tutorials_genlisp.dir/rule
-
-.PHONY : actionlib_tutorials_genlisp
-
-# fast build rule for target.
-actionlib_tutorials_genlisp/fast:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_genlisp.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_genlisp.dir/build
-.PHONY : actionlib_tutorials_genlisp/fast
-
-# Convenience name for target.
 actionlib_tutorials/CMakeFiles/actionlib_tutorials_geneus.dir/rule:
 	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_tutorials_geneus.dir/rule
 .PHONY : actionlib_tutorials/CMakeFiles/actionlib_tutorials_geneus.dir/rule
@@ -1173,19 +1263,34 @@ _actionlib_tutorials_generate_messages_check_deps_MoveToGoal/fast:
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_MoveToGoal/fast
 
 # Convenience name for target.
-actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineFeedback.dir/rule:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineFeedback.dir/rule
-.PHONY : actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineFeedback.dir/rule
+actionlib_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-_actionlib_tutorials_generate_messages_check_deps_MachineFeedback: actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineFeedback.dir/rule
+roscpp_generate_messages_lisp: actionlib_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
-.PHONY : _actionlib_tutorials_generate_messages_check_deps_MachineFeedback
+.PHONY : roscpp_generate_messages_lisp
 
 # fast build rule for target.
-_actionlib_tutorials_generate_messages_check_deps_MachineFeedback/fast:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineFeedback.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineFeedback.dir/build
-.PHONY : _actionlib_tutorials_generate_messages_check_deps_MachineFeedback/fast
+roscpp_generate_messages_lisp/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make actionlib_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+.PHONY : roscpp_generate_messages_lisp/fast
+
+# Convenience name for target.
+actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajResult.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajResult.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajResult.dir/rule
+
+# Convenience name for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajResult: actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajResult.dir/rule
+
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajResult
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajResult/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajResult.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajResult.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajResult/fast
 
 # Convenience name for target.
 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MoveToActionGoal.dir/rule:
@@ -1203,19 +1308,49 @@ _actionlib_tutorials_generate_messages_check_deps_MoveToActionGoal/fast:
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_MoveToActionGoal/fast
 
 # Convenience name for target.
-actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-.PHONY : actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineFeedback.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineFeedback.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineFeedback.dir/rule
 
 # Convenience name for target.
-actionlib_msgs_generate_messages_lisp: actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+_actionlib_tutorials_generate_messages_check_deps_MachineFeedback: actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineFeedback.dir/rule
 
-.PHONY : actionlib_msgs_generate_messages_lisp
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_MachineFeedback
 
 # fast build rule for target.
-actionlib_msgs_generate_messages_lisp/fast:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
-.PHONY : actionlib_msgs_generate_messages_lisp/fast
+_actionlib_tutorials_generate_messages_check_deps_MachineFeedback/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineFeedback.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineFeedback.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_MachineFeedback/fast
+
+# Convenience name for target.
+actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajGoal.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajGoal.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajGoal.dir/rule
+
+# Convenience name for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajGoal: actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajGoal.dir/rule
+
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajGoal
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajGoal/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajGoal.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajGoal.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajGoal/fast
+
+# Convenience name for target.
+actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajAction.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajAction.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajAction.dir/rule
+
+# Convenience name for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajAction: actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajAction.dir/rule
+
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajAction
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajAction/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajAction.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajAction.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajAction/fast
 
 # Convenience name for target.
 actionlib_tutorials/CMakeFiles/actionlib_tutorials_genpy.dir/rule:
@@ -1231,6 +1366,21 @@ actionlib_tutorials_genpy: actionlib_tutorials/CMakeFiles/actionlib_tutorials_ge
 actionlib_tutorials_genpy/fast:
 	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_genpy.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_genpy.dir/build
 .PHONY : actionlib_tutorials_genpy/fast
+
+# Convenience name for target.
+actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_lisp: actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_lisp/fast:
+	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_AveragingAction.dir/rule:
@@ -1322,36 +1472,6 @@ _actionlib_tutorials_generate_messages_check_deps_AveragingActionGoal/fast:
 	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_AveragingActionGoal.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_AveragingActionGoal.dir/build
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_AveragingActionGoal/fast
 
-# Convenience name for target.
-actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-.PHONY : actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_nodejs: actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_nodejs/fast:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
-.PHONY : actionlib_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-actionlib_tutorials/CMakeFiles/fibonacci_server.dir/rule:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/fibonacci_server.dir/rule
-.PHONY : actionlib_tutorials/CMakeFiles/fibonacci_server.dir/rule
-
-# Convenience name for target.
-fibonacci_server: actionlib_tutorials/CMakeFiles/fibonacci_server.dir/rule
-
-.PHONY : fibonacci_server
-
-# fast build rule for target.
-fibonacci_server/fast:
-	cd /home/dvic/txa-dvic-projects-tutos/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/fibonacci_server.dir/build.make actionlib_tutorials/CMakeFiles/fibonacci_server.dir/build
-.PHONY : fibonacci_server/fast
-
 src/averaging_client.o: src/averaging_client.cpp.o
 
 .PHONY : src/averaging_client.o
@@ -1442,30 +1562,32 @@ help:
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... install"
-	@echo "... averaging_server"
+	@echo "... averaging_client"
+	@echo "... actionlib_tutorials_generate_messages_py"
+	@echo "... actionlib_tutorials_gennodejs"
+	@echo "... actionlib_tutorials_generate_messages_nodejs"
+	@echo "... actionlib_tutorials_generate_messages_lisp"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MachineGoal"
 	@echo "... test"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_LidarActionGoal"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... actionlib_tutorials_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MachineActionGoal"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_AveragingResult"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MoveToActionFeedback"
-	@echo "... actionlib_tutorials_generate_messages"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MoveToActionResult"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_doTrajFeedback"
 	@echo "... actionlib_generate_messages_py"
 	@echo "... actionlib_generate_messages_nodejs"
-	@echo "... actionlib_tutorials_gennodejs"
 	@echo "... actionlib_generate_messages_eus"
+	@echo "... actionlib_tutorials_genlisp"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_MachineResult"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_FibonacciActionFeedback"
-	@echo "... roscpp_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... averaging_client"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_cpp"
@@ -1473,27 +1595,31 @@ help:
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_FibonacciActionGoal"
 	@echo "... actionlib_msgs_generate_messages_cpp"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_LidarFeedback"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... fibonacci_server"
+	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... actionlib_tutorials_generate_messages_nodejs"
 	@echo "... edit_cache"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... actionlib_tutorials_generate_messages_lisp"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_FibonacciFeedback"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_LidarActionFeedback"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MachineActionResult"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_FibonacciResult"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_FibonacciAction"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_LidarAction"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal"
+	@echo "... actionlib_tutorials_generate_messages"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_killMotors"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_FibonacciGoal"
 	@echo "... actionlib_tutorials_generate_messages_eus"
 	@echo "... list_install_components"
@@ -1504,27 +1630,29 @@ help:
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_LidarGoal"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MachineAction"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MoveToAction"
+	@echo "... averaging_server"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_doTrajActionResult"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_AveragingActionFeedback"
 	@echo "... actionlib_tutorials_generate_messages_cpp"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MoveToFeedback"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_LidarActionResult"
-	@echo "... _actionlib_tutorials_generate_messages_check_deps_MachineResult"
-	@echo "... actionlib_tutorials_genlisp"
 	@echo "... actionlib_tutorials_geneus"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_AveragingFeedback"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MoveToGoal"
-	@echo "... _actionlib_tutorials_generate_messages_check_deps_MachineFeedback"
+	@echo "... roscpp_generate_messages_lisp"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_doTrajResult"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MoveToActionGoal"
-	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_MachineFeedback"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_doTrajGoal"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_doTrajAction"
 	@echo "... actionlib_tutorials_genpy"
+	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_AveragingAction"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_AveragingActionResult"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_FibonacciActionResult"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_AveragingGoal"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MoveToResult"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_AveragingActionGoal"
-	@echo "... actionlib_msgs_generate_messages_nodejs"
-	@echo "... fibonacci_server"
 	@echo "... src/averaging_client.o"
 	@echo "... src/averaging_client.i"
 	@echo "... src/averaging_client.s"

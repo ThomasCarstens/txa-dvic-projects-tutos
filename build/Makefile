@@ -285,17 +285,69 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
-# Target rules for targets named averaging_server
+# Target rules for targets named averaging_client
 
 # Build rule for target.
-averaging_server: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 averaging_server
-.PHONY : averaging_server
+averaging_client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 averaging_client
+.PHONY : averaging_client
 
 # fast build rule for target.
-averaging_server/fast:
-	$(MAKE) -f actionlib_tutorials/CMakeFiles/averaging_server.dir/build.make actionlib_tutorials/CMakeFiles/averaging_server.dir/build
-.PHONY : averaging_server/fast
+averaging_client/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/averaging_client.dir/build.make actionlib_tutorials/CMakeFiles/averaging_client.dir/build
+.PHONY : averaging_client/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_tutorials_generate_messages_py
+
+# Build rule for target.
+actionlib_tutorials_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials_generate_messages_py
+.PHONY : actionlib_tutorials_generate_messages_py
+
+# fast build rule for target.
+actionlib_tutorials_generate_messages_py/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_py.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_py.dir/build
+.PHONY : actionlib_tutorials_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_tutorials_gennodejs
+
+# Build rule for target.
+actionlib_tutorials_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials_gennodejs
+.PHONY : actionlib_tutorials_gennodejs
+
+# fast build rule for target.
+actionlib_tutorials_gennodejs/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_gennodejs.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_gennodejs.dir/build
+.PHONY : actionlib_tutorials_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_tutorials_generate_messages_nodejs
+
+# Build rule for target.
+actionlib_tutorials_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials_generate_messages_nodejs
+.PHONY : actionlib_tutorials_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_tutorials_generate_messages_nodejs/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_nodejs.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_nodejs.dir/build
+.PHONY : actionlib_tutorials_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_tutorials_generate_messages_lisp
+
+# Build rule for target.
+actionlib_tutorials_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials_generate_messages_lisp
+.PHONY : actionlib_tutorials_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_tutorials_generate_messages_lisp/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_lisp.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_lisp.dir/build
+.PHONY : actionlib_tutorials_generate_messages_lisp/fast
 
 #=============================================================================
 # Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_MachineGoal
@@ -335,19 +387,6 @@ rosgraph_msgs_generate_messages_nodejs: cmake_check_build_system
 rosgraph_msgs_generate_messages_nodejs/fast:
 	$(MAKE) -f actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named actionlib_tutorials_generate_messages_py
-
-# Build rule for target.
-actionlib_tutorials_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials_generate_messages_py
-.PHONY : actionlib_tutorials_generate_messages_py
-
-# fast build rule for target.
-actionlib_tutorials_generate_messages_py/fast:
-	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_py.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_py.dir/build
-.PHONY : actionlib_tutorials_generate_messages_py/fast
 
 #=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_py
@@ -402,19 +441,6 @@ _actionlib_tutorials_generate_messages_check_deps_MoveToActionFeedback/fast:
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_MoveToActionFeedback/fast
 
 #=============================================================================
-# Target rules for targets named actionlib_tutorials_generate_messages
-
-# Build rule for target.
-actionlib_tutorials_generate_messages: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials_generate_messages
-.PHONY : actionlib_tutorials_generate_messages
-
-# fast build rule for target.
-actionlib_tutorials_generate_messages/fast:
-	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages.dir/build
-.PHONY : actionlib_tutorials_generate_messages/fast
-
-#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_py
 
 # Build rule for target.
@@ -454,6 +480,19 @@ _actionlib_tutorials_generate_messages_check_deps_MoveToActionResult/fast:
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_MoveToActionResult/fast
 
 #=============================================================================
+# Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_doTrajFeedback
+
+# Build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajFeedback: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _actionlib_tutorials_generate_messages_check_deps_doTrajFeedback
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajFeedback
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajFeedback/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajFeedback.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajFeedback.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajFeedback/fast
+
+#=============================================================================
 # Target rules for targets named actionlib_generate_messages_py
 
 # Build rule for target.
@@ -480,19 +519,6 @@ actionlib_generate_messages_nodejs/fast:
 .PHONY : actionlib_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named actionlib_tutorials_gennodejs
-
-# Build rule for target.
-actionlib_tutorials_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials_gennodejs
-.PHONY : actionlib_tutorials_gennodejs
-
-# fast build rule for target.
-actionlib_tutorials_gennodejs/fast:
-	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_gennodejs.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_gennodejs.dir/build
-.PHONY : actionlib_tutorials_gennodejs/fast
-
-#=============================================================================
 # Target rules for targets named actionlib_generate_messages_eus
 
 # Build rule for target.
@@ -504,6 +530,32 @@ actionlib_generate_messages_eus: cmake_check_build_system
 actionlib_generate_messages_eus/fast:
 	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_generate_messages_eus.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_generate_messages_eus.dir/build
 .PHONY : actionlib_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_tutorials_genlisp
+
+# Build rule for target.
+actionlib_tutorials_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials_genlisp
+.PHONY : actionlib_tutorials_genlisp
+
+# fast build rule for target.
+actionlib_tutorials_genlisp/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_genlisp.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_genlisp.dir/build
+.PHONY : actionlib_tutorials_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_MachineResult
+
+# Build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_MachineResult: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _actionlib_tutorials_generate_messages_check_deps_MachineResult
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_MachineResult
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_MachineResult/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineResult.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineResult.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_MachineResult/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_eus
@@ -545,19 +597,6 @@ _actionlib_tutorials_generate_messages_check_deps_FibonacciActionFeedback/fast:
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_FibonacciActionFeedback/fast
 
 #=============================================================================
-# Target rules for targets named roscpp_generate_messages_lisp
-
-# Build rule for target.
-roscpp_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_lisp
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	$(MAKE) -f actionlib_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make actionlib_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-#=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -569,19 +608,6 @@ rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
 rosgraph_msgs_generate_messages_cpp/fast:
 	$(MAKE) -f actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named averaging_client
-
-# Build rule for target.
-averaging_client: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 averaging_client
-.PHONY : averaging_client
-
-# fast build rule for target.
-averaging_client/fast:
-	$(MAKE) -f actionlib_tutorials/CMakeFiles/averaging_client.dir/build.make actionlib_tutorials/CMakeFiles/averaging_client.dir/build
-.PHONY : averaging_client/fast
 
 #=============================================================================
 # Target rules for targets named roscpp_generate_messages_nodejs
@@ -662,6 +688,19 @@ actionlib_msgs_generate_messages_cpp/fast:
 .PHONY : actionlib_msgs_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback
+
+# Build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback/fast
+
+#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -727,6 +766,32 @@ std_msgs_generate_messages_cpp/fast:
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named fibonacci_server
+
+# Build rule for target.
+fibonacci_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fibonacci_server
+.PHONY : fibonacci_server
+
+# fast build rule for target.
+fibonacci_server/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/fibonacci_server.dir/build.make actionlib_tutorials/CMakeFiles/fibonacci_server.dir/build
+.PHONY : fibonacci_server/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_nodejs
+
+# Build rule for target.
+actionlib_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_nodejs
+.PHONY : actionlib_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
+.PHONY : actionlib_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -764,19 +829,6 @@ rosgraph_msgs_generate_messages_py: cmake_check_build_system
 rosgraph_msgs_generate_messages_py/fast:
 	$(MAKE) -f actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named actionlib_tutorials_generate_messages_nodejs
-
-# Build rule for target.
-actionlib_tutorials_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials_generate_messages_nodejs
-.PHONY : actionlib_tutorials_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_tutorials_generate_messages_nodejs/fast:
-	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_nodejs.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_nodejs.dir/build
-.PHONY : actionlib_tutorials_generate_messages_nodejs/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_eus
@@ -829,19 +881,6 @@ rosgraph_msgs_generate_messages_lisp: cmake_check_build_system
 rosgraph_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make actionlib_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named actionlib_tutorials_generate_messages_lisp
-
-# Build rule for target.
-actionlib_tutorials_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials_generate_messages_lisp
-.PHONY : actionlib_tutorials_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_tutorials_generate_messages_lisp/fast:
-	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_lisp.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_lisp.dir/build
-.PHONY : actionlib_tutorials_generate_messages_lisp/fast
 
 #=============================================================================
 # Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_FibonacciFeedback
@@ -920,6 +959,45 @@ _actionlib_tutorials_generate_messages_check_deps_LidarAction: cmake_check_build
 _actionlib_tutorials_generate_messages_check_deps_LidarAction/fast:
 	$(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_LidarAction.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_LidarAction.dir/build
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_LidarAction/fast
+
+#=============================================================================
+# Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal
+
+# Build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_tutorials_generate_messages
+
+# Build rule for target.
+actionlib_tutorials_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials_generate_messages
+.PHONY : actionlib_tutorials_generate_messages
+
+# fast build rule for target.
+actionlib_tutorials_generate_messages/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages.dir/build
+.PHONY : actionlib_tutorials_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_killMotors
+
+# Build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_killMotors: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _actionlib_tutorials_generate_messages_check_deps_killMotors
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_killMotors
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_killMotors/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_killMotors.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_killMotors.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_killMotors/fast
 
 #=============================================================================
 # Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_FibonacciGoal
@@ -1039,6 +1117,32 @@ _actionlib_tutorials_generate_messages_check_deps_MoveToAction/fast:
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_MoveToAction/fast
 
 #=============================================================================
+# Target rules for targets named averaging_server
+
+# Build rule for target.
+averaging_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 averaging_server
+.PHONY : averaging_server
+
+# fast build rule for target.
+averaging_server/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/averaging_server.dir/build.make actionlib_tutorials/CMakeFiles/averaging_server.dir/build
+.PHONY : averaging_server/fast
+
+#=============================================================================
+# Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_doTrajActionResult
+
+# Build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajActionResult: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _actionlib_tutorials_generate_messages_check_deps_doTrajActionResult
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajActionResult
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajActionResult/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionResult.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajActionResult.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajActionResult/fast
+
+#=============================================================================
 # Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_AveragingActionFeedback
 
 # Build rule for target.
@@ -1091,32 +1195,6 @@ _actionlib_tutorials_generate_messages_check_deps_LidarActionResult/fast:
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_LidarActionResult/fast
 
 #=============================================================================
-# Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_MachineResult
-
-# Build rule for target.
-_actionlib_tutorials_generate_messages_check_deps_MachineResult: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _actionlib_tutorials_generate_messages_check_deps_MachineResult
-.PHONY : _actionlib_tutorials_generate_messages_check_deps_MachineResult
-
-# fast build rule for target.
-_actionlib_tutorials_generate_messages_check_deps_MachineResult/fast:
-	$(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineResult.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineResult.dir/build
-.PHONY : _actionlib_tutorials_generate_messages_check_deps_MachineResult/fast
-
-#=============================================================================
-# Target rules for targets named actionlib_tutorials_genlisp
-
-# Build rule for target.
-actionlib_tutorials_genlisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials_genlisp
-.PHONY : actionlib_tutorials_genlisp
-
-# fast build rule for target.
-actionlib_tutorials_genlisp/fast:
-	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_genlisp.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_genlisp.dir/build
-.PHONY : actionlib_tutorials_genlisp/fast
-
-#=============================================================================
 # Target rules for targets named actionlib_tutorials_geneus
 
 # Build rule for target.
@@ -1156,17 +1234,30 @@ _actionlib_tutorials_generate_messages_check_deps_MoveToGoal/fast:
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_MoveToGoal/fast
 
 #=============================================================================
-# Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_MachineFeedback
+# Target rules for targets named roscpp_generate_messages_lisp
 
 # Build rule for target.
-_actionlib_tutorials_generate_messages_check_deps_MachineFeedback: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _actionlib_tutorials_generate_messages_check_deps_MachineFeedback
-.PHONY : _actionlib_tutorials_generate_messages_check_deps_MachineFeedback
+roscpp_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_lisp
+.PHONY : roscpp_generate_messages_lisp
 
 # fast build rule for target.
-_actionlib_tutorials_generate_messages_check_deps_MachineFeedback/fast:
-	$(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineFeedback.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineFeedback.dir/build
-.PHONY : _actionlib_tutorials_generate_messages_check_deps_MachineFeedback/fast
+roscpp_generate_messages_lisp/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make actionlib_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+.PHONY : roscpp_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_doTrajResult
+
+# Build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajResult: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _actionlib_tutorials_generate_messages_check_deps_doTrajResult
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajResult
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajResult/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajResult.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajResult.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajResult/fast
 
 #=============================================================================
 # Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_MoveToActionGoal
@@ -1182,17 +1273,43 @@ _actionlib_tutorials_generate_messages_check_deps_MoveToActionGoal/fast:
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_MoveToActionGoal/fast
 
 #=============================================================================
-# Target rules for targets named actionlib_msgs_generate_messages_lisp
+# Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_MachineFeedback
 
 # Build rule for target.
-actionlib_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_lisp
-.PHONY : actionlib_msgs_generate_messages_lisp
+_actionlib_tutorials_generate_messages_check_deps_MachineFeedback: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _actionlib_tutorials_generate_messages_check_deps_MachineFeedback
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_MachineFeedback
 
 # fast build rule for target.
-actionlib_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
-.PHONY : actionlib_msgs_generate_messages_lisp/fast
+_actionlib_tutorials_generate_messages_check_deps_MachineFeedback/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineFeedback.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_MachineFeedback.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_MachineFeedback/fast
+
+#=============================================================================
+# Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_doTrajGoal
+
+# Build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajGoal: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _actionlib_tutorials_generate_messages_check_deps_doTrajGoal
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajGoal
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajGoal/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajGoal.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajGoal.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajGoal/fast
+
+#=============================================================================
+# Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_doTrajAction
+
+# Build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajAction: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _actionlib_tutorials_generate_messages_check_deps_doTrajAction
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajAction
+
+# fast build rule for target.
+_actionlib_tutorials_generate_messages_check_deps_doTrajAction/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajAction.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_doTrajAction.dir/build
+.PHONY : _actionlib_tutorials_generate_messages_check_deps_doTrajAction/fast
 
 #=============================================================================
 # Target rules for targets named actionlib_tutorials_genpy
@@ -1206,6 +1323,19 @@ actionlib_tutorials_genpy: cmake_check_build_system
 actionlib_tutorials_genpy/fast:
 	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_tutorials_genpy.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_tutorials_genpy.dir/build
 .PHONY : actionlib_tutorials_genpy/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_lisp
+
+# Build rule for target.
+actionlib_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_lisp
+.PHONY : actionlib_msgs_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
 
 #=============================================================================
 # Target rules for targets named _actionlib_tutorials_generate_messages_check_deps_AveragingAction
@@ -1285,32 +1415,6 @@ _actionlib_tutorials_generate_messages_check_deps_AveragingActionGoal/fast:
 	$(MAKE) -f actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_AveragingActionGoal.dir/build.make actionlib_tutorials/CMakeFiles/_actionlib_tutorials_generate_messages_check_deps_AveragingActionGoal.dir/build
 .PHONY : _actionlib_tutorials_generate_messages_check_deps_AveragingActionGoal/fast
 
-#=============================================================================
-# Target rules for targets named actionlib_msgs_generate_messages_nodejs
-
-# Build rule for target.
-actionlib_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_nodejs
-.PHONY : actionlib_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make actionlib_tutorials/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
-.PHONY : actionlib_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named fibonacci_server
-
-# Build rule for target.
-fibonacci_server: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 fibonacci_server
-.PHONY : fibonacci_server
-
-# fast build rule for target.
-fibonacci_server/fast:
-	$(MAKE) -f actionlib_tutorials/CMakeFiles/fibonacci_server.dir/build.make actionlib_tutorials/CMakeFiles/fibonacci_server.dir/build
-.PHONY : fibonacci_server/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1333,55 +1437,61 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... averaging_server"
+	@echo "... averaging_client"
+	@echo "... actionlib_tutorials_generate_messages_py"
+	@echo "... actionlib_tutorials_gennodejs"
+	@echo "... actionlib_tutorials_generate_messages_nodejs"
+	@echo "... actionlib_tutorials_generate_messages_lisp"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MachineGoal"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_LidarActionGoal"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... actionlib_tutorials_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MachineActionGoal"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_AveragingResult"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MoveToActionFeedback"
-	@echo "... actionlib_tutorials_generate_messages"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MoveToActionResult"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_doTrajFeedback"
 	@echo "... actionlib_generate_messages_py"
 	@echo "... actionlib_generate_messages_nodejs"
-	@echo "... actionlib_tutorials_gennodejs"
 	@echo "... actionlib_generate_messages_eus"
+	@echo "... actionlib_tutorials_genlisp"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_MachineResult"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_FibonacciActionFeedback"
-	@echo "... roscpp_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... averaging_client"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_FibonacciActionGoal"
 	@echo "... actionlib_msgs_generate_messages_cpp"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_doTrajActionFeedback"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_LidarFeedback"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... fibonacci_server"
+	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... actionlib_tutorials_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... actionlib_tutorials_generate_messages_lisp"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_FibonacciFeedback"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_LidarActionFeedback"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MachineActionResult"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_FibonacciResult"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_FibonacciAction"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_LidarAction"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_doTrajActionGoal"
+	@echo "... actionlib_tutorials_generate_messages"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_killMotors"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_FibonacciGoal"
 	@echo "... actionlib_tutorials_generate_messages_eus"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_LidarResult"
@@ -1391,27 +1501,29 @@ help:
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_LidarGoal"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MachineAction"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MoveToAction"
+	@echo "... averaging_server"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_doTrajActionResult"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_AveragingActionFeedback"
 	@echo "... actionlib_tutorials_generate_messages_cpp"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MoveToFeedback"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_LidarActionResult"
-	@echo "... _actionlib_tutorials_generate_messages_check_deps_MachineResult"
-	@echo "... actionlib_tutorials_genlisp"
 	@echo "... actionlib_tutorials_geneus"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_AveragingFeedback"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MoveToGoal"
-	@echo "... _actionlib_tutorials_generate_messages_check_deps_MachineFeedback"
+	@echo "... roscpp_generate_messages_lisp"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_doTrajResult"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MoveToActionGoal"
-	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_MachineFeedback"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_doTrajGoal"
+	@echo "... _actionlib_tutorials_generate_messages_check_deps_doTrajAction"
 	@echo "... actionlib_tutorials_genpy"
+	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_AveragingAction"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_AveragingActionResult"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_FibonacciActionResult"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_AveragingGoal"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_MoveToResult"
 	@echo "... _actionlib_tutorials_generate_messages_check_deps_AveragingActionGoal"
-	@echo "... actionlib_msgs_generate_messages_nodejs"
-	@echo "... fibonacci_server"
 .PHONY : help
 
 

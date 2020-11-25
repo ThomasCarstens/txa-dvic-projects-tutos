@@ -44,6 +44,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/action/Machine.action"
     "/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/action/Lidar.action"
     "/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/action/MoveTo.action"
+    "/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/action/doTraj.action"
     )
 endif()
 
@@ -105,6 +106,22 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToResult.msg"
     "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToFeedback.msg"
     )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/actionlib_tutorials/msg" TYPE FILE FILES
+    "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajAction.msg"
+    "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg"
+    "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg"
+    "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg"
+    "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg"
+    "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg"
+    "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/actionlib_tutorials/srv" TYPE FILE FILES "/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/srv/killMotors.srv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

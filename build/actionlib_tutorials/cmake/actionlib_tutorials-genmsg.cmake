@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "actionlib_tutorials: 35 messages, 0 services")
+message(STATUS "actionlib_tutorials: 42 messages, 1 services")
 
 set(MSG_I_FLAGS "-Iactionlib_tutorials:/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg;-Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
 
@@ -67,6 +67,11 @@ add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "actionlib_tutorials" "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciResult.msg" ""
 )
 
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg" NAME_WE)
+add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "actionlib_tutorials" "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg" ""
+)
+
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarActionGoal.msg" NAME_WE)
 add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "actionlib_tutorials" "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarActionGoal.msg" "actionlib_msgs/GoalID:actionlib_tutorials/LidarGoal:std_msgs/Header"
@@ -77,9 +82,24 @@ add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "actionlib_tutorials" "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciAction.msg" "actionlib_msgs/GoalID:actionlib_tutorials/FibonacciResult:actionlib_tutorials/FibonacciGoal:actionlib_msgs/GoalStatus:actionlib_tutorials/FibonacciFeedback:actionlib_tutorials/FibonacciActionGoal:actionlib_tutorials/FibonacciActionResult:std_msgs/Header:actionlib_tutorials/FibonacciActionFeedback"
 )
 
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg" NAME_WE)
+add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "actionlib_tutorials" "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg" "actionlib_msgs/GoalID:actionlib_tutorials/doTrajGoal:std_msgs/Header"
+)
+
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/srv/killMotors.srv" NAME_WE)
+add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "actionlib_tutorials" "/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/srv/killMotors.srv" ""
+)
+
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciGoal.msg" NAME_WE)
 add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "actionlib_tutorials" "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciGoal.msg" ""
+)
+
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg" NAME_WE)
+add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "actionlib_tutorials" "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg" "actionlib_msgs/GoalID:actionlib_msgs/GoalStatus:actionlib_tutorials/doTrajFeedback:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarResult.msg" NAME_WE)
@@ -95,6 +115,11 @@ add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToAction.msg" NAME_WE)
 add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "actionlib_tutorials" "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToAction.msg" "actionlib_msgs/GoalID:actionlib_tutorials/MoveToActionFeedback:actionlib_msgs/GoalStatus:actionlib_tutorials/MoveToFeedback:actionlib_tutorials/MoveToActionGoal:actionlib_tutorials/MoveToResult:actionlib_tutorials/MoveToActionResult:std_msgs/Header:actionlib_tutorials/MoveToGoal:geometry_msgs/Point"
+)
+
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg" NAME_WE)
+add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "actionlib_tutorials" "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg" "actionlib_msgs/GoalID:actionlib_msgs/GoalStatus:actionlib_tutorials/doTrajResult:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarFeedback.msg" NAME_WE)
@@ -120,6 +145,11 @@ add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingFeedback.msg" NAME_WE)
 add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "actionlib_tutorials" "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingFeedback.msg" ""
+)
+
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg" NAME_WE)
+add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "actionlib_tutorials" "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg" ""
 )
 
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MachineFeedback.msg" NAME_WE)
@@ -162,6 +192,11 @@ add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "actionlib_tutorials" "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingGoal.msg" ""
 )
 
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajAction.msg" NAME_WE)
+add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "actionlib_tutorials" "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajAction.msg" "actionlib_tutorials/doTrajActionFeedback:actionlib_msgs/GoalID:actionlib_msgs/GoalStatus:actionlib_tutorials/doTrajFeedback:actionlib_tutorials/doTrajGoal:actionlib_tutorials/doTrajActionResult:std_msgs/Header:actionlib_tutorials/doTrajActionGoal:actionlib_tutorials/doTrajResult"
+)
+
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToGoal.msg" NAME_WE)
 add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "actionlib_tutorials" "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToGoal.msg" "geometry_msgs/Point"
@@ -190,6 +225,11 @@ add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingActionGoal.msg" NAME_WE)
 add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "actionlib_tutorials" "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingActionGoal.msg" "actionlib_msgs/GoalID:actionlib_tutorials/AveragingGoal:std_msgs/Header"
+)
+
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg" NAME_WE)
+add_custom_target(_actionlib_tutorials_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "actionlib_tutorials" "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg" ""
 )
 
 #
@@ -259,6 +299,12 @@ _generate_msg_cpp(actionlib_tutorials
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_cpp(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_cpp(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarActionGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
@@ -271,9 +317,21 @@ _generate_msg_cpp(actionlib_tutorials
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_cpp(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_cpp(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciGoal.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_cpp(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_cpp(actionlib_tutorials
@@ -292,6 +350,12 @@ _generate_msg_cpp(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToAction.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToActionFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToFeedback.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToActionGoal.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToResult.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToActionResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_cpp(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_cpp(actionlib_tutorials
@@ -322,6 +386,12 @@ _generate_msg_cpp(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_cpp(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_cpp(actionlib_tutorials
@@ -373,6 +443,12 @@ _generate_msg_cpp(actionlib_tutorials
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_cpp(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajAction.msg"
+  "${MSG_I_FLAGS}"
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_cpp(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
@@ -408,8 +484,20 @@ _generate_msg_cpp(actionlib_tutorials
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/actionlib_tutorials
 )
+_generate_msg_cpp(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/actionlib_tutorials
+)
 
 ### Generating Services
+_generate_srv_cpp(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/srv/killMotors.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/actionlib_tutorials
+)
 
 ### Generating Module File
 _generate_module_cpp(actionlib_tutorials
@@ -443,17 +531,27 @@ get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share
 add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarActionGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciAction.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/srv/killMotors.srv" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciGoal.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MachineAction.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToAction.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarFeedback.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
@@ -464,6 +562,8 @@ add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarActionResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingFeedback.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MachineFeedback.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
@@ -481,6 +581,8 @@ get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share
 add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajAction.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingAction.msg" NAME_WE)
@@ -492,6 +594,8 @@ add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingActionGoal.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_cpp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -564,6 +668,12 @@ _generate_msg_eus(actionlib_tutorials
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_eus(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_eus(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarActionGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
@@ -576,9 +686,21 @@ _generate_msg_eus(actionlib_tutorials
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_eus(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_eus(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciGoal.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_eus(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_eus(actionlib_tutorials
@@ -597,6 +719,12 @@ _generate_msg_eus(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToAction.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToActionFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToFeedback.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToActionGoal.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToResult.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToActionResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_eus(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_eus(actionlib_tutorials
@@ -627,6 +755,12 @@ _generate_msg_eus(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_eus(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_eus(actionlib_tutorials
@@ -678,6 +812,12 @@ _generate_msg_eus(actionlib_tutorials
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_eus(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajAction.msg"
+  "${MSG_I_FLAGS}"
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_eus(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
@@ -713,8 +853,20 @@ _generate_msg_eus(actionlib_tutorials
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/actionlib_tutorials
 )
+_generate_msg_eus(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/actionlib_tutorials
+)
 
 ### Generating Services
+_generate_srv_eus(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/srv/killMotors.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/actionlib_tutorials
+)
 
 ### Generating Module File
 _generate_module_eus(actionlib_tutorials
@@ -748,17 +900,27 @@ get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share
 add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarActionGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciAction.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/srv/killMotors.srv" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciGoal.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MachineAction.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToAction.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarFeedback.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
@@ -769,6 +931,8 @@ add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarActionResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingFeedback.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MachineFeedback.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
@@ -786,6 +950,8 @@ get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share
 add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajAction.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingAction.msg" NAME_WE)
@@ -797,6 +963,8 @@ add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingActionGoal.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_eus _actionlib_tutorials_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -869,6 +1037,12 @@ _generate_msg_lisp(actionlib_tutorials
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_lisp(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_lisp(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarActionGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
@@ -881,9 +1055,21 @@ _generate_msg_lisp(actionlib_tutorials
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_lisp(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_lisp(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciGoal.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_lisp(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_lisp(actionlib_tutorials
@@ -902,6 +1088,12 @@ _generate_msg_lisp(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToAction.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToActionFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToFeedback.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToActionGoal.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToResult.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToActionResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_lisp(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_lisp(actionlib_tutorials
@@ -932,6 +1124,12 @@ _generate_msg_lisp(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_lisp(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_lisp(actionlib_tutorials
@@ -983,6 +1181,12 @@ _generate_msg_lisp(actionlib_tutorials
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_lisp(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajAction.msg"
+  "${MSG_I_FLAGS}"
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_lisp(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
@@ -1018,8 +1222,20 @@ _generate_msg_lisp(actionlib_tutorials
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/actionlib_tutorials
 )
+_generate_msg_lisp(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/actionlib_tutorials
+)
 
 ### Generating Services
+_generate_srv_lisp(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/srv/killMotors.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/actionlib_tutorials
+)
 
 ### Generating Module File
 _generate_module_lisp(actionlib_tutorials
@@ -1053,17 +1269,27 @@ get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share
 add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarActionGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciAction.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/srv/killMotors.srv" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciGoal.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MachineAction.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToAction.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarFeedback.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
@@ -1074,6 +1300,8 @@ add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarActionResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingFeedback.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MachineFeedback.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
@@ -1091,6 +1319,8 @@ get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share
 add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajAction.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingAction.msg" NAME_WE)
@@ -1102,6 +1332,8 @@ add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingActionGoal.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_lisp _actionlib_tutorials_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -1174,6 +1406,12 @@ _generate_msg_nodejs(actionlib_tutorials
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_nodejs(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_nodejs(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarActionGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
@@ -1186,9 +1424,21 @@ _generate_msg_nodejs(actionlib_tutorials
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_nodejs(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_nodejs(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciGoal.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_nodejs(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_nodejs(actionlib_tutorials
@@ -1207,6 +1457,12 @@ _generate_msg_nodejs(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToAction.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToActionFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToFeedback.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToActionGoal.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToResult.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToActionResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_nodejs(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_nodejs(actionlib_tutorials
@@ -1237,6 +1493,12 @@ _generate_msg_nodejs(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_nodejs(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_nodejs(actionlib_tutorials
@@ -1288,6 +1550,12 @@ _generate_msg_nodejs(actionlib_tutorials
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_nodejs(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajAction.msg"
+  "${MSG_I_FLAGS}"
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_nodejs(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
@@ -1323,8 +1591,20 @@ _generate_msg_nodejs(actionlib_tutorials
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/actionlib_tutorials
 )
+_generate_msg_nodejs(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/actionlib_tutorials
+)
 
 ### Generating Services
+_generate_srv_nodejs(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/srv/killMotors.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/actionlib_tutorials
+)
 
 ### Generating Module File
 _generate_module_nodejs(actionlib_tutorials
@@ -1358,17 +1638,27 @@ get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share
 add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarActionGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciAction.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/srv/killMotors.srv" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciGoal.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MachineAction.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToAction.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarFeedback.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
@@ -1379,6 +1669,8 @@ add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutoria
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarActionResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingFeedback.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MachineFeedback.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
@@ -1396,6 +1688,8 @@ get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share
 add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajAction.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingAction.msg" NAME_WE)
@@ -1407,6 +1701,8 @@ add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutoria
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingActionGoal.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_nodejs _actionlib_tutorials_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -1479,6 +1775,12 @@ _generate_msg_py(actionlib_tutorials
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_py(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_py(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarActionGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
@@ -1491,9 +1793,21 @@ _generate_msg_py(actionlib_tutorials
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_py(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_py(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciGoal.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_py(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_py(actionlib_tutorials
@@ -1512,6 +1826,12 @@ _generate_msg_py(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToAction.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToActionFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToFeedback.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToActionGoal.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToResult.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToActionResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToGoal.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_py(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_py(actionlib_tutorials
@@ -1542,6 +1862,12 @@ _generate_msg_py(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingFeedback.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_py(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_py(actionlib_tutorials
@@ -1593,6 +1919,12 @@ _generate_msg_py(actionlib_tutorials
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/actionlib_tutorials
 )
 _generate_msg_py(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajAction.msg"
+  "${MSG_I_FLAGS}"
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/actionlib_tutorials
+)
+_generate_msg_py(actionlib_tutorials
   "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
@@ -1628,8 +1960,20 @@ _generate_msg_py(actionlib_tutorials
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingGoal.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/actionlib_tutorials
 )
+_generate_msg_py(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/actionlib_tutorials
+)
 
 ### Generating Services
+_generate_srv_py(actionlib_tutorials
+  "/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/srv/killMotors.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/actionlib_tutorials
+)
 
 ### Generating Module File
 _generate_module_py(actionlib_tutorials
@@ -1663,17 +2007,27 @@ get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share
 add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajFeedback.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarActionGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciAction.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionGoal.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/srv/killMotors.srv" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/FibonacciGoal.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionFeedback.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MachineAction.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToAction.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajActionResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarFeedback.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
@@ -1684,6 +2038,8 @@ add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_g
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarActionResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingFeedback.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajResult.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MachineFeedback.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
@@ -1701,6 +2057,8 @@ get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share
 add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajAction.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/MoveToGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingAction.msg" NAME_WE)
@@ -1712,6 +2070,8 @@ add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_g
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/LidarGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/AveragingActionGoal.msg" NAME_WE)
+add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/dvic/txa-dvic-projects-tutos/devel/share/actionlib_tutorials/msg/doTrajGoal.msg" NAME_WE)
 add_dependencies(actionlib_tutorials_generate_messages_py _actionlib_tutorials_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

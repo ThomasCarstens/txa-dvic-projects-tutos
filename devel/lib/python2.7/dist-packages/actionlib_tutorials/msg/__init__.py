@@ -33,3 +33,10 @@ from ._MoveToActionResult import *
 from ._MoveToFeedback import *
 from ._MoveToGoal import *
 from ._MoveToResult import *
+from ._doTrajAction import *
+from ._doTrajActionFeedback import *
+from ._doTrajActionGoal import *
+from ._doTrajActionResult import *
+from ._doTrajFeedback import *
+from ._doTrajGoal import *
+from ._doTrajResult import *

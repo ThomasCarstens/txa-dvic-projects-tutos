@@ -7,5 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PKG_CONFIG_PATH='/home/dvic/catkin_ws/devel/lib/pkgconfig:/home/dvic/cs/ros_ws/devel/lib/pkgconfig:/home/dvic/crazyswarm_github/ros_ws/devel/lib/pkgconfig:/opt/ros/melodic/lib/pkgconfig'
 export PWD='/home/dvic/txa-dvic-projects-tutos/build'
