@@ -38,7 +38,7 @@ def polygonial():
         StateMachine.add('SPAWN',
                 ServiceState('spawn', turtlesim.srv.Spawn,
                     request = turtlesim.srv.SpawnRequest(5.0,2.0,0.0,'turtle2')),
-                {'succeeded':'PRECISE'})
+                {'succeeded':'WAYPOINT1'})
 
         # fib_goal = FibonacciGoal(order=20)
         # fib_fullaction = SimpleActionState('fibonacci', FibonacciAction,
@@ -57,9 +57,31 @@ def polygonial():
         goto_fullaction = SimpleActionState('detect_perimeter', MoveToAction,
                           goal=goto_goal)
 
-        StateMachine.add('PRECISE',
+        StateMachine.add('WAYPOINT1',
                           goto_fullaction,
-                          transitions={'succeeded':'TELEPORT1'})
+                          transitions={'succeeded':'WAYPOINT2'})
+
+        pos1 = Point()
+
+        pos1.x = 0.5
+        pos1.y = 0.5
+        pos1.z = 0.5
+
+        goto_goal = MoveToGoal(point=pos1)
+        goto_fullaction = SimpleActionState('detect_perimeter', MoveToAction,
+                          goal=goto_goal)
+
+        StateMachine.add('WAYPOINT2',
+                          goto_fullaction,
+                          transitions={'succeeded':'END_IT'})
+
+
+        # Kill it now.
+        StateMachine.add('END_IT',
+                ServiceState('kill', killMotors.srv,
+                    request = turtlesim.srv.killMotorsRequest(2)),
+                {'succeeded':'TELEPORT1'})
+
 
         # Teleport turtle 1
         StateMachine.add('TELEPORT1',
