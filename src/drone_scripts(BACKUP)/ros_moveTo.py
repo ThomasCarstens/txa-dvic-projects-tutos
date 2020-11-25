@@ -33,10 +33,11 @@ class ArenaFlyer(object):
         self.allcfs = self.swarm.allcfs
 
 
-		self._goal = actionlib_tutorials.msg.MoveToGoal()
-		self.waypoint = np.array([self._goal.x, self._goal.y, self._goal.z])
-        self.pos = Point()
-		self.pos = self._goal
+        # self._goal = actionlib_tutorials.msg.MoveToGoal().point
+        # print ("point should be", self._goal)
+        # self.waypoint = np.array([self._goal.x, self._goal.y, self._goal.z])
+        # self.pos = Point()
+        # self.pos = self._goal
 
         # self.pos.x = 0.5
         # self.pos.y = 0.0
@@ -84,6 +85,12 @@ class ArenaFlyer(object):
         # helper variables
         #r = rospy.Rate(10)
         rospy.wait_for_message('/tf', tf2_msgs.msg.TFMessage, timeout=None)
+
+        self._goal = goal.point
+        print ("point should be", self._goal)
+        self.waypoint = np.array([self._goal.x, self._goal.y, self._goal.z])
+        self.pos = Point()
+        self.pos = self._goal
 
         # append the seeds for the fibonacci sequence
         self._feedback.time_elapsed = Duration(5)
