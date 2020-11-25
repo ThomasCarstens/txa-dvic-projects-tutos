@@ -32,12 +32,15 @@ class ArenaFlyer(object):
         #self.timeHelper = swarm.timeHelper
         self.allcfs = self.swarm.allcfs
 
-        self.waypoint = np.array([0.5, 0.0, 0.5])
-        self.pos = Point()
 
-        self.pos.x = 0.5
-        self.pos.y = 0.0
-        self.pos.z = 0.5
+		self._goal = actionlib_tutorials.msg.MoveToGoal()
+		self.waypoint = np.array([self._goal.x, self._goal.y, self._goal.z])
+        self.pos = Point()
+		self.pos = self._goal
+
+        # self.pos.x = 0.5
+        # self.pos.y = 0.0
+        # self.pos.z = 0.5
 
         # when a message of type Pose is received.
         #self.ttl1_subscriber = rospy.Subscriber('/turtle1/pose',
