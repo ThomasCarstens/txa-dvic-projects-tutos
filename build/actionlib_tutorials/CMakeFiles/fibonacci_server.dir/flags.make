@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"actionlib_tutorials\"
 
-CXX_INCLUDES = -I/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/devel/include -I/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/src/actionlib_tutorials/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/dvic/txa-dvic-projects-tutos/devel/include -I/home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

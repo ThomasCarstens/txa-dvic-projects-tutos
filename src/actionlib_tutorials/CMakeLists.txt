@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(actionlib_tutorials)
 
-find_package(catkin REQUIRED COMPONENTS roscpp actionlib actionlib_msgs std_msgs message_generation)
+find_package(catkin REQUIRED COMPONENTS roscpp actionlib actionlib_msgs std_msgs message_generation geometry_msgs)
 find_package(Boost REQUIRED COMPONENTS system)
 
 add_action_files(
@@ -10,14 +10,15 @@ add_action_files(
   FILES Averaging.action
   FILES Machine.action
   FILES Lidar.action
+  FILES MoveTo.action
 )
 
 generate_messages(
-  DEPENDENCIES actionlib_msgs std_msgs
+  DEPENDENCIES actionlib_msgs std_msgs geometry_msgs std_msgs
 )
 
 catkin_package(
-  CATKIN_DEPENDS actionlib_msgs
+  CATKIN_DEPENDS actionlib_msgs geometry_msgs std_msgs
 )
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})

@@ -3,6 +3,7 @@
 
 (defsystem "actionlib_tutorials-msg"
   :depends-on (:roslisp-msg-protocol :roslisp-utils :actionlib_msgs-msg
+               :geometry_msgs-msg
                :std_msgs-msg
 )
   :components ((:file "_package")
@@ -62,4 +63,18 @@
     (:file "_package_MachineGoal" :depends-on ("_package"))
     (:file "MachineResult" :depends-on ("_package_MachineResult"))
     (:file "_package_MachineResult" :depends-on ("_package"))
+    (:file "MoveToAction" :depends-on ("_package_MoveToAction"))
+    (:file "_package_MoveToAction" :depends-on ("_package"))
+    (:file "MoveToActionFeedback" :depends-on ("_package_MoveToActionFeedback"))
+    (:file "_package_MoveToActionFeedback" :depends-on ("_package"))
+    (:file "MoveToActionGoal" :depends-on ("_package_MoveToActionGoal"))
+    (:file "_package_MoveToActionGoal" :depends-on ("_package"))
+    (:file "MoveToActionResult" :depends-on ("_package_MoveToActionResult"))
+    (:file "_package_MoveToActionResult" :depends-on ("_package"))
+    (:file "MoveToFeedback" :depends-on ("_package_MoveToFeedback"))
+    (:file "_package_MoveToFeedback" :depends-on ("_package"))
+    (:file "MoveToGoal" :depends-on ("_package_MoveToGoal"))
+    (:file "_package_MoveToGoal" :depends-on ("_package"))
+    (:file "MoveToResult" :depends-on ("_package_MoveToResult"))
+    (:file "_package_MoveToResult" :depends-on ("_package"))
   ))

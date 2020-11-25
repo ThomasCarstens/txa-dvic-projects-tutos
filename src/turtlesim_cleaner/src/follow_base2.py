@@ -83,7 +83,7 @@ class ArenaFlyer():
 
         for cf in self.allcfs.crazyflies:
             print(cf.id)
-            cf.takeoff(1.0, 2.5)
+            #cf.takeoff(1.0, 2.5)
 
 
             #now we test if he has reached the desired point.
@@ -134,7 +134,7 @@ class ArenaFlyer():
 
 
 if __name__ == "__main__":
-    rospy.init_node('follow_node', anonymous=True) # this is a maybe
+    rospy.init_node('detect_perimeter', anonymous=True) # this is a maybe
 
     #swarm = Crazyswarm()
     #timeHelper = swarm.timeHelper

@@ -67,14 +67,14 @@ set(actionlib_tutorials_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(actionlib_tutorials_SOURCE_PREFIX /home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/src/actionlib_tutorials)
-  set(actionlib_tutorials_DEVEL_PREFIX /home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/devel)
+  set(actionlib_tutorials_SOURCE_PREFIX /home/dvic/txa-dvic-projects-tutos/src/actionlib_tutorials)
+  set(actionlib_tutorials_DEVEL_PREFIX /home/dvic/txa-dvic-projects-tutos/devel)
   set(actionlib_tutorials_INSTALL_PREFIX "")
   set(actionlib_tutorials_PREFIX ${actionlib_tutorials_DEVEL_PREFIX})
 else()
   set(actionlib_tutorials_SOURCE_PREFIX "")
   set(actionlib_tutorials_DEVEL_PREFIX "")
-  set(actionlib_tutorials_INSTALL_PREFIX /home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/install)
+  set(actionlib_tutorials_INSTALL_PREFIX /home/dvic/txa-dvic-projects-tutos/install)
   set(actionlib_tutorials_PREFIX ${actionlib_tutorials_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/install/lib;/home/thomas/cfsim_ws/devel/lib;/home/thomas/crazyflie_ws/devel/lib;/home/thomas/xarm_ws/devel/lib;/home/thomas/ros_project_dependencies_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/dvic/txa-dvic-projects-tutos/install/lib;/home/dvic/txa-dvic-projects-tutos/devel/lib;/home/dvic/catkin_ws/devel/lib;/home/dvic/cs/ros_ws/devel/lib;/home/dvic/crazyswarm_github/ros_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -185,7 +185,7 @@ foreach(t ${actionlib_tutorials_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "actionlib_msgs")
+set(depends "actionlib_msgs;geometry_msgs;std_msgs")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

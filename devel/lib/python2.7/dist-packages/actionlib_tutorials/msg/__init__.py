@@ -26,3 +26,10 @@ from ._MachineActionResult import *
 from ._MachineFeedback import *
 from ._MachineGoal import *
 from ._MachineResult import *
+from ._MoveToAction import *
+from ._MoveToActionFeedback import *
+from ._MoveToActionGoal import *
+from ._MoveToActionResult import *
+from ._MoveToFeedback import *
+from ._MoveToGoal import *
+from ._MoveToResult import *
