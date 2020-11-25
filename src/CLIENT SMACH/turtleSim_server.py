@@ -18,118 +18,42 @@ import turtlesim.msg
 import turtle_actionlib.msg
 
 def polygonial():
+    #define the differents points
+    my_points = [Point(), Point(), Point(), Point()]
 
+    my_points[0].x = 0.5
+    my_points[0].y = 0.0
+    my_points[0].z = 0.5
 
-    # Construct static goals
-    polygon_big = turtle_actionlib.msg.ShapeGoal(edges = 11, radius = 4.0)
-    polygon_small = turtle_actionlib.msg.ShapeGoal(edges = 6, radius = 0.5)
+    my_points[1].x = 0.5
+    my_points[1].y = 0.5
+    my_points[1].z = 0.5
+
+    my_points[2].x = 0.0
+    my_points[2].y = 0.5
+    my_points[2].z = 0.5
+
+    my_points[3].x = 0.0
+    my_points[3].y = 0.0
+    my_points[3].z = 0.5
 
     # Create a SMACH state machine
     sm0 = StateMachine(outcomes=['succeeded','aborted','preempted'])
 
     # Open the container
     with sm0:
-        # Reset turtlesim
-        StateMachine.add('RESET',
-                ServiceState('reset', std_srvs.srv.Empty),
-                {'succeeded':'SPAWN'})
+        #add each state
+        for i in range(3):
+            StateMachine.add('STATE' + str(i),
+                            SimpleActionState('detect_perimeter',
+                                                MoveToGoal(point = my_points[i])),
+                            transitions={'succeeded' : 'STATE' + str(i+1)})
 
-        # Create a second turtle
-        StateMachine.add('SPAWN',
-                ServiceState('spawn', turtlesim.srv.Spawn,
-                    request = turtlesim.srv.SpawnRequest(5.0,2.0,0.0,'turtle2')),
-                {'succeeded':'PRECISE'})
-
-        # fib_goal = FibonacciGoal(order=20)
-        # fib_fullaction = SimpleActionState('fibonacci', FibonacciAction,
-        #                   goal=fib_goal)
-        #
-        # StateMachine.add('FIBONACCI',
-        #                   fib_fullaction,
-        #                   transitions={'succeeded':'PRECISE'})
-        pos = Point()
-
-        pos.x = 0.5
-        pos.y = 0.0
-        pos.z = 0.5
-
-        goto_goal = MoveToGoal(point=pos)
-        goto_fullaction = SimpleActionState('detect_perimeter', MoveToAction,
-                          goal=goto_goal)
-
-        StateMachine.add('PRECISE',
-                          goto_fullaction,
-                          transitions={'succeeded':'TELEPORT1'})
-
-        # Teleport turtle 1
-        StateMachine.add('TELEPORT1',
-                ServiceState('turtle1/teleport_absolute', turtlesim.srv.TeleportAbsolute,
-                    request = turtlesim.srv.TeleportAbsoluteRequest(5.0,1.0,0.0)),
-                {'succeeded':'DRAW_SHAPES'})
-        print("hi")
-
-
-        # Draw some polygons
-        shapes_cc = Concurrence(
-                outcomes=['succeeded','aborted','preempted'],
-                default_outcome='aborted',
-                outcome_map = {'succeeded':{'BIG':'succeeded','SMALL':'succeeded'}})
-        StateMachine.add('DRAW_SHAPES',shapes_cc)
-        with shapes_cc:
-            # Draw a large polygon with the first turtle
-            Concurrence.add('BIG',
-                    SimpleActionState('turtle_shape1',turtle_actionlib.msg.ShapeAction,
-                        goal = polygon_big))
-
-            # Draw a small polygon with the second turtle
-            small_shape_sm = StateMachine(outcomes=['succeeded','aborted','preempted'])
-            Concurrence.add('SMALL',small_shape_sm)
-
-
-            with small_shape_sm:
-                # Teleport turtle 2
-                StateMachine.add('TELEPORT2',
-                        ServiceState('turtle2/teleport_absolute', turtlesim.srv.TeleportAbsolute,
-                            request = turtlesim.srv.TeleportAbsoluteRequest(9.0,5.0,0.0)),
-                        {'succeeded':'DRAW_WITH_MONITOR'})
-
-                # Construct a concurrence for the shape action and the monitor
-                draw_monitor_cc = Concurrence(
-                        ['succeeded','aborted','preempted','interrupted'],
-                        'aborted',
-                        child_termination_cb = lambda so: True,
-                        outcome_map = {
-                            'succeeded':{'DRAW':'succeeded'},
-                            'preempted':{'DRAW':'preempted','MONITOR':'preempted'},
-                            'interrupted':{'MONITOR':'invalid'}})
-
-                StateMachine.add('DRAW_WITH_MONITOR',
-                        draw_monitor_cc,
-                        {'interrupted':'WAIT_FOR_CLEAR'})
-
-                with draw_monitor_cc:
-                    Concurrence.add('DRAW',
-                            SimpleActionState('togoal', FibonacciAction,
-                                              goal=goto_goal))
-
-
-                    def turtle_far_away(ud, msg):
-                        """Returns True while turtle pose in msg is at least 1 unit away from (2,5)"""
-                        if sqrt(pow(msg.x-9.0,2) + pow(msg.y-5.0,2)) > 2.0:
-                            return True
-                        return False
-
-                    Concurrence.add('MONITOR',
-                            MonitorState('/turtle1/pose',turtlesim.msg.Pose,
-                                cond_cb = turtle_far_away))
-
-
-
-
-                StateMachine.add('WAIT_FOR_CLEAR',
-                        MonitorState('/turtle1/pose',turtlesim.msg.Pose,
-                            cond_cb = lambda ud,msg: not turtle_far_away(ud,msg)),
-                        {'valid':'WAIT_FOR_CLEAR','invalid':'TELEPORT2'})
+        #make it infinit
+        StateMachine.add('STATE' + str(3),
+                        SimpleActionState('detect_perimeter',
+                                            MoveToGoal(point = my_points[3])),
+                        transitions={'succeeded' : 'STATE' + str(0)})
 
 
 
