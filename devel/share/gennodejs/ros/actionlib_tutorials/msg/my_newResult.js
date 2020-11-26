@@ -11,7 +11,6 @@ const _deserializer = _ros_msg_utils.Deserialize;
 const _arrayDeserializer = _deserializer.Array;
 const _finder = _ros_msg_utils.Find;
 const _getByteLength = _ros_msg_utils.getByteLength;
-let geometry_msgs = _finder('geometry_msgs');
 
 //-----------------------------------------------------------
 
@@ -21,7 +20,6 @@ class my_newResult {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.time_elapsed = null;
       this.updates_n = null;
-      this.position = null;
     }
     else {
       if (initObj.hasOwnProperty('time_elapsed')) {
@@ -36,12 +34,6 @@ class my_newResult {
       else {
         this.updates_n = 0;
       }
-      if (initObj.hasOwnProperty('position')) {
-        this.position = initObj.position
-      }
-      else {
-        this.position = new geometry_msgs.msg.Pose();
-      }
     }
   }
 
@@ -51,8 +43,6 @@ class my_newResult {
     bufferOffset = _serializer.duration(obj.time_elapsed, buffer, bufferOffset);
     // Serialize message field [updates_n]
     bufferOffset = _serializer.uint32(obj.updates_n, buffer, bufferOffset);
-    // Serialize message field [position]
-    bufferOffset = geometry_msgs.msg.Pose.serialize(obj.position, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -64,13 +54,11 @@ class my_newResult {
     data.time_elapsed = _deserializer.duration(buffer, bufferOffset);
     // Deserialize message field [updates_n]
     data.updates_n = _deserializer.uint32(buffer, bufferOffset);
-    // Deserialize message field [position]
-    data.position = geometry_msgs.msg.Pose.deserialize(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 68;
+    return 12;
   }
 
   static datatype() {
@@ -80,7 +68,7 @@ class my_newResult {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '03731a192e4d362bdc98565a89504faf';
+    return 'ec7b9dd60f0cbf3a48147f1dd0e2c305';
   }
 
   static messageDefinition() {
@@ -93,30 +81,6 @@ class my_newResult {
     duration time_elapsed
     # How many updates thrown in total
     uint32 updates_n
-    #Where the drone is
-    geometry_msgs/Pose position
-    
-    ================================================================================
-    MSG: geometry_msgs/Pose
-    # A representation of pose in free space, composed of position and orientation. 
-    Point position
-    Quaternion orientation
-    
-    ================================================================================
-    MSG: geometry_msgs/Point
-    # This contains the position of a point in free space
-    float64 x
-    float64 y
-    float64 z
-    
-    ================================================================================
-    MSG: geometry_msgs/Quaternion
-    # This represents an orientation in free space in quaternion form.
-    
-    float64 x
-    float64 y
-    float64 z
-    float64 w
     
     `;
   }
@@ -139,13 +103,6 @@ class my_newResult {
     }
     else {
       resolved.updates_n = 0
-    }
-
-    if (msg.position !== undefined) {
-      resolved.position = geometry_msgs.msg.Pose.Resolve(msg.position)
-    }
-    else {
-      resolved.position = new geometry_msgs.msg.Pose()
     }
 
     return resolved;

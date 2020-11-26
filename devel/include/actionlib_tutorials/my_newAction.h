@@ -137,12 +137,12 @@ struct MD5Sum< ::actionlib_tutorials::my_newAction_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "d203edacc004a0a2c52e295129b49529";
+    return "f0ba3e3a83f6c3cea727ed6db1379800";
   }
 
   static const char* value(const ::actionlib_tutorials::my_newAction_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xd203edacc004a0a2ULL;
-  static const uint64_t static_value2 = 0xc52e295129b49529ULL;
+  static const uint64_t static_value1 = 0xf0ba3e3a83f6c3ceULL;
+  static const uint64_t static_value2 = 0xa727ed6db1379800ULL;
 };
 
 template<class ContainerAllocator>
@@ -266,23 +266,6 @@ struct Definition< ::actionlib_tutorials::my_newAction_<ContainerAllocator> >
 "duration time_elapsed\n"
 "# How many updates thrown in total\n"
 "uint32 updates_n\n"
-"#Where the drone is\n"
-"geometry_msgs/Pose position\n"
-"\n"
-"================================================================================\n"
-"MSG: geometry_msgs/Pose\n"
-"# A representation of pose in free space, composed of position and orientation. \n"
-"Point position\n"
-"Quaternion orientation\n"
-"\n"
-"================================================================================\n"
-"MSG: geometry_msgs/Quaternion\n"
-"# This represents an orientation in free space in quaternion form.\n"
-"\n"
-"float64 x\n"
-"float64 y\n"
-"float64 z\n"
-"float64 w\n"
 "\n"
 "================================================================================\n"
 "MSG: actionlib_tutorials/my_newActionFeedback\n"
@@ -299,7 +282,24 @@ struct Definition< ::actionlib_tutorials::my_newAction_<ContainerAllocator> >
 "#\n"
 "# The amount of time elapsed from the start\n"
 "duration time_elapsed\n"
+"#Where the drone is\n"
+"geometry_msgs/Pose position\n"
 "\n"
+"\n"
+"================================================================================\n"
+"MSG: geometry_msgs/Pose\n"
+"# A representation of pose in free space, composed of position and orientation. \n"
+"Point position\n"
+"Quaternion orientation\n"
+"\n"
+"================================================================================\n"
+"MSG: geometry_msgs/Quaternion\n"
+"# This represents an orientation in free space in quaternion form.\n"
+"\n"
+"float64 x\n"
+"float64 y\n"
+"float64 z\n"
+"float64 w\n"
 ;
   }
 

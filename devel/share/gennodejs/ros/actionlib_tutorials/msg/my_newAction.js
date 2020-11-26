@@ -86,7 +86,7 @@ class my_newAction {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'd203edacc004a0a2c52e295129b49529';
+    return 'f0ba3e3a83f6c3cea727ed6db1379800';
   }
 
   static messageDefinition() {
@@ -197,23 +197,6 @@ class my_newAction {
     duration time_elapsed
     # How many updates thrown in total
     uint32 updates_n
-    #Where the drone is
-    geometry_msgs/Pose position
-    
-    ================================================================================
-    MSG: geometry_msgs/Pose
-    # A representation of pose in free space, composed of position and orientation. 
-    Point position
-    Quaternion orientation
-    
-    ================================================================================
-    MSG: geometry_msgs/Quaternion
-    # This represents an orientation in free space in quaternion form.
-    
-    float64 x
-    float64 y
-    float64 z
-    float64 w
     
     ================================================================================
     MSG: actionlib_tutorials/my_newActionFeedback
@@ -230,7 +213,24 @@ class my_newAction {
     #
     # The amount of time elapsed from the start
     duration time_elapsed
+    #Where the drone is
+    geometry_msgs/Pose position
     
+    
+    ================================================================================
+    MSG: geometry_msgs/Pose
+    # A representation of pose in free space, composed of position and orientation. 
+    Point position
+    Quaternion orientation
+    
+    ================================================================================
+    MSG: geometry_msgs/Quaternion
+    # This represents an orientation in free space in quaternion form.
+    
+    float64 x
+    float64 y
+    float64 z
+    float64 w
     
     `;
   }

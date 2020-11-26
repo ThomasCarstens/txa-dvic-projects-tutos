@@ -5,5 +5,3 @@
 duration time_elapsed
 # How many updates thrown in total
 uint32 updates_n
-#Where the drone is
-geometry_msgs/Pose position

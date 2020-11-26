@@ -15,7 +15,6 @@
 #include <ros/builtin_message_traits.h>
 #include <ros/message_operations.h>
 
-#include <geometry_msgs/Pose.h>
 
 namespace actionlib_tutorials
 {
@@ -26,13 +25,11 @@ struct my_newResult_
 
   my_newResult_()
     : time_elapsed()
-    , updates_n(0)
-    , position()  {
+    , updates_n(0)  {
     }
   my_newResult_(const ContainerAllocator& _alloc)
     : time_elapsed()
-    , updates_n(0)
-    , position(_alloc)  {
+    , updates_n(0)  {
   (void)_alloc;
     }
 
@@ -43,9 +40,6 @@ struct my_newResult_
 
    typedef uint32_t _updates_n_type;
   _updates_n_type updates_n;
-
-   typedef  ::geometry_msgs::Pose_<ContainerAllocator>  _position_type;
-  _position_type position;
 
 
 
@@ -77,8 +71,7 @@ template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::actionlib_tutorials::my_newResult_<ContainerAllocator1> & lhs, const ::actionlib_tutorials::my_newResult_<ContainerAllocator2> & rhs)
 {
   return lhs.time_elapsed == rhs.time_elapsed &&
-    lhs.updates_n == rhs.updates_n &&
-    lhs.position == rhs.position;
+    lhs.updates_n == rhs.updates_n;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -135,12 +128,12 @@ struct MD5Sum< ::actionlib_tutorials::my_newResult_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "03731a192e4d362bdc98565a89504faf";
+    return "ec7b9dd60f0cbf3a48147f1dd0e2c305";
   }
 
   static const char* value(const ::actionlib_tutorials::my_newResult_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x03731a192e4d362bULL;
-  static const uint64_t static_value2 = 0xdc98565a89504fafULL;
+  static const uint64_t static_value1 = 0xec7b9dd60f0cbf3aULL;
+  static const uint64_t static_value2 = 0x48147f1dd0e2c305ULL;
 };
 
 template<class ContainerAllocator>
@@ -166,30 +159,6 @@ struct Definition< ::actionlib_tutorials::my_newResult_<ContainerAllocator> >
 "duration time_elapsed\n"
 "# How many updates thrown in total\n"
 "uint32 updates_n\n"
-"#Where the drone is\n"
-"geometry_msgs/Pose position\n"
-"\n"
-"================================================================================\n"
-"MSG: geometry_msgs/Pose\n"
-"# A representation of pose in free space, composed of position and orientation. \n"
-"Point position\n"
-"Quaternion orientation\n"
-"\n"
-"================================================================================\n"
-"MSG: geometry_msgs/Point\n"
-"# This contains the position of a point in free space\n"
-"float64 x\n"
-"float64 y\n"
-"float64 z\n"
-"\n"
-"================================================================================\n"
-"MSG: geometry_msgs/Quaternion\n"
-"# This represents an orientation in free space in quaternion form.\n"
-"\n"
-"float64 x\n"
-"float64 y\n"
-"float64 z\n"
-"float64 w\n"
 ;
   }
 
@@ -210,7 +179,6 @@ namespace serialization
     {
       stream.next(m.time_elapsed);
       stream.next(m.updates_n);
-      stream.next(m.position);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -233,9 +201,6 @@ struct Printer< ::actionlib_tutorials::my_newResult_<ContainerAllocator> >
     Printer<ros::Duration>::stream(s, indent + "  ", v.time_elapsed);
     s << indent << "updates_n: ";
     Printer<uint32_t>::stream(s, indent + "  ", v.updates_n);
-    s << indent << "position: ";
-    s << std::endl;
-    Printer< ::geometry_msgs::Pose_<ContainerAllocator> >::stream(s, indent + "  ", v.position);
   }
 };
 

@@ -13,10 +13,10 @@ uint32 id
 duration time_elapsed
 # How many updates thrown in total
 uint32 updates_n
-#Where the drone is
-geometry_msgs/Pose position
 ---
 # Part 3: the feedback,to be sent periodically by server
 #
 # The amount of time elapsed from the start
 duration time_elapsed
+#Where the drone is
+geometry_msgs/Pose position

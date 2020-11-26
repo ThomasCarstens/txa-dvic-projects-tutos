@@ -75,7 +75,7 @@ class my_newActionResult {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
     length += actionlib_msgs.msg.GoalStatus.getMessageSize(object.status);
-    return length + 68;
+    return length + 12;
   }
 
   static datatype() {
@@ -85,7 +85,7 @@ class my_newActionResult {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '299ac8687bbc07d2b7e6a31bb6a23bf9';
+    return 'bec7c8a7d141c7aec21f78a19299b20b';
   }
 
   static messageDefinition() {
@@ -161,30 +161,6 @@ class my_newActionResult {
     duration time_elapsed
     # How many updates thrown in total
     uint32 updates_n
-    #Where the drone is
-    geometry_msgs/Pose position
-    
-    ================================================================================
-    MSG: geometry_msgs/Pose
-    # A representation of pose in free space, composed of position and orientation. 
-    Point position
-    Quaternion orientation
-    
-    ================================================================================
-    MSG: geometry_msgs/Point
-    # This contains the position of a point in free space
-    float64 x
-    float64 y
-    float64 z
-    
-    ================================================================================
-    MSG: geometry_msgs/Quaternion
-    # This represents an orientation in free space in quaternion form.
-    
-    float64 x
-    float64 y
-    float64 z
-    float64 w
     
     `;
   }

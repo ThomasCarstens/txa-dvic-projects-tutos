@@ -3,6 +3,4 @@
           TIME_ELAPSED
           UPDATES_N-VAL
           UPDATES_N
-          POSITION-VAL
-          POSITION
 ))
