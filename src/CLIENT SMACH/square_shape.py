@@ -8,7 +8,7 @@ import smach_ros
 import smach
 
 import actionlib
-from actionlib_tutorials.msg import MoveToAction, MoveToGoal, MachineAction, FibonacciAction, FibonacciGoal
+from actionlib_tutorials.msg import my_newAction, my_newGoal, MachineAction, FibonacciAction, FibonacciGoal
 from geometry_msgs.msg import Point
 from smach import StateMachine, Concurrence
 from smach_ros import ActionServerWrapper, ServiceState, SimpleActionState, MonitorState, IntrospectionServer
@@ -46,13 +46,13 @@ def polygonial():
         for i in range(3):
             StateMachine.add('STATE' + str(i),
                             SimpleActionState('detect_perimeter',
-                                                MoveToAction, goal = MoveToGoal(point = my_points[i]),
+                                                my_newAction, goal = my_newGoal(point = my_points[i], id = 3)),
                             transitions={'succeeded' : 'STATE' + str(i+1)})
 
         #make it infinit
         StateMachine.add('STATE' + str(3),
                         SimpleActionState('detect_perimeter',
-                                            MoveToAction, goal = MoveToGoal(point = my_points[3]),
+                                            my_newAction, goal = my_newGoal(point = my_points[3], id = 3)),
                         transitions={'succeeded' : 'STATE' + str(0)})
 
 

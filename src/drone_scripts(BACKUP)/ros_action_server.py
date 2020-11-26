@@ -187,9 +187,8 @@ class PerimeterMonitor(object):
         rospy.wait_for_message('/tf', tf2_msgs.msg.TFMessage, timeout=None)
 
         self._goal = goal.point
-		self.id = goal.id
         print ("point should be", self._goal)
-		print("id is " + str(goal.id))
+        print("id is " + str(goal.id))
         self.waypoint = np.array([self._goal.x, self._goal.y, self._goal.z])
         self._feedback.position = Pose()
 
@@ -197,19 +196,19 @@ class PerimeterMonitor(object):
         self.success == False
 
         for cf in self.allcfs.crazyflies:
-			if cf.id == self.id:
-            	print(cf.id)
-				self._feedback.position.x = cf.position()[0]
-				self._feedback.position.y = cf.position()[1]
-				self._feedback.position.z = cf.position()[2]
-            	cf.takeoff(0.5, 5.0)
-            	cf.goTo(self.waypoint, yaw=0, duration=5.0)
+            if cf.id == goal.id:
+                print(cf.id)
+                self._feedback.position.position.x = cf.position()[0]
+                self._feedback.position.position.y = cf.position()[1]
+                self._feedback.position.position.z = cf.position()[2]
+                cf.takeoff(0.5, 5.0)
+                cf.goTo(self.waypoint, yaw=0, duration=5.0)
 
-            	if self._as.is_preempt_requested():
-                	rospy.loginfo('%s: Preempted' % self._action_name)
-                	self._as.set_preempted()
-                	success = False
-                	break
+                if self._as.is_preempt_requested():
+                    rospy.loginfo('%s: Preempted' % self._action_name)
+                    self._as.set_preempted()
+                    success = False
+                    break
 
             #now we test if he has reached the desired point.
         self.takeoff_transition()
@@ -247,8 +246,8 @@ class PerimeterMonitor(object):
     def euclidean_distance(self, goal_pose):
         """Euclidean distance between current pose and the goal."""
         euclidean_distance= sqrt(pow((goal_pose.x - self.cf2_pose.x), 2) + pow((goal_pose.y - self.cf2_pose.y), 2) + pow((goal_pose.z - self.cf2_pose.z), 2))
-    	#print("distance to goal is", round(euclidean_distance, 4))
-    	return euclidean_distance
+        #print("distance to goal is", round(euclidean_distance, 4))
+        return euclidean_distance
 
     def takeoff_transition(self):
         distance_tolerance = 0.1
@@ -257,10 +256,10 @@ class PerimeterMonitor(object):
         #goal.y = 0.0
         #goal.z = 0.5
 
-        while self.euclidean_distance(self.pos) >= distance_tolerance:
+        while self.euclidean_distance(self._goal) >= distance_tolerance:
             self.success = False
 
-        if self.euclidean_distance(self.pos) < distance_tolerance:
+        if self.euclidean_distance(self._goal) < distance_tolerance:
             self.success = True
             print("success is", self.success)
             #return success

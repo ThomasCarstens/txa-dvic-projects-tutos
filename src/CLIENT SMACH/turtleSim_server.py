@@ -68,9 +68,10 @@ def polygonial():
                 'aborted',
                 child_termination_cb = lambda so: True,
                 outcome_map = {
-                    'succeeded':{'WAYPOINT2':'succeeded'},
-                    'preempted':{'WAYPOINT2':'preempted','WAIT_FOR_CLEAR':'preempted'},
-                    'interrupted':{'WAIT_FOR_CLEAR':'invalid'}})
+                    'succeeded':{'WAYPOINT2':'succeeded'}})
+                    #'preempted':{'WAYPOINT2':'preempted','WAIT_FOR_CLEAR':'preempted'},
+                    #'interrupted':{'WAIT_FOR_CLEAR':'invalid'}}
+                    
 
         StateMachine.add('PREEMPTABLE_MOVE',
                 draw_monitor_cc,
@@ -98,12 +99,14 @@ def polygonial():
                 print (msg.data)
                 if msg.data == "home":
                     return True
+                #if msg.data == "kill":
+                #    return 'invalid'
                 return False
 
             Concurrence.add('WAIT_FOR_CLEAR',
                 MonitorState('/cf2/pattern', String,
-                    cond_cb = lambda ud,msg: not turtle_far_away(ud,msg)),
-                {'valid':'WAYPOINT3','invalid':'END_IT'})
+                    cond_cb = lambda ud,msg: turtle_far_away(ud,msg)),
+                {True:'WAYPOINT3',False:'END_IT'})
 
 
 
