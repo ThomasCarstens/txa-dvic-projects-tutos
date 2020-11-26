@@ -13,11 +13,13 @@ from geometry_msgs.msg import Point
 from smach import StateMachine, Concurrence
 from smach_ros import ActionServerWrapper, ServiceState, SimpleActionState, MonitorState, IntrospectionServer
 import std_srvs.srv
+import sys
 import turtlesim.srv
 import turtlesim.msg
 import turtle_actionlib.msg
 
 def polygonial():
+    id = sys.argv[1]
     #define the differents points
     my_points = [Point(), Point(), Point(), Point()]
 
@@ -46,13 +48,13 @@ def polygonial():
         for i in range(3):
             StateMachine.add('STATE' + str(i),
                             SimpleActionState('detect_perimeter',
-                                                my_newAction, goal = my_newGoal(point = my_points[i], id = 3)),
+                                                my_newAction, goal = my_newGoal(point = my_points[i], id = id)),
                             transitions={'succeeded' : 'STATE' + str(i+1)})
 
         #make it infinit
         StateMachine.add('STATE' + str(3),
                         SimpleActionState('detect_perimeter',
-                                            my_newAction, goal = my_newGoal(point = my_points[3], id = 3)),
+                                            my_newAction, goal = my_newGoal(point = my_points[3], id = id)),
                         transitions={'succeeded' : 'STATE' + str(0)})
 
 
