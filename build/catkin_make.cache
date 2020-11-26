@@ -1,2 +1,2 @@
 actionlib_tutorials:turtlesim_cleaner
--DCATKIN_DEVEL_PREFIX=/home/dvic/txa-dvic-projects-tutos/devel -DCMAKE_INSTALL_PREFIX=/home/dvic/txa-dvic-projects-tutos/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/berenice/Documents/txa-dvic-projects-tutos/devel -DCMAKE_INSTALL_PREFIX=/home/berenice/Documents/txa-dvic-projects-tutos/install -G Unix Makefiles

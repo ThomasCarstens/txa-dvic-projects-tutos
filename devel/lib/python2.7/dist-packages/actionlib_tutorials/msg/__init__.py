@@ -40,3 +40,10 @@ from ._doTrajActionResult import *
 from ._doTrajFeedback import *
 from ._doTrajGoal import *
 from ._doTrajResult import *
+from ._my_newAction import *
+from ._my_newActionFeedback import *
+from ._my_newActionGoal import *
+from ._my_newActionResult import *
+from ._my_newFeedback import *
+from ._my_newGoal import *
+from ._my_newResult import *

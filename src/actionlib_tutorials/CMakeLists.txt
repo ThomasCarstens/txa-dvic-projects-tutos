@@ -12,6 +12,7 @@ add_action_files(
   FILES Lidar.action
   FILES MoveTo.action
   FILES doTraj.action
+  FILES my_new.action
 )
 
 add_service_files(

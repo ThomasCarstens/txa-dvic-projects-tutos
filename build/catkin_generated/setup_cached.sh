@@ -7,4 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export PWD='/home/dvic/txa-dvic-projects-tutos/build'
+export CMAKE_PREFIX_PATH="/home/berenice/Documents/txa-dvic-projects-tutos/devel:$CMAKE_PREFIX_PATH"
+export PWD='/home/berenice/Documents/txa-dvic-projects-tutos/build'
+export ROSLISP_PACKAGE_DIRECTORIES='/home/berenice/Documents/txa-dvic-projects-tutos/devel/share/common-lisp'
+export ROS_PACKAGE_PATH="/home/berenice/Documents/txa-dvic-projects-tutos/src:$ROS_PACKAGE_PATH"
