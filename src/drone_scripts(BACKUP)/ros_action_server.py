@@ -5,9 +5,9 @@ import rospy
 from rospy import Duration
 
 import tf
-from geometry_msgs.msg import TransformStamped, Point
+from geometry_msgs.msg import TransformStamped, Point, Pose
 import time
-from turtlesim.msg import Pose
+import turtlesim.msg
 from std_msgs.msg import String
 #from tf2_msgs.msg import TFMessage
 import tf2_msgs.msg
@@ -59,10 +59,10 @@ class PerimeterMonitor(object):
         self._as2 = actionlib.SimpleActionServer(self._action_name2, actionlib_tutorials.msg.doTrajAction, execute_cb=self.execute_cb2, auto_start = False)
         self._as2.start()
 
-        self._feedback = actionlib_tutorials.msg.MoveToFeedback()
-        self._result = actionlib_tutorials.msg.MoveToResult()
+        self._feedback = actionlib_tutorials.msg.my_newFeedback()
+        self._result = actionlib_tutorials.msg.my_newResult()
         self._action_name = 'detect_perimeter'
-        self._as = actionlib.SimpleActionServer(self._action_name, actionlib_tutorials.msg.MoveToAction, execute_cb=self.execute_cb, auto_start = False)
+        self._as = actionlib.SimpleActionServer(self._action_name, actionlib_tutorials.msg.my_newAction, execute_cb=self.execute_cb, auto_start = False)
         self._as.start()
         print("Ready to send move messages.")
         self.setupKillService()
@@ -183,43 +183,33 @@ class PerimeterMonitor(object):
             rospy.loginfo('%s: Succeeded' % self._action_name)
             self._as.set_succeeded(self._result)
 
-
     def execute_cb(self, goal):
-        # helper variables
-        #r = rospy.Rate(10)
         rospy.wait_for_message('/tf', tf2_msgs.msg.TFMessage, timeout=None)
 
         self._goal = goal.point
+		self.id = goal.id
         print ("point should be", self._goal)
+		print("id is " + str(goal.id))
         self.waypoint = np.array([self._goal.x, self._goal.y, self._goal.z])
-        self.pos = Point()
-        self.pos = self._goal
+        self._feedback.position = Pose()
 
-        # append the seeds for the fibonacci sequence
         self._feedback.time_elapsed = Duration(5)
-        #self._feedback.sequence.append(0)
-        #self._feedback.sequence.append(1)
         self.success == False
 
-        # publish info to the console for the user
-        #rospy.loginfo('%s: Now with tolerance %i with current pose [%s]' % (self._action_name, goal.order, ','.join(map(str,self._feedback.sequence))))
-
-        # check that preempt has not been requested by the client
-
-
-        # start executing the action
-        # x = TurtleBot()
-
         for cf in self.allcfs.crazyflies:
-            print(cf.id)
-            cf.takeoff(0.5, 5.0)
-            cf.goTo(self.waypoint, yaw=0, duration=5.0)
+			if cf.id == self.id:
+            	print(cf.id)
+				self._feedback.position.x = cf.position()[0]
+				self._feedback.position.y = cf.position()[1]
+				self._feedback.position.z = cf.position()[2]
+            	cf.takeoff(0.5, 5.0)
+            	cf.goTo(self.waypoint, yaw=0, duration=5.0)
 
-            if self._as.is_preempt_requested():
-                rospy.loginfo('%s: Preempted' % self._action_name)
-                self._as.set_preempted()
-                success = False
-                break
+            	if self._as.is_preempt_requested():
+                	rospy.loginfo('%s: Preempted' % self._action_name)
+                	self._as.set_preempted()
+                	success = False
+                	break
 
             #now we test if he has reached the desired point.
         self.takeoff_transition()
