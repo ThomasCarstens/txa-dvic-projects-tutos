@@ -21,6 +21,14 @@ import actionlib_tutorials.msg
 import actionlib_tutorials.srv
 
 from math import pow, atan2, sqrt
+from gtts import gTTS
+import playsound
+
+def speak(text):
+    tts = gTTS(text=text, lang="en")
+    filename = "voice.mp3"
+    tts.save(filename)
+    playsound.playsound(filename)
 
 def signal_handler(signal, frame):
 	sys.exit(0)
@@ -194,6 +202,8 @@ class PerimeterMonitor(object):
 
         self._feedback.time_elapsed = Duration(5)
         self.success == False
+
+		speak("sending drone number " + str(goal.id) " to x " + str(self._goal.x) + " y " + str(self._goal.y) + " z " + str(self._goal.z))
 
         for cf in self.allcfs.crazyflies:
             if cf.id == goal.id:
