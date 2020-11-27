@@ -2,8 +2,10 @@
 # the result, and the feedback.
 # Part 1: the goal.
 #
-# The angle in degree the robot to turn, sent by client main
+#Where to go
 geometry_msgs/Point point
+#The drone's id
+uint32 id
 ---
 # Part 2: the result, sent by action server unpon completion
 #
@@ -16,3 +18,5 @@ uint32 updates_n
 #
 # The amount of time elapsed from the start
 duration time_elapsed
+#Where the drone is
+geometry_msgs/Pose position

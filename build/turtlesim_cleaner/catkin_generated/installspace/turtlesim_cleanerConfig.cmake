@@ -67,14 +67,14 @@ set(turtlesim_cleaner_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(turtlesim_cleaner_SOURCE_PREFIX /home/berenice/Documents/txa-dvic-projects-tutos/src/turtlesim_cleaner)
-  set(turtlesim_cleaner_DEVEL_PREFIX /home/berenice/Documents/txa-dvic-projects-tutos/devel)
+  set(turtlesim_cleaner_SOURCE_PREFIX /home/thomas/cours-de-robotique/src/turtlesim_cleaner)
+  set(turtlesim_cleaner_DEVEL_PREFIX /home/thomas/cours-de-robotique/devel)
   set(turtlesim_cleaner_INSTALL_PREFIX "")
   set(turtlesim_cleaner_PREFIX ${turtlesim_cleaner_DEVEL_PREFIX})
 else()
   set(turtlesim_cleaner_SOURCE_PREFIX "")
   set(turtlesim_cleaner_DEVEL_PREFIX "")
-  set(turtlesim_cleaner_INSTALL_PREFIX /home/berenice/Documents/txa-dvic-projects-tutos/install)
+  set(turtlesim_cleaner_INSTALL_PREFIX /home/thomas/cours-de-robotique/install)
   set(turtlesim_cleaner_PREFIX ${turtlesim_cleaner_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/berenice/Documents/txa-dvic-projects-tutos/install/lib;/opt/ros/melodic/lib)
+    foreach(path /home/thomas/cours-de-robotique/install/lib;/home/thomas/cs_sim/ros_ws/src/crazyswarm/scripts/ros_sim/devel/lib;/home/thomas/cfsim_ws/devel/lib;/home/thomas/crazyflie_ws/devel/lib;/home/thomas/xarm_ws/devel/lib;/home/thomas/ros_project_dependencies_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

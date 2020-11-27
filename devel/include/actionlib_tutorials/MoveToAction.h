@@ -137,12 +137,12 @@ struct MD5Sum< ::actionlib_tutorials::MoveToAction_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "241d1d6dae10fd4dc692914568999004";
+    return "f0ba3e3a83f6c3cea727ed6db1379800";
   }
 
   static const char* value(const ::actionlib_tutorials::MoveToAction_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x241d1d6dae10fd4dULL;
-  static const uint64_t static_value2 = 0xc692914568999004ULL;
+  static const uint64_t static_value1 = 0xf0ba3e3a83f6c3ceULL;
+  static const uint64_t static_value2 = 0xa727ed6db1379800ULL;
 };
 
 template<class ContainerAllocator>
@@ -211,8 +211,10 @@ struct Definition< ::actionlib_tutorials::MoveToAction_<ContainerAllocator> >
 "# the result, and the feedback.\n"
 "# Part 1: the goal.\n"
 "#\n"
-"# The angle in degree the robot to turn, sent by client main\n"
+"#Where to go\n"
 "geometry_msgs/Point point\n"
+"#The drone's id\n"
+"uint32 id\n"
 "\n"
 "================================================================================\n"
 "MSG: geometry_msgs/Point\n"
@@ -280,6 +282,24 @@ struct Definition< ::actionlib_tutorials::MoveToAction_<ContainerAllocator> >
 "#\n"
 "# The amount of time elapsed from the start\n"
 "duration time_elapsed\n"
+"#Where the drone is\n"
+"geometry_msgs/Pose position\n"
+"\n"
+"\n"
+"================================================================================\n"
+"MSG: geometry_msgs/Pose\n"
+"# A representation of pose in free space, composed of position and orientation. \n"
+"Point position\n"
+"Quaternion orientation\n"
+"\n"
+"================================================================================\n"
+"MSG: geometry_msgs/Quaternion\n"
+"# This represents an orientation in free space in quaternion form.\n"
+"\n"
+"float64 x\n"
+"float64 y\n"
+"float64 z\n"
+"float64 w\n"
 ;
   }
 

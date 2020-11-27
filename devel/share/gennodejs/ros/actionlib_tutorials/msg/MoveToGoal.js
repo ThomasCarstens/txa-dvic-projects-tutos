@@ -20,6 +20,7 @@ class MoveToGoal {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.point = null;
+      this.id = null;
     }
     else {
       if (initObj.hasOwnProperty('point')) {
@@ -28,6 +29,12 @@ class MoveToGoal {
       else {
         this.point = new geometry_msgs.msg.Point();
       }
+      if (initObj.hasOwnProperty('id')) {
+        this.id = initObj.id
+      }
+      else {
+        this.id = 0;
+      }
     }
   }
 
@@ -35,6 +42,8 @@ class MoveToGoal {
     // Serializes a message object of type MoveToGoal
     // Serialize message field [point]
     bufferOffset = geometry_msgs.msg.Point.serialize(obj.point, buffer, bufferOffset);
+    // Serialize message field [id]
+    bufferOffset = _serializer.uint32(obj.id, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -44,11 +53,13 @@ class MoveToGoal {
     let data = new MoveToGoal(null);
     // Deserialize message field [point]
     data.point = geometry_msgs.msg.Point.deserialize(buffer, bufferOffset);
+    // Deserialize message field [id]
+    data.id = _deserializer.uint32(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 24;
+    return 28;
   }
 
   static datatype() {
@@ -58,7 +69,7 @@ class MoveToGoal {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'a7c84ff13976aa04656e56e300124444';
+    return '6efe66e6c95aef59612cca501d13269e';
   }
 
   static messageDefinition() {
@@ -69,8 +80,10 @@ class MoveToGoal {
     # the result, and the feedback.
     # Part 1: the goal.
     #
-    # The angle in degree the robot to turn, sent by client main
+    #Where to go
     geometry_msgs/Point point
+    #The drone's id
+    uint32 id
     
     ================================================================================
     MSG: geometry_msgs/Point
@@ -93,6 +106,13 @@ class MoveToGoal {
     }
     else {
       resolved.point = new geometry_msgs.msg.Point()
+    }
+
+    if (msg.id !== undefined) {
+      resolved.id = msg.id;
+    }
+    else {
+      resolved.id = 0
     }
 
     return resolved;

@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "turtlesim_cleaner"
-PROJECT_SPACE_DIR = "/home/berenice/Documents/txa-dvic-projects-tutos/install"
+PROJECT_SPACE_DIR = "/home/thomas/cours-de-robotique/install"
 PROJECT_VERSION = "0.0.0"

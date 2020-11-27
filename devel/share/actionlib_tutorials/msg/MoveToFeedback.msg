@@ -3,3 +3,6 @@
 #
 # The amount of time elapsed from the start
 duration time_elapsed
+#Where the drone is
+geometry_msgs/Pose position
+

@@ -137,12 +137,12 @@ struct MD5Sum< ::actionlib_tutorials::MoveToActionFeedback_<ContainerAllocator> 
 {
   static const char* value()
   {
-    return "7d180ca849d0f3ec156099fd160a1ec1";
+    return "b32c4c593ce117b8546cf05577b82f2d";
   }
 
   static const char* value(const ::actionlib_tutorials::MoveToActionFeedback_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x7d180ca849d0f3ecULL;
-  static const uint64_t static_value2 = 0x156099fd160a1ec1ULL;
+  static const uint64_t static_value1 = 0xb32c4c593ce117b8ULL;
+  static const uint64_t static_value2 = 0x546cf05577b82f2dULL;
 };
 
 template<class ContainerAllocator>
@@ -229,6 +229,31 @@ struct Definition< ::actionlib_tutorials::MoveToActionFeedback_<ContainerAllocat
 "#\n"
 "# The amount of time elapsed from the start\n"
 "duration time_elapsed\n"
+"#Where the drone is\n"
+"geometry_msgs/Pose position\n"
+"\n"
+"\n"
+"================================================================================\n"
+"MSG: geometry_msgs/Pose\n"
+"# A representation of pose in free space, composed of position and orientation. \n"
+"Point position\n"
+"Quaternion orientation\n"
+"\n"
+"================================================================================\n"
+"MSG: geometry_msgs/Point\n"
+"# This contains the position of a point in free space\n"
+"float64 x\n"
+"float64 y\n"
+"float64 z\n"
+"\n"
+"================================================================================\n"
+"MSG: geometry_msgs/Quaternion\n"
+"# This represents an orientation in free space in quaternion form.\n"
+"\n"
+"float64 x\n"
+"float64 y\n"
+"float64 z\n"
+"float64 w\n"
 ;
   }
 

@@ -75,7 +75,7 @@ class MoveToActionGoal {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
     length += actionlib_msgs.msg.GoalID.getMessageSize(object.goal_id);
-    return length + 24;
+    return length + 28;
   }
 
   static datatype() {
@@ -85,7 +85,7 @@ class MoveToActionGoal {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '215e9c98c1bdc2bd19e1a8eb6bc51969';
+    return '566c5059a499a6486f594dcd67861571';
   }
 
   static messageDefinition() {
@@ -133,8 +133,10 @@ class MoveToActionGoal {
     # the result, and the feedback.
     # Part 1: the goal.
     #
-    # The angle in degree the robot to turn, sent by client main
+    #Where to go
     geometry_msgs/Point point
+    #The drone's id
+    uint32 id
     
     ================================================================================
     MSG: geometry_msgs/Point

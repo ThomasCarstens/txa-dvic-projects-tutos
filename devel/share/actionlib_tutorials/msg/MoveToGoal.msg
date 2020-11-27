@@ -3,5 +3,7 @@
 # the result, and the feedback.
 # Part 1: the goal.
 #
-# The angle in degree the robot to turn, sent by client main
+#Where to go
 geometry_msgs/Point point
+#The drone's id
+uint32 id

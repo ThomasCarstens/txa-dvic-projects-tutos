@@ -7,10 +7,10 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/berenice/Documents/txa-dvic-projects-tutos/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/berenice/Documents/txa-dvic-projects-tutos/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/berenice/Documents/txa-dvic-projects-tutos/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PWD='/home/berenice/Documents/txa-dvic-projects-tutos/build'
-export PYTHONPATH="/home/berenice/Documents/txa-dvic-projects-tutos/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES='/home/berenice/Documents/txa-dvic-projects-tutos/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/berenice/Documents/txa-dvic-projects-tutos/src:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/thomas/cours-de-robotique/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/thomas/cours-de-robotique/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/thomas/cours-de-robotique/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PWD="/home/thomas/cours-de-robotique/build"
+export PYTHONPATH="/home/thomas/cours-de-robotique/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/thomas/cours-de-robotique/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/thomas/cours-de-robotique/src:$ROS_PACKAGE_PATH"

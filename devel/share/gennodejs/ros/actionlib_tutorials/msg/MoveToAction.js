@@ -86,7 +86,7 @@ class MoveToAction {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '241d1d6dae10fd4dc692914568999004';
+    return 'f0ba3e3a83f6c3cea727ed6db1379800';
   }
 
   static messageDefinition() {
@@ -142,8 +142,10 @@ class MoveToAction {
     # the result, and the feedback.
     # Part 1: the goal.
     #
-    # The angle in degree the robot to turn, sent by client main
+    #Where to go
     geometry_msgs/Point point
+    #The drone's id
+    uint32 id
     
     ================================================================================
     MSG: geometry_msgs/Point
@@ -211,6 +213,24 @@ class MoveToAction {
     #
     # The amount of time elapsed from the start
     duration time_elapsed
+    #Where the drone is
+    geometry_msgs/Pose position
+    
+    
+    ================================================================================
+    MSG: geometry_msgs/Pose
+    # A representation of pose in free space, composed of position and orientation. 
+    Point position
+    Quaternion orientation
+    
+    ================================================================================
+    MSG: geometry_msgs/Quaternion
+    # This represents an orientation in free space in quaternion form.
+    
+    float64 x
+    float64 y
+    float64 z
+    float64 w
     
     `;
   }

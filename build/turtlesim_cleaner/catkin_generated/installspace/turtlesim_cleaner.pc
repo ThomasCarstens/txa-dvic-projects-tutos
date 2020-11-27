@@ -1,4 +1,4 @@
-prefix=/home/berenice/Documents/txa-dvic-projects-tutos/install
+prefix=/home/thomas/cours-de-robotique/install
 
 Name: turtlesim_cleaner
 Description: Description of turtlesim_cleaner

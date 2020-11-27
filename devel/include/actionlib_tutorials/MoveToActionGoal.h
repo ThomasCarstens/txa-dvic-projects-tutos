@@ -137,12 +137,12 @@ struct MD5Sum< ::actionlib_tutorials::MoveToActionGoal_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "215e9c98c1bdc2bd19e1a8eb6bc51969";
+    return "566c5059a499a6486f594dcd67861571";
   }
 
   static const char* value(const ::actionlib_tutorials::MoveToActionGoal_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x215e9c98c1bdc2bdULL;
-  static const uint64_t static_value2 = 0x19e1a8eb6bc51969ULL;
+  static const uint64_t static_value1 = 0x566c5059a499a648ULL;
+  static const uint64_t static_value2 = 0x6f594dcd67861571ULL;
 };
 
 template<class ContainerAllocator>
@@ -203,8 +203,10 @@ struct Definition< ::actionlib_tutorials::MoveToActionGoal_<ContainerAllocator> 
 "# the result, and the feedback.\n"
 "# Part 1: the goal.\n"
 "#\n"
-"# The angle in degree the robot to turn, sent by client main\n"
+"#Where to go\n"
 "geometry_msgs/Point point\n"
+"#The drone's id\n"
+"uint32 id\n"
 "\n"
 "================================================================================\n"
 "MSG: geometry_msgs/Point\n"
