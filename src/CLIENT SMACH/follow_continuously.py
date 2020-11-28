@@ -108,14 +108,10 @@ def polygonial():
                     """Returns True if UNITY STRING is a kill!!!"""
                     print (msg.data)
                     if msg.data == "home":
-                        #SimpleActionClient('togoal', FibonacciAction).send_goal(FibonacciGoal(order=24))
                         return True
-                    #if msg.data == "kill":
-                    #    return 'invalid'
                     else:
-                        if not msg.data:
-                            print("sup")
-                            return False
+#                        if not msg.data:
+                        return False
 
                 Concurrence.add('WAIT_FOR_CLEAR',
                     MonitorState('/cf2/pattern', String,
