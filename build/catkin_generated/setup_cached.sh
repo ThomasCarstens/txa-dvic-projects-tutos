@@ -8,9 +8,6 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/thomas/cours-de-robotique/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/thomas/cours-de-robotique/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/thomas/cours-de-robotique/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/thomas/cours-de-robotique/build"
-export PYTHONPATH="/home/thomas/cours-de-robotique/devel/lib/python2.7/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/thomas/cours-de-robotique/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/thomas/cours-de-robotique/src:$ROS_PACKAGE_PATH"

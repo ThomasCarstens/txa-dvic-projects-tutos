@@ -1,0 +1,8 @@
+prefix=/home/thomas/cours-de-robotique/devel
+
+Name: fkie_node_manager
+Description: Description of fkie_node_manager
+Version: 1.2.4
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

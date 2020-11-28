@@ -1,2 +1,2 @@
-actionlib_tutorials:turtlesim_cleaner
+actionlib_tutorials:multimaster/fkie_master_discovery:multimaster/fkie_master_sync:multimaster/fkie_multimaster:multimaster/fkie_multimaster_msgs:multimaster/fkie_node_manager:multimaster/fkie_node_manager_daemon:turtlesim_cleaner
 -DCATKIN_DEVEL_PREFIX=/home/thomas/cours-de-robotique/devel -DCMAKE_INSTALL_PREFIX=/home/thomas/cours-de-robotique/install -G Unix Makefiles

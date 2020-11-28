@@ -131,6 +131,12 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/thomas/cours-de-robotique/build/gtest/cmake_install.cmake")
+  include("/home/thomas/cours-de-robotique/build/multimaster/fkie_multimaster/cmake_install.cmake")
+  include("/home/thomas/cours-de-robotique/build/multimaster/fkie_multimaster_msgs/cmake_install.cmake")
+  include("/home/thomas/cours-de-robotique/build/multimaster/fkie_master_discovery/cmake_install.cmake")
+  include("/home/thomas/cours-de-robotique/build/multimaster/fkie_master_sync/cmake_install.cmake")
+  include("/home/thomas/cours-de-robotique/build/multimaster/fkie_node_manager_daemon/cmake_install.cmake")
+  include("/home/thomas/cours-de-robotique/build/multimaster/fkie_node_manager/cmake_install.cmake")
   include("/home/thomas/cours-de-robotique/build/actionlib_tutorials/cmake_install.cmake")
   include("/home/thomas/cours-de-robotique/build/turtlesim_cleaner/cmake_install.cmake")
 

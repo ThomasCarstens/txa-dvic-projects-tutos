@@ -63,17 +63,21 @@ class FibonacciAction(object):
         #rospy.loginfo('%s: Now with tolerance %i with current pose [%s]' % (self._action_name, goal.order, ','.join(map(str,self._feedback.sequence))))
 
 
-        # check that preempt has not been requested by the client
-        # if self._as.is_preempt_requested():
-        #     rospy.loginfo('%s: Preempted' % self._action_name)
-        #     self._as.set_preempted()
-        #     success = False
-        #     break
+
 
         # start executing the action
         # x = TurtleBot()
 
-        if self.success == False:
+        while self.success == False:
+            # check that preempt has not been requested by the client
+            if self._as.is_preempt_requested():
+                rospy.loginfo('%s: Preempted' % self._action_name)
+                self._as.set_preempted()
+                print("now preempted but what about the goal.")
+                #self.success == True #so to integrate this file.
+                success = False
+                break
+
             print ("while reexecuted")
             try:
                 print("try clause tested")
@@ -125,7 +129,7 @@ class FibonacciAction(object):
 	return euclidean_distance
 
 
-    def linear_vel(self, goal_pose, constant=0.5):
+    def linear_vel(self, goal_pose, constant=0.1):
         """See video: https://www.youtube.com/watch?v=Qh15Nol5htM."""
         return constant * self.euclidean_distance(goal_pose)
 
@@ -147,7 +151,7 @@ class FibonacciAction(object):
 
 
         # Please, insert a number slightly greater than 0 (e.g. 0.01).
-        distance_tolerance = 1#input("Set your tolerance: ")
+        distance_tolerance = 0.2#input("Set your tolerance: ")
 
         # goal_pose.x = self.turtle2_pose.x
         # goal_pose.y = self.turtle2_pose.y
@@ -184,7 +188,13 @@ class FibonacciAction(object):
                 # Publishing our vel_msg
                 self.velocity_publisher.publish(vel_msg)
                 #print("success is", self.success)
-
+                if self._as.is_preempt_requested():
+                    rospy.loginfo('%s: Preempted' % self._action_name)
+                    self._as.set_preempted()
+                    print("now preempted but what about the goal.")
+                    #self.success == True #so to integrate this file.
+                    self.success = False
+                    break
                 # Publish at the desired rate.
                 self.rate.sleep()
 

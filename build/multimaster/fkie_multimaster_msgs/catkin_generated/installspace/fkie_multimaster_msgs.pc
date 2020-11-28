@@ -1,0 +1,8 @@
+prefix=/home/thomas/cours-de-robotique/install
+
+Name: fkie_multimaster_msgs
+Description: Description of fkie_multimaster_msgs
+Version: 1.2.4
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime std_msgs
