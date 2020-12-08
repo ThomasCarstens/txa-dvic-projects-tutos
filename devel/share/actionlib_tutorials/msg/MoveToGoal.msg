@@ -6,4 +6,4 @@
 #Where to go
 geometry_msgs/Point point
 #The drone's id
-uint32 id
+int32 order

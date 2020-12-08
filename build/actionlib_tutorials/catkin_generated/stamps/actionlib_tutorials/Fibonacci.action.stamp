@@ -1,5 +1,11 @@
 #goal definition
-int32 order
+
+#Where to go
+geometry_msgs/Point destination
+
+#Who to call
+uint32 order
+
 ---
 #result definition
 int32[] sequence

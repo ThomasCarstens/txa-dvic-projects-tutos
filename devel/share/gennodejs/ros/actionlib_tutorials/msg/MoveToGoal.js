@@ -20,7 +20,7 @@ class MoveToGoal {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.point = null;
-      this.id = null;
+      this.order = null;
     }
     else {
       if (initObj.hasOwnProperty('point')) {
@@ -29,11 +29,11 @@ class MoveToGoal {
       else {
         this.point = new geometry_msgs.msg.Point();
       }
-      if (initObj.hasOwnProperty('id')) {
-        this.id = initObj.id
+      if (initObj.hasOwnProperty('order')) {
+        this.order = initObj.order
       }
       else {
-        this.id = 0;
+        this.order = 0;
       }
     }
   }
@@ -42,8 +42,8 @@ class MoveToGoal {
     // Serializes a message object of type MoveToGoal
     // Serialize message field [point]
     bufferOffset = geometry_msgs.msg.Point.serialize(obj.point, buffer, bufferOffset);
-    // Serialize message field [id]
-    bufferOffset = _serializer.uint32(obj.id, buffer, bufferOffset);
+    // Serialize message field [order]
+    bufferOffset = _serializer.int32(obj.order, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -53,8 +53,8 @@ class MoveToGoal {
     let data = new MoveToGoal(null);
     // Deserialize message field [point]
     data.point = geometry_msgs.msg.Point.deserialize(buffer, bufferOffset);
-    // Deserialize message field [id]
-    data.id = _deserializer.uint32(buffer, bufferOffset);
+    // Deserialize message field [order]
+    data.order = _deserializer.int32(buffer, bufferOffset);
     return data;
   }
 
@@ -69,7 +69,7 @@ class MoveToGoal {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '6efe66e6c95aef59612cca501d13269e';
+    return '6ebf71f49e07c108ca02b1e46a31ccaa';
   }
 
   static messageDefinition() {
@@ -83,7 +83,7 @@ class MoveToGoal {
     #Where to go
     geometry_msgs/Point point
     #The drone's id
-    uint32 id
+    int32 order
     
     ================================================================================
     MSG: geometry_msgs/Point
@@ -108,11 +108,11 @@ class MoveToGoal {
       resolved.point = new geometry_msgs.msg.Point()
     }
 
-    if (msg.id !== undefined) {
-      resolved.id = msg.id;
+    if (msg.order !== undefined) {
+      resolved.order = msg.order;
     }
     else {
-      resolved.id = 0
+      resolved.order = 0
     }
 
     return resolved;

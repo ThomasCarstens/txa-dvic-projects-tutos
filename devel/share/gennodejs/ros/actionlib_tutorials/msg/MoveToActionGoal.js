@@ -85,7 +85,7 @@ class MoveToActionGoal {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '566c5059a499a6486f594dcd67861571';
+    return '531d419dccf897e130b8ec398b8ef043';
   }
 
   static messageDefinition() {
@@ -136,7 +136,7 @@ class MoveToActionGoal {
     #Where to go
     geometry_msgs/Point point
     #The drone's id
-    uint32 id
+    int32 order
     
     ================================================================================
     MSG: geometry_msgs/Point

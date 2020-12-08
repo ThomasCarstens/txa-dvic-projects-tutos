@@ -137,12 +137,12 @@ struct MD5Sum< ::actionlib_tutorials::MoveToAction_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "f0ba3e3a83f6c3cea727ed6db1379800";
+    return "ad5dafa7492f79fdd6b59cbb508c336f";
   }
 
   static const char* value(const ::actionlib_tutorials::MoveToAction_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xf0ba3e3a83f6c3ceULL;
-  static const uint64_t static_value2 = 0xa727ed6db1379800ULL;
+  static const uint64_t static_value1 = 0xad5dafa7492f79fdULL;
+  static const uint64_t static_value2 = 0xd6b59cbb508c336fULL;
 };
 
 template<class ContainerAllocator>
@@ -214,7 +214,7 @@ struct Definition< ::actionlib_tutorials::MoveToAction_<ContainerAllocator> >
 "#Where to go\n"
 "geometry_msgs/Point point\n"
 "#The drone's id\n"
-"uint32 id\n"
+"int32 order\n"
 "\n"
 "================================================================================\n"
 "MSG: geometry_msgs/Point\n"

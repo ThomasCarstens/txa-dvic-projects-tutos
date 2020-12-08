@@ -1,6 +1,0 @@
-set(fkie_master_discovery_SETUP_PY_VERSION "1.2.4")
-set(fkie_master_discovery_SETUP_PY_SCRIPTS "")
-set(fkie_master_discovery_SETUP_PY_PACKAGES "fkie_master_discovery")
-set(fkie_master_discovery_SETUP_PY_PACKAGE_DIRS "src/fkie_master_discovery")
-set(fkie_master_discovery_SETUP_PY_MODULES "")
-set(fkie_master_discovery_SETUP_PY_MODULE_DIRS "")

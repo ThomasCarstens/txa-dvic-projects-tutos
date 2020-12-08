@@ -26,11 +26,11 @@ struct MoveToGoal_
 
   MoveToGoal_()
     : point()
-    , id(0)  {
+    , order(0)  {
     }
   MoveToGoal_(const ContainerAllocator& _alloc)
     : point(_alloc)
-    , id(0)  {
+    , order(0)  {
   (void)_alloc;
     }
 
@@ -39,8 +39,8 @@ struct MoveToGoal_
    typedef  ::geometry_msgs::Point_<ContainerAllocator>  _point_type;
   _point_type point;
 
-   typedef uint32_t _id_type;
-  _id_type id;
+   typedef int32_t _order_type;
+  _order_type order;
 
 
 
@@ -72,7 +72,7 @@ template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::actionlib_tutorials::MoveToGoal_<ContainerAllocator1> & lhs, const ::actionlib_tutorials::MoveToGoal_<ContainerAllocator2> & rhs)
 {
   return lhs.point == rhs.point &&
-    lhs.id == rhs.id;
+    lhs.order == rhs.order;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -129,12 +129,12 @@ struct MD5Sum< ::actionlib_tutorials::MoveToGoal_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "6efe66e6c95aef59612cca501d13269e";
+    return "6ebf71f49e07c108ca02b1e46a31ccaa";
   }
 
   static const char* value(const ::actionlib_tutorials::MoveToGoal_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x6efe66e6c95aef59ULL;
-  static const uint64_t static_value2 = 0x612cca501d13269eULL;
+  static const uint64_t static_value1 = 0x6ebf71f49e07c108ULL;
+  static const uint64_t static_value2 = 0xca02b1e46a31ccaaULL;
 };
 
 template<class ContainerAllocator>
@@ -161,7 +161,7 @@ struct Definition< ::actionlib_tutorials::MoveToGoal_<ContainerAllocator> >
 "#Where to go\n"
 "geometry_msgs/Point point\n"
 "#The drone's id\n"
-"uint32 id\n"
+"int32 order\n"
 "\n"
 "================================================================================\n"
 "MSG: geometry_msgs/Point\n"
@@ -188,7 +188,7 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.point);
-      stream.next(m.id);
+      stream.next(m.order);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -210,8 +210,8 @@ struct Printer< ::actionlib_tutorials::MoveToGoal_<ContainerAllocator> >
     s << indent << "point: ";
     s << std::endl;
     Printer< ::geometry_msgs::Point_<ContainerAllocator> >::stream(s, indent + "  ", v.point);
-    s << indent << "id: ";
-    Printer<uint32_t>::stream(s, indent + "  ", v.id);
+    s << indent << "order: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.order);
   }
 };
 

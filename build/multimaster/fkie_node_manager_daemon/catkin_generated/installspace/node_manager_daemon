@@ -1,4 +1,0 @@
-#!/usr/bin/env python2
-
-import fkie_node_manager_daemon
-fkie_node_manager_daemon.start_server()

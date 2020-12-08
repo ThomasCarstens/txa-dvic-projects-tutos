@@ -1,8 +1,0 @@
-prefix=/home/thomas/cours-de-robotique/devel
-
-Name: fkie_master_sync
-Description: Description of fkie_master_sync
-Version: 1.2.4
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: fkie_master_discovery fkie_multimaster_msgs

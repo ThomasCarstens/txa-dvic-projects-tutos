@@ -1,8 +1,0 @@
-prefix=/home/thomas/cours-de-robotique/install
-
-Name: fkie_master_discovery
-Description: Description of fkie_master_discovery
-Version: 1.2.4
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: fkie_multimaster_msgs std_srvs
