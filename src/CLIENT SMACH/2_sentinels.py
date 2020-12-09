@@ -36,7 +36,7 @@ def cf2_polygonial():
     my_points3[2].z = 0.5
 
     my_points3[3].x = 0.0
-    my_points3[3].y = 0.0
+    my_points3[3].y = 0.2
     my_points3[3].z = 0.5
 
 
@@ -55,9 +55,26 @@ def cf2_polygonial():
     my_points2[2].z = 0.5
 
     my_points2[3].x = 0.0
-    my_points2[3].y = 0.2
+    my_points2[3].y = -0.2
     my_points2[3].z = 0.5
 
+    my_points1 = [Point(), Point(), Point(), Point()]
+
+    my_points1[0].x = -0.5
+    my_points1[0].y = 0.2
+    my_points1[0].z = 0.5
+
+    my_points1[1].x = -0.5
+    my_points1[1].y = -0.5
+    my_points1[1].z = 0.5
+
+    my_points1[2].x = 0.0
+    my_points1[2].y = -0.5
+    my_points1[2].z = 0.5
+
+    my_points1[3].x = 0.0
+    my_points1[3].y = 0.2
+    my_points1[3].z = 0.5
 
 # Create the top level SMACH state machine
     sm_top = StateMachine(outcomes=['succeeded'])
@@ -69,7 +86,7 @@ def cf2_polygonial():
         #                        transitions={'outcome3':'SUB'})
 
         draw_monitor_cc = Concurrence(
-                ['succeeded'],  #['succeeded','aborted'],
+                ['succeeded', 'preempted'],  #['succeeded','aborted'],
                 'succeeded',
                 #child_termination_cb = lambda so: True,
                 #outcome_map = {
@@ -79,7 +96,7 @@ def cf2_polygonial():
 
         StateMachine.add('PREEMPTABLE_MOVE',
                 draw_monitor_cc,
-                {'succeeded':''})
+                {'preempted':'succeeded'})
 
 
         with draw_monitor_cc:
@@ -96,16 +113,15 @@ def cf2_polygonial():
                 #add each state
                 for i in range(3):
                     StateMachine.add('CF2STATE' + str(i),
-                                    SimpleActionState('drone2detect_perimeter',
+                                    SimpleActionState('detect_perimeter',
                                                         my_newAction, goal = my_newGoal(point = my_points2[i], id = 2)),
                                     transitions={'succeeded' : 'CF2STATE' + str(i+1)})
 
                 #make it infinit
                 smach.StateMachine.add('CF2STATE' + str(3),
-                                SimpleActionState('drone2detect_perimeter',
+                                SimpleActionState('detect_perimeter',
                                                     my_newAction, goal = my_newGoal(point = my_points2[3], id = 2)),
                                 transitions={'succeeded' : 'CF2STATE' + str(0)})
-
 
 
             # CRAZYFLIE 3
@@ -121,13 +137,13 @@ def cf2_polygonial():
                 #add each state
                 for i in range(3):
                     StateMachine.add('CF3STATE' + str(i),
-                                    SimpleActionState('detect_perimeter',
+                                    SimpleActionState('detect_perimeter1',
                                                         my_newAction, goal = my_newGoal(point = my_points3[i], id = 3)),
                                     transitions={'succeeded' : 'CF3STATE' + str(i+1)})
 
                 #make it infinit
                 StateMachine.add('CF3STATE' + str(3),
-                                SimpleActionState('detect_perimeter',
+                                SimpleActionState('detect_perimeter1',
                                                     my_newAction, goal = my_newGoal(point = my_points3[3], id = 3)),
                                 transitions={'succeeded' : 'CF3STATE' + str(0)})
 

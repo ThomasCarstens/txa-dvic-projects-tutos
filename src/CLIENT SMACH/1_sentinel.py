@@ -19,19 +19,20 @@ import turtle_actionlib.msg
 import sys
 
 def polygonial():
+    id = 3
     #define the differents points
     my_points = [Point(), Point(), Point(), Point()]
 
-    my_points[0].x = 0.5
+    my_points[0].x = 0.3
     my_points[0].y = 0.0
     my_points[0].z = 0.5
 
-    my_points[1].x = 0.5
-    my_points[1].y = 0.5
+    my_points[1].x = 0.3
+    my_points[1].y = 0.3
     my_points[1].z = 0.5
 
     my_points[2].x = 0.0
-    my_points[2].y = 0.5
+    my_points[2].y = 0.3
     my_points[2].z = 0.5
 
     my_points[3].x = 0.0
@@ -47,13 +48,13 @@ def polygonial():
         for i in range(3):
             StateMachine.add('STATE' + str(i),
                             SimpleActionState('detect_perimeter',
-                                                my_newAction, goal = my_newGoal(point = my_points[i], id = 3)),
+                                                my_newAction, goal = my_newGoal(point = my_points[i], id = id )),
                             transitions={'succeeded' : 'STATE' + str(i+1)})
 
         #make it infinit
         StateMachine.add('STATE' + str(3),
                         SimpleActionState('detect_perimeter',
-                                            my_newAction, goal = my_newGoal(point = my_points[3], id = 3)),
+                                            my_newAction, goal = my_newGoal(point = my_points[3], id = id)),
                         transitions={'succeeded' : 'STATE' + str(0)})
 
 

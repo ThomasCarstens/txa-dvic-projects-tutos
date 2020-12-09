@@ -130,7 +130,7 @@ def cf2_polygonial():
                                 #transitions={'invalid':'CANCEL_TOGOAL'}),
 
                 #make it infinit
-                smach.StateMachine.add('CF2STATE' + str(3),
+                StateMachine.add('CF2STATE' + str(3),
                                 SimpleActionState('drone2detect_perimeter',
                                                     my_newAction, goal = my_newGoal(point = my_points2[3], id = 2)),
                                 transitions={'succeeded' : 'CF2STATE' + str(0)})
