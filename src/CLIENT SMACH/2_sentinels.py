@@ -77,6 +77,75 @@ def cf2_polygonial():
     my_points1[3].z = 0.5
 
 # Create the top level SMACH state machine
+
+    # sm_topoftop = StateMachine(outcomes=['succeeded'])
+
+    # with sm_topoftop:
+
+    #     """ PREEMPTION PROCEDURE starts here (see above state for state transition)"""
+
+    #     draw_monitor_cc = Concurrence(
+    #             ['succeeded','aborted'],
+    #             'succeeded',
+    #             child_termination_cb = lambda so: True,
+    #             #outcome_map = {
+    #         #        'succeeded':{'WAIT_FOR_CLEAR':'valid'},
+	#          #       'aborted':{'WAIT_FOR_CLEAR':'invalid'}}
+    #          )
+
+
+    #     StateMachine.add('PREEMPTABLE_MOVE',
+    #             draw_monitor_cc,
+    #             {'succeeded':''})
+
+
+    #     with draw_monitor_cc:
+
+
+    #         """MONITOR STATE"""
+
+    #         def turtle_far_away(ud, msg):
+    #             """Returns True if UNITY STRING is a kill!!!"""
+    #             print (msg.data)
+    #             if msg.data == "home":
+    #                 #SimpleActionClient('togoal', FibonacciAction).send_goal(FibonacciGoal(order=24))
+    #                 return True
+    #             #if msg.data == "kill":
+    #             #    return 'invalid'
+    #             else:
+    #                 if not msg.data:
+    #                     print("sup")
+    #                     return False
+
+    #         Concurrence.add('WAIT_FOR_CLEAR',
+    #             MonitorState('/cf2/pattern', String,
+    #                 cond_cb = lambda ud,msg: not turtle_far_away(ud,msg)))
+    #                 #transitions={'invalid':'CANCEL_TOGOAL'}),
+
+
+    #         """MONITOR STATE"""
+
+    #         pos1 = Point()
+
+    #         pos1.x = 0.7
+    #         pos1.y = 0
+    #         #pos1.z = 0.5
+
+    #         goto_goal = FibonacciGoal(order=2, destination=pos1)
+    #         goto_fullaction = SimpleActionState('togoal', FibonacciAction,
+    #                         goal=goto_goal)
+
+    #         Concurrence.add('WAYPOINT3',
+    #                 goto_fullaction)
+
+
+    #     """ PREEMPTION PROCEDURE ends here (see state PREEMPTABLE_MOVE for state transition)"""
+
+
+
+
+
+
     sm_top = StateMachine(outcomes=['succeeded'])
 
     # Open the container
@@ -103,6 +172,7 @@ def cf2_polygonial():
             # CRAZYFLIE 2
         # Create a SMACH state machine
             sm2 = StateMachine(outcomes=['succeeded','aborted','preempted'])  # ['succeeded','aborted','preempted']
+
 
             Concurrence.add('CRAZYFLIE2', sm2#,
                                 #transitions={'outcome4':'outcome5'}

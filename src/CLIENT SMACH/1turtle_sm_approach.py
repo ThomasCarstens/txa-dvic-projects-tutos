@@ -80,7 +80,7 @@ def polygonial():
         #                                         my_newAction, goal = my_newGoal(point = my_points[i], id = id)),
         #                     transitions={'succeeded' : 'STATE' + str(i+1)})
 
-
+        """ PREEMPTION PROCEDURE starts here (see above state for state transition)"""
 
         draw_monitor_cc = Concurrence(
                 ['succeeded','aborted'],
@@ -131,6 +131,14 @@ def polygonial():
                     cond_cb = lambda ud,msg: not turtle_far_away(ud,msg)))
                     #transitions={'invalid':'CANCEL_TOGOAL'}),
 
+
+
+        """ PREEMPTION PROCEDURE ends here (see state PREEMPTABLE_MOVE for state transition)"""
+
+
+
+
+        
             #Concurrence.add('CANCEL_TOGOAL', CancelGoal())
 
                 #{'valid':'valid', 'invalid':'succeeded', 'preempted':'preempted'}
