@@ -45,13 +45,13 @@ def polygonial():
                     request = turtlesim.srv.SpawnRequest(5.0,2.0,0.0,'turtle2')),
                 {'succeeded':'PREEMPTABLE_MOVE'})
 
-        def child_term_cb():
-            time.sleep(3.0)
+        #def child_term_cb():
+        #    time.sleep(3.0)
 
         draw_monitor_cc = Concurrence(
                 ['succeeded', 'aborted'],  #['succeeded','aborted'],
                 'succeeded',
-                child_termination_cb = child_term_cb,
+                #child_termination_cb = child_term_cb,
                 #child_termination_cb = lambda so: True,
                 #outcome_map = {
                 #    'succeeded':{'CRAZYFLIE2':'succeeded'},
@@ -142,7 +142,7 @@ def polygonial():
                 #add each state
                 for i in range(3):
                     StateMachine.add('CF3STATE' + str(i),
-                                    SimpleActionState('togoal1',
+                                    SimpleActionState('togoal',
                                                         FibonacciAction, goal = FibonacciGoal(order=2, destination=my_points2[i])),
                                     transitions={'succeeded' : 'CF3STATE' + str(i+1)})
 

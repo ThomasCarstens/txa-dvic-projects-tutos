@@ -17,7 +17,7 @@ import smach
 import actionlib
 
 import actionlib_tutorials.msg
-
+import os
 
 
 class FibonacciAction(object):
@@ -78,6 +78,8 @@ class FibonacciAction(object):
     def execute_cb(self, goal):
         # helper variables
         r = rospy.Rate(10)
+        print("!!!!!!!!! togoal pid is", goal.order)
+        self.togoal_pid=goal.order
 
 
         # append the seeds for the fibonacci sequence
@@ -90,10 +92,15 @@ class FibonacciAction(object):
         #rospy.loginfo('%s: Now with tolerance %i with current pose [%s]' % (self._action_name, goal.order, ','.join(map(str,self._feedback.sequence))))
         #self.id = goal.order
         self.turtle_pose= Pose()
-        if self.id == 1:
-            self.turtle_pose = self.turtle1_pose
-        if self.id == 2:
-            self.turtle_pose = self.turtle2_pose
+        # if self.id == 1:
+        #     self.turtle_pose = self.turtle1_pose
+        # if self.id == 2:
+        #     self.turtle_pose = self.turtle2_pose
+
+        #if os.getpid() == self.togoal_pid:
+        self.turtle_pose = self.turtle1_pose
+        #if os.getpid() == self.togoal1_pid:
+        #    self.turtle_pose11 = self.turtle2_pose
 
 
 
@@ -113,8 +120,16 @@ class FibonacciAction(object):
             #print ("while reexecuted")
             try:
                 print("try clause tested")
-                self.move2goal(goal.destination, self.turtle_pose)
+                vel_msg = self.move2goal(goal.destination, self.turtle_pose)
                 currentPose = int(self.turtle_pose.x)
+
+                distance_tolerance = 0.2
+
+                if self.euclidean_distance(goal.destination, self.turtle1_pose) < distance_tolerance:
+                    self.success = True
+                    break
+
+                self.velocity_publisher1.publish(vel_msg)
                 #print("my pose is", int(turtle_pose.x))
                 #print("turtle1:", currentPose)
                 ####goalPose = [self.turtle2_pose.x]
@@ -143,7 +158,8 @@ class FibonacciAction(object):
     def execute_cb1(self, goal):
         # helper variables
         r = rospy.Rate(10)
-
+        self.togoal1_pid=goal.order
+        print("!!!!!!!!! togoal111 pid is", os.getpid())
 
         # append the seeds for the fibonacci sequence
         self._feedback1.sequence = []
@@ -154,11 +170,17 @@ class FibonacciAction(object):
         # publish info to the console for the user
         #rospy.loginfo('%s: Now with tolerance %i with current pose [%s]' % (self._action_name, goal.order, ','.join(map(str,self._feedback.sequence))))
         #self.id1 = goal.order
+
         self.turtle_pose11= Pose()
-        if self.id == 1:
-            self.turtle_pose11 = self.turtle1_pose
-        if self.id == 2:
-            self.turtle_pose11 = self.turtle2_pose
+        # if self.id == 1:
+        #     self.turtle_pose11 = self.turtle1_pose
+        # if self.id == 2:
+        #     self.turtle_pose11 = self.turtle2_pose
+
+        #if os.getpid() == self.togoal_pid:
+        #    self.turtle_pose = self.turtle1_pose
+        #if os.getpid() == self.togoal1_pid:
+        self.turtle_pose11 = self.turtle2_pose
 
 
 
@@ -172,18 +194,23 @@ class FibonacciAction(object):
                 self._as1.set_preempted()
                 print("now preempted but what about the goal.")
                 #self.success == True #so to integrate this file.
-                success = False
+                self.success1 = False
                 break
 
             #print ("while reexecuted")
             try:
                 print("try clause tested")
-                self.move2goal(goal.destination, self.turtle_pose11)
-                currentPose = int(self.turtle_pose11.x)
-                #print("my pose is", int(turtle_pose.x))
-                #print("turtle1:", currentPose)
-                ####goalPose = [self.turtle2_pose.x]
-                #print("turtle2:", goalPose)
+                vel_msg = self.move2goal(goal.destination, self.turtle2_pose)
+                #currentPose = int(self.turtle_pose11.x)
+
+                distance_tolerance = 0.2
+
+                if self.euclidean_distance(goal.destination, self.turtle_pose11) < distance_tolerance:
+                    self.success1 = True
+                    break
+
+                self.velocity_publisher2.publish(vel_msg)
+
                 self._feedback1.sequence.append(currentPose)
                 # publish the feedback
                 self._as1.publish_feedback(self._feedback1)
@@ -211,14 +238,16 @@ class FibonacciAction(object):
         received by the subscriber."""
 
         #self.mutex.acquire()
-        print("UPDATE TT1")
+        #print("UPDATE TT1")
         self.turtle1_pose = data
         self.turtle1_pose.x = round(self.turtle1_pose.x, 4)
         self.turtle1_pose.y = round(self.turtle1_pose.y, 4)
-        if self.id == 1:
-            self.turtle_pose = self.turtle1_pose
-        if self.id == 2:
-            self.turtle_pose = self.turtle2_pose
+
+        #if os.getpid() == self.togoal_pid:
+        self.turtle_pose = self.turtle1_pose
+        #if os.getpid() == self.togoal1_pid:
+        #self.turtle_pose11 = self.turtle2_pose
+
         self.rate.sleep()
         #self.mutex.release()
 	#print("turtle1:")
@@ -228,21 +257,23 @@ class FibonacciAction(object):
         received by the subscriber."""
 
         #self.mutex.acquire()
-        print("UPDATE TT2")
+        #print("UPDATE TT2")
         self.turtle2_pose = data
         self.turtle2_pose.x = round(self.turtle2_pose.x, 4)
         self.turtle2_pose.y = round(self.turtle2_pose.y, 4)
-        if self.id == 1:
-            self.turtle_pose = self.turtle1_pose
-        if self.id == 2:
-            self.turtle_pose = self.turtle2_pose
+
+        #if os.getpid() == self.togoal_pid:
+            #self.turtle_pose = self.turtle1_pose
+        #if os.getpid() == self.togoal1_pid:
+        self.turtle_pose11 = self.turtle2_pose
+
         self.rate.sleep()
         #self.mutex.release()
 
     def euclidean_distance(self, goal_pose, my_pose):
         """Euclidean distance between current pose and the goal."""
         euclidean_distance= sqrt(pow((goal_pose.x - my_pose.x), 2) + pow((goal_pose.y - my_pose.y), 2))
-        print("distance is", round(euclidean_distance, 4), "between", goal_pose.x, "and", my_pose.x )
+        print("distance is", round(euclidean_distance, 4), "between", goal_pose, "and", my_pose )
         return euclidean_distance
 
 
@@ -253,7 +284,7 @@ class FibonacciAction(object):
     def steering_angle(self, goal_pose, my_pose):
         """See video: https://www.youtube.com/watch?v=Qh15Nol5htM."""
         angle = atan2(goal_pose.y - my_pose.y, goal_pose.x - my_pose.x)
-        print("atan2 is", angle)
+        #print("atan2 is", angle)
         return angle
 
     def angular_vel(self, goal_pose, my_pose, constant=3):
@@ -292,11 +323,11 @@ class FibonacciAction(object):
         #if self.turtle2_pose.x != 0.0 and self.turtle2_pose.y != 0.0:
 
         self.PoseListener()
-        print("POSE IS", self.turtle_pose)
+        #print("POSE IS", self.turtle_pose)
         if self.euclidean_distance(goal_point, my_pose) >= distance_tolerance:
             print("debug: approach tt1")
             #self.mutex.acquire()
-            self.success = False
+
 
             # Porportional controller.
             # https://en.wikipedia.org/wiki/Proportional_control
@@ -311,21 +342,27 @@ class FibonacciAction(object):
             vel_msg.angular.y = 0
             vel_msg.angular.z = self.angular_vel(goal_point, my_pose)
 
-            print("speed is", vel_msg.linear.x, "and", vel_msg.angular.z)
+            #print("speed is", vel_msg.linear.x, "and", vel_msg.angular.z)
 
             #LOCK THREAD
-            self.mutex.acquire()
+            #self.mutex.acquire()
             # Publishing our vel_msg
             #TEMPORARY: Only for Publisher 1
-            print("id is", self.id)
-            if self.id == 1:
-                self.velocity_publisher1.publish(vel_msg)
-            if self.id == 2:
-                self.velocity_publisher2.publish(vel_msg)
+            print("PID is", os.getpid())
+
+
+            # if os.getpid() == self.togoal_pid:
+            #     self.velocity_publisher1.publish(vel_msg)
+            #     self.success = False
+            # if os.getpid() == self.togoal1_pid:
+            #     self.velocity_publisher2.publish(vel_msg)
+            #     self.success1 = False
+
+
             # Publish at the desired rate.
             #self.rate.sleep()
 
-            self.mutex.release()
+            #self.mutex.release()
 
             #print("success is", self.success)
             if self._as.is_preempt_requested():
@@ -334,6 +371,7 @@ class FibonacciAction(object):
                 print("now preempted but what about the goal.")
                 #self.success == True #so to integrate this file.
                 self.success = False
+                self.success1 = False
                 #break
 
             #self.mutex.release()
@@ -343,15 +381,16 @@ class FibonacciAction(object):
             vel_msg.linear.x = 0
             vel_msg.angular.z = 0
 
+            # if os.getpid() == self.togoal_pid:
+            #     self.velocity_publisher1.publish(vel_msg)
+            #     self.success = True
+            # if os.getpid() == self.togoal1_pid:
+            #     self.velocity_publisher2.publish(vel_msg)
+            #     self.success1 = True
 
-            if self.id == 1:
-                self.velocity_publisher1.publish(vel_msg)
-            if self.id == 2:
-                self.velocity_publisher2.publish(vel_msg)
             #self.rate.sleep()
 
-            self.success = True
-            print("success is", self.success)
+        return vel_msg
 
 
 if __name__ == '__main__':
