@@ -117,7 +117,7 @@ def cf2_polygonial():
         def get_cf2_pose(ud, msg):
             cf = data.transforms[0]
             if cf.child_frame_id == 'cf2':
-                if msg.x > 1 or msg.x < 1 or msg.y > 1 or msg.y < 1 or msg.z > 1 or msg.z < 1:
+                if cf.transform.translation.x > 1 or cf.transform.translation.x < 1 or cf.transform.translation.y > 1 or cf.transform.translation.y < 1 or cf.transform.translation.z > 1 or cf.transform.translation.z < 1:
                     is_preempt_2 = True
                     return True
                 else:
@@ -126,7 +126,7 @@ def cf2_polygonial():
         def get_cf3_pose(ud, msg):
             cf = data.transforms[0]
             if cf.child_frame_id == 'cf3':
-                if msg.x > 1 or msg.x < 1 or msg.y > 1 or msg.y < 1 or msg.z > 1 or msg.z < 1:
+                if cf.transform.translation.x > 1 or cf.transform.translation.x < 1 or cf.transform.translation.y > 1 or cf.transform.translation.y < 1 or cf.transform.translation.z > 1 or cf.transform.translation.z < 1:
                     is_preempt_3 = True
                     return True
                 else:
