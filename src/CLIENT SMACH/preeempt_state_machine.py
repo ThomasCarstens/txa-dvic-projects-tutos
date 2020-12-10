@@ -21,8 +21,6 @@ from std_msgs.msg import String
 import tf
 
 def cf2_polygonial():
-    is_preempt_2 = False
-    is_preempt_3 = False
     #define the differents points
     my_points3 = [Point(), Point(), Point(), Point()]
 
@@ -117,8 +115,7 @@ def cf2_polygonial():
         def get_cf2_pose(ud, msg):
             cf = data.transforms[0]
             if cf.child_frame_id == 'cf2':
-                if cf.transform.translation.x > 1 or cf.transform.translation.x < 1 or cf.transform.translation.y > 1 or cf.transform.translation.y < 1 or cf.transform.translation.z > 1 or cf.transform.translation.z < 1:
-                    is_preempt_2 = True
+                if cf.transform.translation.x > 1 or cf.transform.translation.x < -1 or cf.transform.translation.y > 1 or cf.transform.translation.y < -1 or cf.transform.translation.z > 1 or cf.transform.translation.z < -1:
                     return True
                 else:
                     return False
@@ -126,8 +123,7 @@ def cf2_polygonial():
         def get_cf3_pose(ud, msg):
             cf = data.transforms[0]
             if cf.child_frame_id == 'cf3':
-                if cf.transform.translation.x > 1 or cf.transform.translation.x < 1 or cf.transform.translation.y > 1 or cf.transform.translation.y < 1 or cf.transform.translation.z > 1 or cf.transform.translation.z < 1:
-                    is_preempt_3 = True
+                if cf.transform.translation.x > 1 or cf.transform.translation.x < -1 or cf.transform.translation.y > 1 or cf.transform.translation.y < -1 or cf.transform.translation.z > 1 or cf.transform.translation.z < -1:
                     return True
                 else:
                     return False
