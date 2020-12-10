@@ -81,7 +81,7 @@ def cf2_polygonial():
     main_sm = Concurrence(outcomes = ['succeeded', 'preempted'], default_outcome = 'succeeded')
 
     with main_sm:
-        safety_sm = Concurrence(outcomes = ['succeeded', 'preempted', 'aborted'])
+        safety_sm = Concurrence(outcomes = ['succeeded', 'preempted', 'aborted'], default_outcome = 'succeeded')
 
         with safety_sm:
             """MONITOR STATE"""
@@ -101,7 +101,7 @@ def cf2_polygonial():
             sm2 = StateMachine(outcomes = ['succeeded', 'preempted', 'aborted'])#'preempted',
             with sm2:
                 #add each state
-                for i in range(3):
+                for i in range(1):
                     StateMachine.add('CF2STATE' + str(i),
                                     SimpleActionState('detect_perimeter',
                                                         my_newAction, goal = my_newGoal(point = my_points2[i], id = 2)),
