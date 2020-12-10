@@ -81,7 +81,7 @@ def cf2_polygonial():
     main_sm = Concurrence(outcomes = ['succeeded', 'preempted'], default_outcome = 'succeeded')
 
     with main_sm:
-        sm2 = StateMachine(outcomes = 'preempted')
+        sm2 = StateMachine(outcomes = ['succeeded', 'preempted', 'aborted'])#'preempted', 
         with sm2:
             #add each state
             for i in range(3):
@@ -96,7 +96,7 @@ def cf2_polygonial():
                                                 my_newAction, goal = my_newGoal(point = my_points2[3], id = 2)),
                             transitions={'succeeded' : 'CF2STATE' + str(0)})
 
-        sm3 = StateMachine(outcomes=['preempted'])
+        sm3 = StateMachine(outcomes=['succeeded', 'preempted', 'aborted'])#'preempted'
 
         with sm3:
             #add each state
@@ -115,7 +115,7 @@ def cf2_polygonial():
         def get_cf2_pose(ud, msg):
             cf = msg.transforms[0]
             if cf.child_frame_id == 'cf2':
-                if cf.transform.translation.x > 1 or cf.transform.translation.x < -1 or cf.transform.translation.y > 1 or cf.transform.translation.y < -1 or cf.transform.translation.z > 1 or cf.transform.translation.z < -1:
+                if cf.transform.translation.x > 0.4 or cf.transform.translation.x < -1 or cf.transform.translation.y > 0.4 or cf.transform.translation.y < -1 or cf.transform.translation.z > 1 or cf.transform.translation.z < -1:
                     rospy.loginfo('cf2_false')
                     return True
             else:
@@ -125,7 +125,7 @@ def cf2_polygonial():
         def get_cf3_pose(ud, msg):
             cf = msg.transforms[0]
             if cf.child_frame_id == 'cf3':
-                if cf.transform.translation.x > 1 or cf.transform.translation.x < -1 or cf.transform.translation.y > 1 or cf.transform.translation.y < -1 or cf.transform.translation.z > 1 or cf.transform.translation.z < -1:
+                if cf.transform.translation.x > 0.4 or cf.transform.translation.x < -1 or cf.transform.translation.y > 0.4 or cf.transform.translation.y < -1 or cf.transform.translation.z > 1 or cf.transform.translation.z < -1:
                     rospy.loginfo('cf3_false')
                     return True
             else:
