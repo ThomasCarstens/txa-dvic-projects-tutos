@@ -117,7 +117,7 @@ def cf2_polygonial():
             if cf.child_frame_id == 'cf2':
                 if cf.transform.translation.x > 1 or cf.transform.translation.x < -1 or cf.transform.translation.y > 1 or cf.transform.translation.y < -1 or cf.transform.translation.z > 1 or cf.transform.translation.z < -1:
                     rospy.loginfo('cf2_false')
-                    return False
+                    return True
             else:
                 rospy.loginfo('cf2_true')
                 return False
@@ -127,15 +127,15 @@ def cf2_polygonial():
             if cf.child_frame_id == 'cf3':
                 if cf.transform.translation.x > 1 or cf.transform.translation.x < -1 or cf.transform.translation.y > 1 or cf.transform.translation.y < -1 or cf.transform.translation.z > 1 or cf.transform.translation.z < -1:
                     rospy.loginfo('cf3_false')
-                    return False
+                    return True
             else:
                 rospy.loginfo('cf3_true')
                 return False
 
         Concurrence.add('cf2_move', sm2)
         Concurrence.add('cf3_move', sm3)
-        Concurrence.add('monitor_cf2', MonitorState('/tf', TFMessage, cond_cb = get_cf2_pose))
-        Concurrence.add('monitor_cf3', MonitorState('/tf', TFMessage, cond_cb = get_cf3_pose))
+        Concurrence.add('monitor_cf2', MonitorState('/tf', TFMessage, cond_cb = lambda ud, msg : not get_cf2_pose(ud, msg)))
+        Concurrence.add('monitor_cf3', MonitorState('/tf', TFMessage, cond_cb = lambda ud, msg : not get_cf2_pose(ud, msg)))
 
     # Attach a SMACH introspection server
     sis = IntrospectionServer('state_machine_preemption', main_sm, '/sm_top_IS')
