@@ -81,61 +81,84 @@ def cf2_polygonial():
     main_sm = Concurrence(outcomes = ['succeeded', 'preempted'], default_outcome = 'succeeded')
 
     with main_sm:
-        sm2 = StateMachine(outcomes = ['succeeded', 'preempted', 'aborted'])#'preempted', 
-        with sm2:
-            #add each state
-            for i in range(3):
-                StateMachine.add('CF2STATE' + str(i),
+        safety_sm = Concurrence(outcomes = ['succeeded', 'preempted', 'aborted'])
+
+        with safety_sm:
+            """MONITOR STATE"""
+            def turtle_far_away(ud, msg):
+                """Returns True if UNITY STRING is a kill!!!"""
+                print (msg.data)
+                if msg.data == "home":
+                    #SimpleActionClient('togoal', FibonacciAction).send_goal(FibonacciGoal(order=24))
+                    return True
+                #if msg.data == "kill":
+                #    return 'invalid'
+                else:
+                    if not msg.data:
+                        print("sup")
+                        return False
+
+            sm2 = StateMachine(outcomes = ['succeeded', 'preempted', 'aborted'])#'preempted',
+            with sm2:
+                #add each state
+                for i in range(3):
+                    StateMachine.add('CF2STATE' + str(i),
+                                    SimpleActionState('detect_perimeter',
+                                                        my_newAction, goal = my_newGoal(point = my_points2[i], id = 2)),
+                                    transitions={'succeeded' : 'CF2STATE' + str(i+1)})
+
+                    #make it infinit
+                    smach.StateMachine.add('CF2STATE' + str(3),
                                 SimpleActionState('detect_perimeter',
-                                                    my_newAction, goal = my_newGoal(point = my_points2[i], id = 2)),
-                                transitions={'succeeded' : 'CF2STATE' + str(i+1)})
+                                                    my_newAction, goal = my_newGoal(point = my_points2[3], id = 2)),
+                                transitions={'succeeded' : 'CF2STATE' + str(0)})
 
-            #make it infinit
-            smach.StateMachine.add('CF2STATE' + str(3),
-                            SimpleActionState('detect_perimeter',
-                                                my_newAction, goal = my_newGoal(point = my_points2[3], id = 2)),
-                            transitions={'succeeded' : 'CF2STATE' + str(0)})
+            sm3 = StateMachine(outcomes=['succeeded', 'preempted', 'aborted'])#'preempted'
 
-        sm3 = StateMachine(outcomes=['succeeded', 'preempted', 'aborted'])#'preempted'
+            with sm3:
+                #add each state
+                for i in range(3):
+                    StateMachine.add('CF3STATE' + str(i),
+                                    SimpleActionState('detect_perimeter1',
+                                                        my_newAction, goal = my_newGoal(point = my_points3[i], id = 3)),
+                                    transitions={'succeeded' : 'CF3STATE' + str(i+1)})
 
-        with sm3:
-            #add each state
-            for i in range(3):
-                StateMachine.add('CF3STATE' + str(i),
+                #make it infinit
+                StateMachine.add('CF3STATE' + str(3),
                                 SimpleActionState('detect_perimeter1',
-                                                    my_newAction, goal = my_newGoal(point = my_points3[i], id = 3)),
-                                transitions={'succeeded' : 'CF3STATE' + str(i+1)})
+                                                    my_newAction, goal = my_newGoal(point = my_points3[3], id = 3)),
+                                transitions={'succeeded' : 'CF3STATE' + str(0)})
 
-            #make it infinit
-            StateMachine.add('CF3STATE' + str(3),
-                            SimpleActionState('detect_perimeter1',
-                                                my_newAction, goal = my_newGoal(point = my_points3[3], id = 3)),
-                            transitions={'succeeded' : 'CF3STATE' + str(0)})
+            def get_cf2_pose(ud, msg):
+                cf = msg.transforms[0]
+                if cf.child_frame_id == 'cf2':
+                    if cf.transform.translation.x > 0.4 or cf.transform.translation.x < -1 or cf.transform.translation.y > 0.4 or cf.transform.translation.y < -1 or cf.transform.translation.z > 1 or cf.transform.translation.z < -1:
+                        rospy.loginfo(cf.transform.translation.x)
+                        # rospy.loginfo('cf2_false')
+                        return True
+                else:
+                    # rospy.loginfo('cf2_true')
+                    return False
 
-        def get_cf2_pose(ud, msg):
-            cf = msg.transforms[0]
-            if cf.child_frame_id == 'cf2':
-                if cf.transform.translation.x > 0.4 or cf.transform.translation.x < -1 or cf.transform.translation.y > 0.4 or cf.transform.translation.y < -1 or cf.transform.translation.z > 1 or cf.transform.translation.z < -1:
-                    rospy.loginfo('cf2_false')
-                    return True
-            else:
-                rospy.loginfo('cf2_true')
-                return False
+            def get_cf3_pose(ud, msg):
+                cf = msg.transforms[0]
+                if cf.child_frame_id == 'cf3':
+                    if cf.transform.translation.x > 0.4 or cf.transform.translation.x < -1 or cf.transform.translation.y > 0.4 or cf.transform.translation.y < -1 or cf.transform.translation.z > 1 or cf.transform.translation.z < -1:
+                        rospy.loginfo(cf.transform.translation.x)
+                        # rospy.loginfo('cf3_false')
+                        return True
+                else:
+                    # rospy.loginfo('cf3_true')
+                    return False
 
-        def get_cf3_pose(ud, msg):
-            cf = msg.transforms[0]
-            if cf.child_frame_id == 'cf3':
-                if cf.transform.translation.x > 0.4 or cf.transform.translation.x < -1 or cf.transform.translation.y > 0.4 or cf.transform.translation.y < -1 or cf.transform.translation.z > 1 or cf.transform.translation.z < -1:
-                    rospy.loginfo('cf3_false')
-                    return True
-            else:
-                rospy.loginfo('cf3_true')
-                return False
+            Concurrence.add('cf2_move', sm2)
+            Concurrence.add('cf3_move', sm3)
+            Concurrence.add('monitor_cf2', MonitorState('/tf', TFMessage, cond_cb = lambda ud, msg : not get_cf2_pose(ud, msg)))
+            # Concurrence.add('monitor_cf3', MonitorState('/tf', TFMessage, cond_cb = lambda ud, msg : not get_cf2_pose(ud, msg)))
 
-        Concurrence.add('cf2_move', sm2)
-        Concurrence.add('cf3_move', sm3)
-        Concurrence.add('monitor_cf2', MonitorState('/tf', TFMessage, cond_cb = lambda ud, msg : not get_cf2_pose(ud, msg)))
-        Concurrence.add('monitor_cf3', MonitorState('/tf', TFMessage, cond_cb = lambda ud, msg : not get_cf2_pose(ud, msg)))
+        Concurrence.add('safety', safety_sm)
+        Concurrence.add('WAIT_FOR_CLEAR', MonitorState('/cf2/pattern', String, cond_cb = lambda ud,msg: not turtle_far_away(ud,msg)))
+        #transitions={'invalid':'CANCEL_TOGOAL'}),
 
     # Attach a SMACH introspection server
     sis = IntrospectionServer('state_machine_preemption', main_sm, '/sm_top_IS')
