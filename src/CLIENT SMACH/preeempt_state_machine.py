@@ -113,20 +113,24 @@ def cf2_polygonial():
                             transitions={'succeeded' : 'CF3STATE' + str(0)})
 
         def get_cf2_pose(ud, msg):
-            cf = data.transforms[0]
+            cf = msg.transforms[0]
             if cf.child_frame_id == 'cf2':
                 if cf.transform.translation.x > 1 or cf.transform.translation.x < -1 or cf.transform.translation.y > 1 or cf.transform.translation.y < -1 or cf.transform.translation.z > 1 or cf.transform.translation.z < -1:
-                    return True
-                else:
+                    rospy.loginfo('cf2_false')
                     return False
+            else:
+                rospy.loginfo('cf2_true')
+                return False
 
         def get_cf3_pose(ud, msg):
-            cf = data.transforms[0]
+            cf = msg.transforms[0]
             if cf.child_frame_id == 'cf3':
                 if cf.transform.translation.x > 1 or cf.transform.translation.x < -1 or cf.transform.translation.y > 1 or cf.transform.translation.y < -1 or cf.transform.translation.z > 1 or cf.transform.translation.z < -1:
-                    return True
-                else:
+                    rospy.loginfo('cf3_false')
                     return False
+            else:
+                rospy.loginfo('cf3_true')
+                return False
 
         Concurrence.add('cf2_move', sm2)
         Concurrence.add('cf3_move', sm3)
