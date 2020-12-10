@@ -77,7 +77,7 @@ def cf2_polygonial():
     my_points1[3].y = 0.2
     my_points1[3].z = 0.5
 
-# Create the top level SMACH state machine
+    # Create the top level SMACH state machine
 
     sm_topoftop = StateMachine(outcomes=['succeeded'])
 
@@ -219,7 +219,7 @@ def cf2_polygonial():
 
 
 
-    
+
 
     # Attach a SMACH introspection server
     sis_sm_topoftop = IntrospectionServer('smach_usecase_sm_top', sm_topoftop, '/sm_top_IS')
