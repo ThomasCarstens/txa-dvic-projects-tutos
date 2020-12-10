@@ -18,7 +18,7 @@ import turtlesim.msg
 import turtle_actionlib.msg
 import sys
 from std_msgs.msg import String
-import tf
+from tf2_msgs.msg import TFMessage
 
 def cf2_polygonial():
     #define the differents points
@@ -78,7 +78,7 @@ def cf2_polygonial():
 
     # Create the top level SMACH state machine
 
-    main_sm = Concurrence(outcomes = ['succeeded', 'preempted'], default_outcome = 'succeeded', child_termination_cb = True)
+    main_sm = Concurrence(outcomes = ['succeeded', 'preempted'], default_outcome = 'succeeded')
 
     with main_sm:
         sm2 = StateMachine(outcomes = 'preempted')
@@ -130,8 +130,8 @@ def cf2_polygonial():
 
         Concurrence.add('cf2_move', sm2)
         Concurrence.add('cf3_move', sm3)
-        Concurrence.add('monitor_cf2', MonitorState('/tf', tf2_msgs.msg.TFMessage, cond_cb = get_cf2_pose))
-        Concurrence.add('monitor_cf3', MonitorState('/tf', tf2_msgs.msg.TFMessage, cond_cb = get_cf3_pose))
+        Concurrence.add('monitor_cf2', MonitorState('/tf', TFMessage, cond_cb = get_cf2_pose))
+        Concurrence.add('monitor_cf3', MonitorState('/tf', TFMessage, cond_cb = get_cf3_pose))
 
     # Attach a SMACH introspection server
     sis = IntrospectionServer('state_machine_preemption', main_sm, '/sm_top_IS')
