@@ -79,7 +79,7 @@ def cf2_polygonial():
 
     # Create the top level SMACH state machine
 
-    sm_topoftop = StateMachine(outcomes=['succeeded'])
+    sm_topoftop = StateMachine(outcomes=['succeeded', 'aborted', 'preempted'])
 
     with sm_topoftop:
 
@@ -97,7 +97,7 @@ def cf2_polygonial():
 
         StateMachine.add('PREEMPTABLE_MOVE',
                 string_monitor,
-                {'succeeded':''})
+                {'succeeded':'FOLLOW_STATE'})
 
 
         with string_monitor:
@@ -108,7 +108,7 @@ def cf2_polygonial():
             def turtle_far_away(ud, msg):
                 """Returns True if UNITY STRING is a kill!!!"""
                 print (msg.data)
-                if msg.data == "home":
+                if msg.data == "FOLLOW_ME":
                     #SimpleActionClient('togoal', FibonacciAction).send_goal(FibonacciGoal(order=24))
                     return True
                 #if msg.data == "kill":
@@ -119,7 +119,7 @@ def cf2_polygonial():
                         return False
 
             Concurrence.add('WAIT_FOR_CLEAR',
-                MonitorState('/collision', String,
+                MonitorState('/swarmfollow', String,
                     cond_cb = lambda ud,msg: not turtle_far_away(ud,msg)))
                     #transitions={'invalid':'CANCEL_TOGOAL'}),
 
@@ -142,7 +142,7 @@ def cf2_polygonial():
             """ PREEMPTION PROCEDURE ends here (see state PREEMPTABLE_MOVE for state transition)"""
 
 
-            sm_top = StateMachine(outcomes=['succeeded', 'aborted'])
+            sm_top = StateMachine(outcomes=['succeeded', 'aborted', 'preempted']) #11DEC: adding preempted
 
             Concurrence.add('PREEMPTABLE_MOVE',
                     sm_top)#,
@@ -165,7 +165,7 @@ def cf2_polygonial():
 
                 StateMachine.add('PREEMPTABLE_MOVE',
                         draw_monitor_cc,
-                        {'preempted':'succeeded'})
+                        {'succeeded':'succeeded'})
 
 
                 with draw_monitor_cc:
@@ -217,6 +217,12 @@ def cf2_polygonial():
                                                             my_newAction, goal = my_newGoal(point = my_points3[3], id = 3)),
                                         transitions={'succeeded' : 'CF3STATE' + str(0)})
 
+
+        StateMachine.add('FOLLOW_STATE',
+                        SimpleActionState('cf3_follow_cf2',
+                                            my_newAction, goal = my_newGoal(point = my_points3[3], id = 3))#,
+                        #transitions={'succeeded' : 'FOLLOW_STATE'}
+                        )
 
 
 
