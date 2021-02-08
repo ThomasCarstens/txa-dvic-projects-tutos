@@ -1,3 +1,9 @@
+"""
+BUBULLE, NOVEMBRE 2020
+1 DRONE DOES A SQUARE
+No comments because this is well understood.
+"""
+
 #! /usr/bin/env python
 from __future__ import print_function
 import rospy

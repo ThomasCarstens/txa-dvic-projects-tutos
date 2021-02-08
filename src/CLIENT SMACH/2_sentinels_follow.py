@@ -1,3 +1,10 @@
+"""
+TXA, NOVEMBRE 2020
+2 DRONES: CF3 DOES A SQUARE, AND WHEN TRIGGERED BY /swarmfollow WILL FOLLOW CF2
+10/12/2020: Functional.
+08/02/2021: Added comments
+"""
+
 #! /usr/bin/env python
 from __future__ import print_function
 import rospy
@@ -20,8 +27,9 @@ import sys
 from std_msgs.msg import String
 
 def cf2_polygonial():
-    id = int(2)
-    #define the differents points
+    id = int(2) # custom Drone ID, e.g. 2 for cf2
+
+    #define 4 squares as list of points.
     my_points3 = [Point(), Point(), Point(), Point()]
 
     my_points3[0].x = 0.5
@@ -83,17 +91,30 @@ def cf2_polygonial():
 
     with sm_topoftop:
 
-        """ PREEMPTION PROCEDURE starts here (see above state for state transition)"""
+        """ PREEMPTION PROCEDURE: first, a concurrence. One state is FOLLOW_STATE
+        and it executes when the other state is preempted: PREEMPTABLE_MOVE.
+
+        PREEMPTABLE_MOVE is divided into a concurrence: WAIT_FOR_CLEAR monitors a ROS topic to wait for a trigger,
+        and the other state Puts CRAZYFLIE2 and CRAZYFLIE3 in Concurrence.
+
+        Not sure why but I also called that state PREEMPTABLE_MOVE.
+        """
 
         string_monitor = Concurrence(
                 ['succeeded', ],
                 'succeeded',
-                child_termination_cb = lambda so: True,
+                child_termination_cb = lambda so: True, #stop child execution if true.
                 #outcome_map = {
             #        'succeeded':{'WAIT_FOR_CLEAR':'valid'},
 	         #       'aborted':{'WAIT_FOR_CLEAR':'invalid'}}
              )
 
+        """ FOR DEMO: CF3 FOLLOWS CF2 IF ACTION IS PREEMPTED."""
+
+        StateMachine.add('FOLLOW_STATE',
+                        SimpleActionState('cf3_follow_cf2',
+                                            my_newAction, goal = my_newGoal(point = my_points3[3], id = 3))
+                        )
 
         StateMachine.add('PREEMPTABLE_MOVE',
                 string_monitor,
@@ -101,12 +122,10 @@ def cf2_polygonial():
 
 
         with string_monitor:
-
-
             """MONITOR STATE"""
 
             def turtle_far_away(ud, msg):
-                """Returns True if UNITY STRING is a kill!!!"""
+                """Returns True if /swarmfollow message says FOLLOW_ME"""
                 print (msg.data)
                 if msg.data == "FOLLOW_ME":
                     #SimpleActionClient('togoal', FibonacciAction).send_goal(FibonacciGoal(order=24))
@@ -118,41 +137,21 @@ def cf2_polygonial():
                         print("sup")
                         return False
 
+            """Start ROS monitoring"""
             Concurrence.add('WAIT_FOR_CLEAR',
                 MonitorState('/swarmfollow', String,
                     cond_cb = lambda ud,msg: not turtle_far_away(ud,msg)))
                     #transitions={'invalid':'CANCEL_TOGOAL'}),
 
-
-            """REST OF SM STATE"""
-
-            # pos1 = Point()
-
-            # pos1.x = 0.7
-            # pos1.y = 0
-            # #pos1.z = 0.5
-
-            # goto_goal = FibonacciGoal(order=2, destination=pos1)
-            # goto_fullaction = SimpleActionState('togoal', FibonacciAction,
-            #                 goal=goto_goal)
-
-            # Concurrence.add('WAYPOINT3',
-            #         goto_fullaction)
-
-            """ PREEMPTION PROCEDURE ends here (see state PREEMPTABLE_MOVE for state transition)"""
-
-
             sm_top = StateMachine(outcomes=['succeeded', 'aborted', 'preempted']) #11DEC: adding preempted
 
+            """Add the REST as a SM."""
             Concurrence.add('PREEMPTABLE_MOVE',
                     sm_top)#,
                     #{'preempted':'succeeded'})
 
             # Open the container
             with sm_top:
-
-                # smach.StateMachine.add('BAS', Bas(),
-                #                        transitions={'outcome3':'SUB'})
 
                 draw_monitor_cc = Concurrence(
                         ['succeeded', 'preempted'],  #['succeeded','aborted'],
@@ -163,14 +162,14 @@ def cf2_polygonial():
                         #    'aborted':{'CRAZYFLIE3':'succeeded'}}
                     )
 
+                """CONCURRENCE Designed To Fly multiple drones SIMULTANEOUSLY."""
                 StateMachine.add('PREEMPTABLE_MOVE',
                         draw_monitor_cc,
                         {'succeeded':'succeeded'})
 
-
                 with draw_monitor_cc:
-                    # CRAZYFLIE 2
-                # Create a SMACH state machine
+
+                    """CRAZYFLIE 2 SQUARE."""
                     sm2 = StateMachine(outcomes=['succeeded','aborted','preempted'])  # ['succeeded','aborted','preempted']
 
 
@@ -194,7 +193,7 @@ def cf2_polygonial():
                                         transitions={'succeeded' : 'CF2STATE' + str(0)})
 
 
-                    # CRAZYFLIE 3
+                    """CRAZYFLIE 3 SQUARE."""
                     # Create a SMACH state machine
                     sm3 = StateMachine(outcomes=['succeeded','aborted','preempted'])  # ['succeeded','aborted','preempted']
 
@@ -218,14 +217,8 @@ def cf2_polygonial():
                                         transitions={'succeeded' : 'CF3STATE' + str(0)})
 
 
-        StateMachine.add('FOLLOW_STATE',
-                        SimpleActionState('cf3_follow_cf2',
-                                            my_newAction, goal = my_newGoal(point = my_points3[3], id = 3))#,
-                        #transitions={'succeeded' : 'FOLLOW_STATE'}
-                        )
 
-
-
+""" END OF SMACH STRUCTURE: ADD OTHER THINGS """
 
     # Attach a SMACH introspection server
     sis_sm_topoftop = IntrospectionServer('smach_usecase_sm_top', sm_topoftop, '/sm_top_IS')
@@ -239,49 +232,11 @@ def cf2_polygonial():
     sm_topoftop_thread.start()
 
 
-# def cf3_polygonial():
-#     id = int(3)
-#     #define the differents points
-#     my_points2 = [Point(), Point(), Point(), Point()]
-
-#     my_points2[0].x = -0.5
-#     my_points2[0].y = 0.2
-#     my_points2[0].z = 0.5
-
-#     my_points2[1].x = -0.5
-#     my_points2[1].y = -0.5
-#     my_points2[1].z = 0.5
-
-#     my_points2[2].x = 0.0
-#     my_points2[2].y = -0.5
-#     my_points2[2].z = 0.5
-
-#     my_points2[3].x = 0.0
-#     my_points2[3].y = 0.2
-#     my_points2[3].z = 0.5
-
-
-
-
-#     # Attach a SMACH introspection server
-#     sis3 = IntrospectionServer('smach_usecase_03', sm3, '/sm3_IS')
-#     sis3.start()
-
-#     # Set preempt handler
-#     smach_ros.set_preempt_handler(sm3)
-
-#     # Execute SMACH tree in a separate thread so that we can ctrl-c the script
-#     sm3_thread = threading.Thread(target = sm3.execute)
-#     sm3_thread.start()
-
 
 if __name__ == '__main__':
     rospy.init_node('smach_usecase_step_06')
 
     tcf2 = threading.Thread(target=cf2_polygonial)
     tcf2.start()
-
-    # tcf3 = threading.Thread(target=cf3_polygonial)
-    # tcf3.start()
 
     rospy.spin()
